@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Humangenetik II · Selbstlernseite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/styles.css">
+  <script src="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; }
+  </style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:clip;text-wrap:pretty" data-screen-label="Selbstlernseite">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:24px;padding:13px clamp(20px,5vw,72px);background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(8px)">
+    <span style="display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:18px">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:32px;width:auto;display:block">
+      <span style="width:1px;height:24px;background:var(--color-divider)"></span>
+      <span style="font-family:var(--font-body);font-size:12px;line-height:1.15;color:color-mix(in srgb,var(--color-text) 62%,transparent);font-weight:600">GK Biologie 12<br>Genetik</span>
+    </span>
+    <span style="flex:1"></span>
+    <a href="index.html" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Übersicht</a>
+    <a href="#geschlecht" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Geschlechtsgebunden</a>
+    <a href="#chromosomen" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Chromosomen</a>
+    <a href="#erkennen" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Erkennen</a>
+    <a href="#glossar" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Glossar</a>
+    <a class="btn btn-primary" href="#quiz">Zum Quiz</a>
+    <div style="{{ navProgressStyle }}"></div>
+  </nav>
+
+  <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <!-- HERO -->
+    <header style="position:relative;padding:73px 0 50px" data-screen-label="Intro">
+      <div style="position:absolute;right:-40px;top:-140px;width:380px;height:380px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;pointer-events:none"></div>
+      <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernwelten · Evangelisches Gymnasium · GK Biologie 12</span>
+      <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:18ch">Humangenetik II</h1>
+      <p style="font-size:19px;line-height:28px;margin:20px 0 0;max-width:64ch;color:var(--color-text)">Geschlechtsgebundene (X-chromosomale) Erbgänge und Chromosomenanomalien — zwei Ausnahmen von den bisherigen Grundmustern. Am Ende dieser Seite weißt du, warum Männer bestimmte Erbkrankheiten viel häufiger zeigen als Frauen, kannst das typische „Kreuzvererbungs"-Muster im Stammbaum erkennen — und verstehst, wie durch Non-Disjunction eine Trisomie 21 entsteht.</p>
+      <div style="display:flex;gap:13px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-primary" href="#geschlecht">Los geht's</a>
+        <a class="btn btn-secondary" href="#quiz">Direkt zum Quiz</a>
+        <a class="btn btn-ghost" href="humangenetik-1.html">← Zurück zu Humangenetik I</a>
+        <a class="btn btn-ghost" href="arbeitstechniken.html">Weiter zu Arbeitstechniken der Genetik →</a>
+      </div>
+    </header>
+
+    <!-- EINORDNUNG: LERNBEREICH -->
+    <section style="padding:50px 0" data-screen-label="Einordnung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Der große Überblick</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Wo steht dieses Thema im Lernbereich?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Der Lernbereich „Grundlagen, Anwendungen und Perspektiven der Genetik" umfasst 9 Doppelstunden. Diese Seite deckt Block 4 ab — die zweite von zwei Doppelstunden zur Humangenetik. Hier lernst du zwei wichtige Ausnahmen von den bisherigen Grundmustern kennen: Erbgänge, die an das Geschlecht gekoppelt sind, und Erbkrankheiten, die nicht durch ein einzelnes Gen, sondern durch eine veränderte Chromosomenzahl entstehen.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:28px">
+        <a href="klassische-genetik-1.html" style="text-decoration:none;color:inherit;flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 1 · Ustd 1–2</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Klassische Genetik I</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Mendelsche Regeln, Kreuzungsschemata</span>
+        </a>
+        <a href="klassische-genetik-2.html" style="text-decoration:none;color:inherit;flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 2 · Ustd 3–4</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Klassische Genetik II</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Multiple Allele, Blutgruppen, Epistasie</span>
+        </a>
+        <a href="humangenetik-1.html" style="text-decoration:none;color:inherit;flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 3 · Ustd 5–6</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Humangenetik I</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Autosomale Erbgänge, Stammbaumanalyse</span>
+        </a>
+        <div style="flex:1 1 150px;background:var(--color-accent-100);box-shadow:inset 0 0 0 2px var(--color-accent-300);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 4 · Ustd 7–8</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Humangenetik II</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Geschlechtsgebunden, Chromosomenanomalien</span>
+        </div>
+        <a href="arbeitstechniken.html" style="text-decoration:none;color:inherit;flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 5–9 · Ustd 9–18</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Arbeitstechniken &amp; Gentherapie</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">PCR, Gelelektrophorese, CRISPR, Debatte</span>
+        </a>
+      </div>
+      <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">💡</span>
+        <div>
+          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Rückgriff auf Block 3</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.5">Die Stammbaumanalyse aus Block 3 bleibt dein wichtigstes Werkzeug — nur das Muster im Stammbaum ändert sich. Statt auf einem Autosom liegt das betrachtete Gen jetzt auf einem Gonosom (Geschlechtschromosom), und statt eines einzelnen veränderten Gens ist bei den Chromosomenanomalien plötzlich eine ganze Chromosomenzahl betroffen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARUM WICHTIG -->
+    <section style="padding:50px 0" data-screen-label="Warum wichtig">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Warum sich das lohnt</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Wozu Gonosomen &amp; Chromosomenzahl verstehen?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Beide Themen zeigen: Nicht jede Erbkrankheit folgt dem einfachen autosomalen Muster aus Block 3 — Lage auf dem Gonosom und Chromosomenzahl verändern das Bild grundlegend.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <div class="card">
+          <span class="card-kicker">Medizin &amp; Beratung</span>
+          <div class="card-title">Erweiterte Stammbaumanalyse</div>
+          <p class="card-body">Genetische Beratung muss neben autosomalen auch gonosomale Erbgänge berücksichtigen — das Wiederholungsrisiko unterscheidet sich je nach Geschlecht des Kindes deutlich.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker">Pränataldiagnostik</span>
+          <div class="card-title">Karyogramm vor der Geburt</div>
+          <p class="card-body">Chorionzottenbiopsie und Amniozentese erlauben es, Chromosomenanomalien wie die Trisomie 21 schon vor der Geburt zuverlässig nachzuweisen.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker">Reproduktionsmedizin</span>
+          <div class="card-title">Alter &amp; Non-Disjunction</div>
+          <p class="card-body">Das Wissen um den Zusammenhang zwischen mütterlichem Alter und Non-Disjunction-Risiko ist zentral für die Beratung bei späterem Kinderwunsch.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker">Nächste Blöcke</span>
+          <div class="card-title">Arbeitstechniken &amp; Gentherapie</div>
+          <p class="card-body">In den folgenden Blöcken lernst du Labormethoden wie PCR und Gelelektrophorese kennen — die Werkzeuge, mit denen man solche Diagnosen heute tatsächlich stellt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRUNDBEGRIFFE -->
+    <sc-if value="{{ showGrundbegriffe }}" hint-placeholder-val="{{ true }}">
+      <section id="grundbegriffe" style="padding:50px 0" data-screen-label="Grundbegriffe">
+        <div style="max-width:64ch">
+          <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Genetik-ABC, Teil 4</span>
+          <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Grundbegriffe zum Aufwärmen</h2>
+          <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese acht Begriffe brauchst du für alles Weitere auf dieser Seite. Klick auf ein Kärtchen — überleg erst selbst, ob du den Begriff noch kennst, bevor du die Erklärung aufdeckst.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+          <sc-for list="{{ grundbegriffe }}" as="term" hint-placeholder-count="8">
+            <button type="button" onClick="{{ term.onClick }}" style="position:relative;height:168px;perspective:1200px;background:transparent;border:none;padding:0;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit">
+              <div style="{{ term.flipStyle }}">
+                <div class="card" style="{{ term.frontStyle }}">
+                  <span class="card-kicker">{{ term.kicker }}</span>
+                  <div class="card-title">{{ term.title }}</div>
+                  <span style="margin-top:auto;font-size:12px;color:var(--color-accent-700);text-decoration:underline;text-decoration-style:dotted">Klicken zum Umdrehen</span>
+                </div>
+                <div class="card" style="{{ term.backStyle }};background:var(--color-accent-100)">
+                  <span class="card-kicker">{{ term.title }}</span>
+                  <p class="card-body">{{ term.body }}</p>
+                </div>
+              </div>
+            </button>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <!-- X-CHROMOSOMAL-REZESSIV -->
+    <section id="geschlecht" style="padding:50px 0" data-screen-label="Geschlechtsgebunden">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Erbgang III</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">X-chromosomal-rezessiv: Rot-Grün-Blindheit</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Nicht alle Gene liegen auf den Autosomen — manche liegen auf einem Gonosom (Geschlechtschromosom), meist dem X-Chromosom. Frauen besitzen zwei X-Chromosomen (XX) und damit zwei Kopien jedes X-chromosomalen Gens, genau wie bei Autosomen. Männer besitzen aber nur ein X- und ein Y-Chromosom (XY) — für die meisten X-chromosomalen Gene gibt es auf dem Y-Chromosom kein Gegenstück. Männer sind für diese Gene daher <b>hemizygot</b>: Ein einziges rezessives Allel reicht bei ihnen bereits aus, damit das Merkmal im Phänotyp sichtbar wird. Zur Vereinfachung schreiben wir das gesunde Allel als X<sup>A</sup> und das Allel für Rot-Grün-Blindheit als X<sup>a</sup> — in den interaktiven Elementen unten kürzen wir das als „Xᴬ" bzw. „Xᵃ" ab. Klick im Stammbaum unten auf eine Person, um zu sehen, wie sich ihr Genotyp aus ihrer Stellung in der Familie ableiten lässt.</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px;box-shadow:var(--shadow-sm);overflow-x:auto">
+        <div style="position:relative;width:560px;height:400px;margin:0 auto">
+          <sc-for list="{{ xLines }}" as="ln" hint-placeholder-count="11">
+            <div style="{{ ln.style }}"></div>
+          </sc-for>
+          <sc-for list="{{ xNodes }}" as="n" hint-placeholder-count="8">
+            <button type="button" onClick="{{ n.onClick }}" style="{{ n.wrapStyle }}">
+              <span style="{{ n.shapeStyle }}"></span>
+              <span style="{{ n.labelStyle }}">{{ n.label }}</span>
+            </button>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:13px;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>weiblich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
+        </div>
+
+        <div style="background:var(--color-bg);border-radius:28px;padding:13px 18px;min-height:76px;box-shadow:inset 0 0 0 1px var(--color-divider);margin-top:13px">
+          <sc-if value="{{ xInfo }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent" style="margin-bottom:6px">{{ xInfo.tagLabel }}</span>
+            <h4 style="font-size:19px;margin:0 0 4px;font-family:var(--font-heading);font-weight:400">{{ xInfo.label }} — Genotyp {{ xInfo.genotype }}</h4>
+            <p style="margin:0;font-size:14.5px;line-height:1.5">{{ xInfo.text }}</p>
+          </sc-if>
+          <sc-if value="{{ xInfoEmpty }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;color:color-mix(in srgb,var(--color-text) 55%,transparent);font-size:14.5px">Noch nichts ausgewählt — klick oben auf eine Person im Stammbaum.</p>
+          </sc-if>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">🧬</span>
+        <div>
+          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Kreuzvererbung: das typische Muster erkennen</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.5">Ein Vater kann ein X-chromosomales Merkmal nie direkt an seinen Sohn weitergeben — er vererbt seinen Söhnen nur sein Y-Chromosom, sein X-Chromosom geht ausschließlich an seine Töchter. Das erklärt das klassische Muster: betroffener Großvater → gesunde, aber Konduktorin-Tochter → betroffener Enkel. Man nennt dieses Überspringen der Vater-Generation Kreuzvererbung.</p>
+        </div>
+      </div>
+
+<div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniGeschlecht.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniGeschlecht.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniGeschlecht.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniGeschlecht.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- ÜBUNG: STAMMBAUM AUSFÜLLEN -->
+    <section style="padding:50px 0" data-screen-label="Übung Stammbaum">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Jetzt du</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Genotypen im Stammbaum bestimmen</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese Familie hat einen Fall von Hämophilie (Bluterkrankheit, X-chromosomal-rezessiv). I-2 heiratet gesund und unbelastet in die Familie ein. Bestimme für jede der fünf Personen den Genotyp und trag ihn in das Feld unter der jeweiligen Person ein. Schreib das gesunde Allel als <b>A</b>, das Allel für Hämophilie als <b>a</b> — ein Genotyp lautet z. B. „XAXa" oder „XaY".</p>
+      </div>
+
+      <div style="background:var(--color-accent-100);border-radius:31px;padding:22px;margin-top:28px;overflow-x:auto">
+        <div style="position:relative;width:480px;height:260px;margin:0 auto">
+          <sc-for list="{{ exLines }}" as="ln" hint-placeholder-count="6">
+            <div style="{{ ln.style }}"></div>
+          </sc-for>
+          <sc-for list="{{ exNodes }}" as="n" hint-placeholder-count="5">
+            <div style="{{ n.wrapStyle }}">
+              <span style="{{ n.shapeStyle }}"></span>
+              <span style="{{ n.aboveLabelStyle }}">{{ n.label }}</span>
+              <input type="text" maxlength="5" value="{{ n.val }}" onChange="{{ n.onChange }}" style="{{ n.inputStyle }}">
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:9px;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>weiblich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
+        </div>
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:18px">
+          <button type="button" class="btn btn-primary" onClick="{{ checkEx }}">Prüfen</button>
+          <button type="button" class="btn btn-secondary" onClick="{{ resetEx }}">Zurücksetzen</button>
+          <sc-if value="{{ exChecked }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent-2">{{ exCorrectCount }} / {{ exTotal }} richtig</span>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHROMOSOMENANOMALIEN -->
+    <section id="chromosomen" style="padding:50px 0" data-screen-label="Chromosomenanomalien">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Wenn nicht ein Gen, sondern ein ganzes Chromosom betroffen ist</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Chromosomenanomalien: Trisomie 21</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Nicht jede Erbkrankheit entsteht durch ein einzelnes verändertes Gen. Bei einer Chromosomenanomalie liegt stattdessen ein ganzes Chromosom in der falschen Anzahl vor — man spricht allgemein von Aneuploidie. Das bekannteste Beispiel ist die Trisomie 21 (Down-Syndrom): Chromosom 21 liegt hier dreifach statt zweifach vor, wodurch gleich alle Gene auf diesem Chromosom in erhöhter Dosis vorliegen. Sichtbar wird das in einem Karyogramm — einer nach Größe sortierten Übersicht aller Chromosomen einer Zelle.</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px;box-shadow:var(--shadow-sm)">
+        <div class="seg" style="margin-bottom:18px">
+          <label class="seg-opt"><input type="radio" name="karyo" checked="{{ karyoNormalChecked }}" onChange="{{ setKaryoNormal }}"> 46 Chromosomen (normal)</label>
+          <label class="seg-opt"><input type="radio" name="karyo" checked="{{ karyoTrisomyChecked }}" onChange="{{ setKaryoTrisomy }}"> 47 Chromosomen (Trisomie 21)</label>
+        </div>
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <div style="display:flex;align-items:flex-end;gap:6px;background:var(--color-bg);border-radius:20px;padding:16px 22px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+            <sc-for list="{{ karyoBars }}" as="bar" hint-placeholder-count="2">
+              <span style="{{ bar.style }}"></span>
+            </sc-for>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.5;max-width:38ch">{{ karyoText }}</p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 8px">Wie entsteht so eine Trisomie?</span>
+        <p style="font-size:15px;line-height:1.55;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Ursache ist meist eine Non-Disjunction: eine fehlerhafte Chromosomentrennung während der Meiose. Normalerweise trennen sich homologe Chromosomen in der Meiose I korrekt, sodass jede entstehende Keimzelle genau eine Kopie erhält. Bei einer Non-Disjunction gelingt diese Trennung nicht — eine Keimzelle erhält beide Kopien, die andere keine.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px;margin-top:18px">
+        <div class="card elev-sm" style="align-items:center;text-align:center">
+          <span class="card-kicker">Normale Meiose I</span>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin:8px 0">
+            <div style="display:flex;gap:4px;align-items:center;justify-content:center;min-width:56px;height:56px;border-radius:16px;background:var(--color-bg);box-shadow:inset 0 0 0 1px var(--color-divider)">
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+            </div>
+            <span style="font-size:22px;color:var(--color-neutral-500)" aria-hidden="true">→</span>
+            <div style="display:flex;gap:4px;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:var(--color-bg);box-shadow:inset 0 0 0 1px var(--color-divider)">
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+            </div>
+            <div style="display:flex;gap:4px;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:var(--color-bg);box-shadow:inset 0 0 0 1px var(--color-divider)">
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+            </div>
+          </div>
+          <p class="card-body" style="text-align:left">Die beiden homologen Chromosomen 21 trennen sich korrekt — jede der beiden entstehenden Keimzellen erhält genau eine Kopie.</p>
+        </div>
+        <div class="card elev-sm" style="align-items:center;text-align:center">
+          <span class="card-kicker">Non-Disjunction in Meiose I</span>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;margin:8px 0">
+            <div style="display:flex;gap:4px;align-items:center;justify-content:center;min-width:56px;height:56px;border-radius:16px;background:var(--color-bg);box-shadow:inset 0 0 0 1px var(--color-divider)">
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+            </div>
+            <span style="font-size:22px;color:var(--color-neutral-500)" aria-hidden="true">→</span>
+            <div style="display:flex;gap:4px;align-items:center;justify-content:center;min-width:56px;height:56px;border-radius:16px;background:var(--color-accent-100);box-shadow:inset 0 0 0 2px var(--color-accent-500)">
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+              <span style="width:24px;height:24px;border-radius:50%;background:var(--color-accent-2-200);color:var(--color-accent-2-800);font-size:10px;font-weight:700;display:grid;place-items:center">21</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:12px;background:var(--color-bg);box-shadow:inset 0 0 0 1px dashed var(--color-divider)">
+              <span style="font-size:12px;color:color-mix(in srgb,var(--color-text) 45%,transparent)">—</span>
+            </div>
+          </div>
+          <p class="card-body" style="text-align:left">Die Trennung schlägt fehl — eine Keimzelle erhält beide Kopien von Chromosom 21, die andere keine. Verschmilzt die überzählige Keimzelle bei der Befruchtung mit einer normalen Keimzelle, hat die Zygote drei Kopien: Trisomie 21.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;overflow-x:auto">
+        <table class="table">
+          <thead><tr><th>Alter der Mutter</th><th>ungefähre Häufigkeit von Trisomie 21</th></tr></thead>
+          <tbody>
+            <tr><td>unter 30 Jahren</td><td>etwa 1 : 1500</td></tr>
+            <tr><td>35 Jahre</td><td>etwa 1 : 350</td></tr>
+            <tr><td>40 Jahre</td><td>etwa 1 : 100</td></tr>
+            <tr><td>45 Jahre und älter</td><td>etwa 1 : 30</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:12.5px;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin:8px 0 0">Gerundete Näherungswerte aus großen Bevölkerungsstudien. Mit zunehmendem Alter der Mutter steigt die Wahrscheinlichkeit einer Non-Disjunction bei der Eizellreifung deutlich an.</p>
+      </div>
+
+      <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">🔬</span>
+        <div>
+          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Wie wird eine Trisomie vor der Geburt festgestellt?</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.5">Über eine Chorionzottenbiopsie oder eine Fruchtwasseruntersuchung (Amniozentese) lassen sich kindliche Zellen gewinnen, aus denen ein Karyogramm erstellt wird — damit ist eine Trisomie eindeutig nachweisbar, meist schon deutlich vor der Geburt.</p>
+        </div>
+      </div>
+
+<div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniChromosomen.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniChromosomen.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniChromosomen.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniChromosomen.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- ERBGANG ERKENNEN -->
+    <section id="erkennen" style="padding:50px 0" data-screen-label="Erbgang erkennen">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Checkliste, erweitert</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Alle drei Erbgänge im Vergleich</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Die Checkliste aus Humangenetik I lässt sich um den X-chromosomal-rezessiven Erbgang erweitern. Besonders verräterisch für einen X-chromosomalen Erbgang ist, dass Väter das Merkmal nie an ihre Söhne weitergeben — bei autosomalen Erbgängen kann das dagegen durchaus vorkommen.</p>
+      </div>
+      <div style="margin-top:28px;overflow-x:auto">
+        <table class="table">
+          <thead><tr><th>Merkmal</th><th>Autosomal-rezessiv</th><th>Autosomal-dominant</th><th>X-chromosomal-rezessiv</th></tr></thead>
+          <tbody>
+            <tr><td>Auftreten über Generationen</td><td>kann Generationen überspringen</td><td>erscheint in jeder Generation</td><td>kann Generationen überspringen (über Konduktorinnen)</td></tr>
+            <tr><td>Betroffenes Kind von gesunden Eltern?</td><td>ja</td><td>nein, außer Neumutation</td><td>ja — bei Konduktorin-Mutter</td></tr>
+            <tr><td>Männer und Frauen gleich häufig betroffen?</td><td>ja</td><td>ja</td><td>nein — Männer deutlich häufiger</td></tr>
+            <tr><td>Vater-Sohn-Übertragung möglich?</td><td>ja</td><td>ja</td><td>nein, nie</td></tr>
+            <tr><td>Beispiel</td><td>Mukoviszidose</td><td>Chorea Huntington</td><td>Rot-Grün-Blindheit, Hämophilie</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- VERTIEFUNG -->
+    <section style="padding:50px 0" data-screen-label="Vertiefung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Für Neugierige</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Vertiefung</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Klapp die Boxen auf für mehr Tiefe.</p>
+      </div>
+
+      <details open="" style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:13px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px;display:flex;align-items:center;gap:10px">Klinefelter- und Turner-Syndrom: Aneuploidie bei den Gonosomen selbst</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0 0 8px">Chromosomenanomalien betreffen nicht nur die Autosomen — auch die Geschlechtschromosomen selbst können in falscher Zahl vorliegen. Beim Klinefelter-Syndrom (47,XXY) besitzt ein Mann ein X-Chromosom zu viel; beim Turner-Syndrom (45,X) fehlt einer Frau ein X-Chromosom vollständig.</p>
+          <p style="margin:0">Beide Formen entstehen ebenfalls durch Non-Disjunction, hier allerdings bei den Geschlechtschromosomen statt bei einem Autosom wie Chromosom 21.</p>
+        </div>
+      </details>
+
+      <details style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:9px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px;display:flex;align-items:center;gap:10px">Hämophilie in europäischen Königshäusern</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0">Die britische Königin Victoria war nachweislich Konduktorin für X-chromosomal-rezessive Hämophilie. Über die Heiraten ihrer Töchter und Enkelinnen verbreitete sich die Anlage in mehrere europäische Königshäuser — ein historisch gut dokumentiertes Beispiel für Kreuzvererbung über mehrere Generationen.</p>
+        </div>
+      </details>
+
+      <details style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:9px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px;display:flex;align-items:center;gap:10px">Mosaik-Trisomie: nicht jede Zelle ist betroffen</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0">Bei einer Mosaik-Trisomie 21 tritt die Non-Disjunction erst nach der Befruchtung auf, während früher Zellteilungen des Embryos. Dadurch besitzt nur ein Teil der Körperzellen die dritte Kopie von Chromosom 21, der Rest ist normal — das Erscheinungsbild ist dann oft, aber nicht immer, milder ausgeprägt als bei einer vollständigen Trisomie 21.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- GLOSSAR -->
+    <section id="glossar" style="padding:50px 0" data-screen-label="Glossar">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nachschlagen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Glossar der Fachbegriffe</h2>
+      </div>
+      <dl style="margin:28px 0 0;display:grid;grid-template-columns:220px 1fr;gap:0">
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">gonosomal</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Ein Gen liegt auf einem der Geschlechtschromosomen (X oder Y), nicht auf den Autosomen.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Hemizygotie</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Zustand, bei dem nur eine Kopie eines Gens vorliegt — bei Männern für alle X-chromosomalen Gene, weil das Y-Chromosom kein Gegenstück besitzt.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Konduktorin</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Heterozygote Überträgerin eines X-chromosomal-rezessiven Merkmals; selbst gesund, kann das Allel aber an ihre Kinder weitergeben.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Kreuzvererbung</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Typisches Vererbungsmuster X-chromosomaler Merkmale: vom betroffenen Großvater über die unauffällige Tochter zum betroffenen Enkel.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Karyogramm</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Nach Größe und Form geordnete Übersicht aller Chromosomen einer Zelle; macht Chromosomenanomalien sichtbar.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Non-Disjunction</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Fehlerhafte Chromosomentrennung während der Meiose, bei der Chromosomen nicht korrekt auf die Tochterzellen verteilt werden.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Trisomie / Aneuploidie</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Trisomie: ein Chromosom liegt dreifach statt zweifach vor. Aneuploidie: Oberbegriff für jede von der Norm abweichende Chromosomenzahl.</dd>
+      </dl>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" style="padding:50px 0 73px" data-screen-label="Quiz">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernkontrolle</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Teste dich selbst</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Zehn Fragen. Beantworte so viele du kannst und klick auf „Auswerten" — du bekommst deine Punktzahl und zu jeder Frage die Erklärung.</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:calc(28px*1.05);padding:clamp(20px,4vw,40px);margin-top:28px">
+        <div style="display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:9px">
+          <span class="tag tag-accent-2">{{ answeredCount }} / {{ totalCount }} beantwortet</span>
+        </div>
+
+        <sc-for list="{{ quiz }}" as="q" hint-placeholder-count="10">
+          <div style="padding:26px 0;border-top:1px solid var(--color-divider)">
+            <span class="tag tag-outline" style="margin-bottom:9px">Frage {{ q.num }}</span>
+            <h4 style="font-family:var(--font-heading);font-size:20px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ q.stem }}</h4>
+
+            <sc-if value="{{ q.isMc }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                  <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">
+                    <span style="flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--color-neutral-400);display:grid;place-items:center"></span>
+                    <span style="flex:1">{{ opt.text }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ q.isCloze }}" hint-placeholder-val="{{ false }}">
+              <select onChange="{{ q.onSelectChange }}" value="{{ q.selectValue }}" style="{{ q.selectStyle }}">
+                <option value="-1">— wählen —</option>
+                <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                  <option value="{{ opt.value }}">{{ opt.text }}</option>
+                </sc-for>
+              </select>
+            </sc-if>
+
+            <sc-if value="{{ q.showExplain }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:13px;font-size:14px;line-height:1.5;background:var(--color-bg);border-radius:16px;padding:13px 18px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+                <b style="color:var(--color-accent-800)">{{ q.resultLabel }} </b>{{ q.explain }}
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:28px">
+          <button type="button" class="btn btn-primary" onClick="{{ grade }}">Auswerten</button>
+          <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+            <button type="button" class="btn btn-secondary" onClick="{{ retry }}">Nochmal versuchen</button>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;margin-top:28px;background:var(--color-bg);border-radius:28px;padding:18px;box-shadow:var(--shadow-sm);align-items:center;gap:18px">
+            <div style="flex:none;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:{{ scoreRingBg }}">
+              <div style="width:92px;height:92px;border-radius:50%;background:var(--color-bg);display:grid;place-items:center;text-align:center">
+                <div>
+                  <span style="font-family:var(--font-heading);font-size:26px;line-height:1;display:block">{{ scorePctLabel }}</span>
+                  <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Punkte</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin:0 0 4px;font-size:24px;font-family:var(--font-heading);font-weight:400">{{ scoreHead }}</h3>
+              <p style="margin:0;font-size:15px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ scoreMsg }}</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="padding:40px clamp(20px,5vw,72px) 73px;font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);max-width:1120px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:40px;width:auto">
+      <span>Selbstlernseite Humangenetik II · GK Biologie 12 · Lernwelten – Evangelisches Gymnasium</span>
+    </div>
+  </footer>
+</div>
+</helmet>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1400,&quot;height&quot;:1000},&quot;showGrundbegriffe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Inhalt&quot;}}">
+class Component extends DCLogic {
+  state = {
+    scrollPct: 0,
+    xSel: null,
+    miniAnswers: {},
+    quizAnswers: {},
+    graded: false,
+    revealedTerms: {},
+    exVals: {},
+    exChecked: false,
+    karyoView: 'normal',
+  };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      this.setState({ scrollPct: pct });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+
+  selectX(id) { this.setState({ xSel: id }); }
+  selectMini(id, i) {
+    this.setState(s => ({ miniAnswers: { ...s.miniAnswers, [id]: i } }));
+  }
+  setQuizAnswer(id, i) {
+    if (this.state.graded) return;
+    this.setState(s => ({ quizAnswers: { ...s.quizAnswers, [id]: i } }));
+  }
+  grade() { this.setState({ graded: true }); }
+  retry() { this.setState({ quizAnswers: {}, graded: false, xSel: null }); }
+
+  toggleTerm(id) {
+    this.setState(s => ({ revealedTerms: { ...s.revealedTerms, [id]: !s.revealedTerms[id] } }));
+  }
+
+  setEx(id, val) { this.setState(s => ({ exVals: { ...s.exVals, [id]: val } })); }
+  checkEx() { this.setState({ exChecked: true }); }
+  resetEx() { this.setState({ exVals: {}, exChecked: false }); }
+
+  setKaryo(view) { this.setState({ karyoView: view }); }
+
+  normalizeGenotype(str) {
+    return (str || '').trim().toUpperCase().replace(/\s+/g, '');
+  }
+  matchesAny(input, accepted) {
+    const norm = this.normalizeGenotype(input);
+    if (!norm) return false;
+    return accepted.some(a => this.normalizeGenotype(a) === norm);
+  }
+
+  optionStyle(locked, isCorrect, isSelected) {
+    let border = 'var(--color-divider)';
+    let bg = 'var(--color-bg)';
+    let opacity = '1';
+    if (locked) {
+      if (isCorrect) { border = 'var(--color-accent-2-600)'; bg = 'var(--color-accent-2-100)'; }
+      else if (isSelected) { border = '#b04a3a'; bg = '#f8e2dc'; }
+      else { opacity = '0.55'; }
+    } else if (isSelected) {
+      border = 'var(--color-accent)'; bg = 'var(--color-accent-100)';
+    }
+    return `display:flex;align-items:center;gap:10px;background:${bg};border:1.5px solid ${border};border-radius:999px;padding:11px 16px;cursor:${locked ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);opacity:${opacity};width:100%;transition:border-color .15s,background .15s`;
+  }
+
+  buildNode(p, id, selectedId, selectFn) {
+    const selected = selectedId === id;
+    const shapeRadius = p.sex === 'f' ? '50%' : 'var(--radius-sm)';
+    const bg = p.affected ? 'var(--color-accent-600)' : 'var(--color-bg)';
+    const border = p.affected ? 'var(--color-accent-800)' : 'var(--color-accent-700)';
+    const ring = selected ? ',0 0 0 3px var(--color-accent)' : '';
+    return {
+      id, label: p.label,
+      wrapStyle: `position:absolute;left:${p.x - 22}px;top:${p.y - 22}px;width:44px;height:44px;background:none;border:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center`,
+      shapeStyle: `width:36px;height:36px;border-radius:${shapeRadius};background:${bg};box-shadow:inset 0 0 0 2.5px ${border}${ring}`,
+      labelStyle: `position:absolute;left:50%;top:100%;transform:translateX(-50%);white-space:nowrap;font-size:11px;color:color-mix(in srgb,var(--color-text) 65%,transparent);margin-top:2px`,
+      onClick: () => selectFn(id),
+    };
+  }
+
+  buildExNode(p, id, val, checked, accepted) {
+    const correct = checked ? this.matchesAny(val, accepted) : null;
+    let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+    if (checked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+    const shapeRadius = p.sex === 'f' ? '50%' : 'var(--radius-sm)';
+    const shapeBg = p.affected ? 'var(--color-accent-600)' : 'var(--color-bg)';
+    const shapeBorder = p.affected ? 'var(--color-accent-800)' : 'var(--color-accent-700)';
+    return {
+      id, label: p.label, val: val || '',
+      wrapStyle: `position:absolute;left:${p.x - 32}px;top:${p.y - 22}px;width:64px;display:flex;flex-direction:column;align-items:center;gap:2px`,
+      shapeStyle: `width:36px;height:36px;border-radius:${shapeRadius};background:${shapeBg};box-shadow:inset 0 0 0 2.5px ${shapeBorder}`,
+      aboveLabelStyle: `font-size:11px;color:color-mix(in srgb,var(--color-text) 65%,transparent)`,
+      inputStyle: `width:58px;height:32px;text-align:center;font-family:var(--font-heading);font-size:13px;border-radius:10px;border:1.5px solid ${border};background:${bg};color:var(--color-text);margin-top:2px`,
+      onChange: (e) => this.setEx(id, e.target.value),
+    };
+  }
+
+  buildLine(l) {
+    return `position:absolute;left:${l.left}px;top:${l.top}px;width:${l.width}px;height:${l.height}px;background:var(--color-neutral-600)`;
+  }
+
+  renderVals() {
+    const X = {
+      i1: { label: 'I-1', x: 220, y: 50, sex: 'm', affected: true, genotype: 'XᵃY', certain: true, explain: 'I-1 ist von Rot-Grün-Blindheit betroffen. Männer besitzen nur ein X-Chromosom und sind für X-chromosomale Gene hemizygot — ein einziges Xᵃ-Allel reicht daher aus, damit das Merkmal sichtbar wird. Der Genotyp ist eindeutig XᵃY.' },
+      i2: { label: 'I-2', x: 340, y: 50, sex: 'f', affected: false, genotype: 'XᴬXᴬ', certain: true, explain: 'I-2 heiratet unbelastet in die Familie ein. Da es in ihrer eigenen Familie keine Hinweise auf die Krankheit gibt, gehen wir vereinfacht davon aus, dass sie nicht Anlageträgerin ist — Genotyp XᴬXᴬ.' },
+      ii1: { label: 'II-1', x: 100, y: 190, sex: 'f', affected: false, genotype: 'XᴬXᵃ', certain: true, explain: 'II-1 ist eine Tochter von I-1 (XᵃY) und I-2 (XᴬXᴬ). Töchter erhalten von ihrem Vater immer dessen einziges X-Chromosom — also sicher ein Xᵃ-Allel — und von der Mutter ein Xᴬ-Allel. Der Genotyp ist eindeutig XᴬXᵃ: II-1 ist gesunde Konduktorin.' },
+      ii2: { label: 'II-2', x: 340, y: 190, sex: 'm', affected: false, genotype: 'XᴬY', certain: true, explain: 'II-2 ist ein Sohn von I-1 und I-2. Söhne erhalten ihr einziges X-Chromosom ausschließlich von der Mutter — der Vater vererbt ihnen nur sein Y-Chromosom. Da Mutter I-2 nicht Anlageträgerin ist, ist II-2 unabhängig vom Vater sicher XᴬY und gesund. Ein Vater kann ein X-chromosomales Merkmal nie direkt an seinen Sohn weitergeben.' },
+      ii3: { label: 'II-3', x: 220, y: 190, sex: 'm', affected: false, genotype: 'XᴬY', certain: true, explain: 'II-3 heiratet als gesunder Mann von außen in die Familie ein und wird vereinfacht mit dem Genotyp XᴬY angenommen.' },
+      iii1: { label: 'III-1', x: 100, y: 330, sex: 'm', affected: true, genotype: 'XᵃY', certain: true, explain: 'III-1 ist ein Sohn von II-1 (XᴬXᵃ) und II-3 (XᴬY). Er erhält sein X-Chromosom von der Mutter — hat er dabei das Xᵃ-Allel geerbt, ist er als hemizygoter Junge sofort betroffen. Sein Genotyp ist eindeutig XᵃY.' },
+      iii2: { label: 'III-2', x: 200, y: 330, sex: 'm', affected: false, genotype: 'XᴬY', certain: true, explain: 'III-2 ist ebenfalls ein Sohn von II-1 und II-3, aber gesund. Weil bei Jungen der Phänotyp den Genotyp wegen der Hemizygotie immer vollständig verrät, bedeutet „gesund" hier zwangsläufig XᴬY — anders als bei Mädchen gibt es für Jungen keine unauffällige Trägerschaft.' },
+      iii3: { label: 'III-3', x: 300, y: 330, sex: 'f', affected: false, genotype: 'XᴬXᴬ oder XᴬXᵃ', certain: false, explain: 'III-3 ist eine gesunde Tochter von II-1 (XᴬXᵃ) und II-3 (XᴬY). Vom Vater erhält sie sicher ein Xᴬ-Allel, von der Mutter entweder Xᴬ oder Xᵃ mit gleicher Wahrscheinlichkeit. Ohne Gentest lässt sich nicht sagen, ob sie XᴬXᴬ oder XᴬXᵃ (Konduktorin) ist — genau wie bei unauffälligen Anlageträgerinnen im autosomal-rezessiven Beispiel aus Humangenetik I.' },
+    };
+
+    const X_LINES = [
+      { left: 242, top: 49, width: 76, height: 2 },
+      { left: 279, top: 72, width: 2, height: 68 },
+      { left: 99, top: 139, width: 241, height: 2 },
+      { left: 99, top: 140, width: 2, height: 28 },
+      { left: 339, top: 140, width: 2, height: 28 },
+      { left: 122, top: 189, width: 76, height: 2 },
+      { left: 159, top: 212, width: 2, height: 68 },
+      { left: 99, top: 279, width: 202, height: 2 },
+      { left: 99, top: 280, width: 2, height: 28 },
+      { left: 199, top: 280, width: 2, height: 28 },
+      { left: 299, top: 280, width: 2, height: 28 },
+    ];
+
+    const xNodes = Object.keys(X).map(id => this.buildNode(X[id], id, this.state.xSel, (i) => this.selectX(i)));
+    const xLines = X_LINES.map(l => ({ style: this.buildLine(l) }));
+
+    let xInfo = null, xInfoEmpty = true;
+    if (this.state.xSel !== null) {
+      const p = X[this.state.xSel];
+      xInfoEmpty = false;
+      xInfo = { label: p.label, genotype: p.genotype, tagLabel: p.certain ? 'eindeutig bestimmbar' : 'nicht eindeutig bestimmbar', text: p.explain };
+    }
+
+    // Exercise pedigree: Hämophilie
+    const EX = {
+      i1: { label: 'I-1', x: 220, y: 50, sex: 'm', affected: true },
+      i2: { label: 'I-2', x: 340, y: 50, sex: 'f', affected: false },
+      ii1: { label: 'II-1', x: 160, y: 190, sex: 'f', affected: false },
+      ii2: { label: 'II-2', x: 280, y: 190, sex: 'm', affected: false },
+      ii3: { label: 'II-3', x: 400, y: 190, sex: 'f', affected: false },
+    };
+    const EX_ANSWERS = { i1: ['XaY'], i2: ['XAXA'], ii1: ['XAXa', 'XaXA'], ii2: ['XAY'], ii3: ['XAXa', 'XaXA'] };
+    const EX_LINES = [
+      { left: 242, top: 49, width: 76, height: 2 },
+      { left: 279, top: 72, width: 2, height: 68 },
+      { left: 160, top: 139, width: 240, height: 2 },
+      { left: 159, top: 140, width: 2, height: 28 },
+      { left: 279, top: 140, width: 2, height: 28 },
+      { left: 399, top: 140, width: 2, height: 28 },
+    ];
+    const exChecked = this.state.exChecked;
+    const exNodes = Object.keys(EX).map(id => this.buildExNode(EX[id], id, this.state.exVals[id], exChecked, EX_ANSWERS[id]));
+    const exLines = EX_LINES.map(l => ({ style: this.buildLine(l) }));
+    const exCorrectCount = Object.keys(EX).filter(id => this.matchesAny(this.state.exVals[id], EX_ANSWERS[id])).length;
+
+    // Karyotype toggle
+    const karyoView = this.state.karyoView;
+    const barStyle = `width:14px;height:54px;border-radius:999px;background:var(--color-accent-600)`;
+    const karyoBars = karyoView === 'normal' ? [{ style: barStyle }, { style: barStyle }] : [{ style: barStyle }, { style: barStyle }, { style: barStyle }];
+    const karyoText = karyoView === 'normal'
+      ? '46 Chromosomen (46,XX bzw. 46,XY) — Chromosom 21 liegt wie alle Autosomen in zwei Kopien vor.'
+      : '47 Chromosomen (47,XX,+21 bzw. 47,XY,+21) — Chromosom 21 liegt dreifach vor. Das zusätzliche Chromosom 21 verursacht das Down-Syndrom.';
+
+    const GRUNDBEGRIFFE_DATA = [
+      { id: 'gonosomal', kicker: 'Ort im Genom', title: 'gonosomal', body: 'Ein Gen liegt auf einem der Geschlechtschromosomen (X oder Y), nicht auf den Autosomen.' },
+      { id: 'hemizygotie', kicker: 'Männer', title: 'Hemizygotie', body: 'Nur eine Kopie eines Gens liegt vor — bei Männern für alle X-chromosomalen Gene, weil das Y-Chromosom kein Gegenstück besitzt.' },
+      { id: 'konduktorin', kicker: 'Genotyp', title: 'Konduktorin', body: 'Heterozygote Überträgerin eines X-chromosomal-rezessiven Merkmals; selbst gesund, kann es aber weitervererben.' },
+      { id: 'kreuzvererbung', kicker: 'Muster', title: 'Kreuzvererbung', body: 'Vom betroffenen Großvater über die unauffällige Tochter zum betroffenen Enkel — typisch für X-chromosomale Merkmale.' },
+      { id: 'karyogramm', kicker: 'Werkzeug', title: 'Karyogramm', body: 'Nach Größe und Form geordnete Übersicht aller Chromosomen einer Zelle.' },
+      { id: 'nondisjunction', kicker: 'Ursache', title: 'Non-Disjunction', body: 'Fehlerhafte Chromosomentrennung während der Meiose.' },
+      { id: 'trisomie', kicker: 'Chromosomenzahl', title: 'Trisomie', body: 'Ein Chromosom liegt dreifach statt zweifach vor, z. B. bei Trisomie 21.' },
+      { id: 'aneuploidie', kicker: 'Oberbegriff', title: 'Aneuploidie', body: 'Jede von der Norm abweichende Chromosomenzahl, egal ob zu viel oder zu wenig.' },
+    ];
+    const grundbegriffe = GRUNDBEGRIFFE_DATA.map(t => {
+      const revealed = !!this.state.revealedTerms[t.id];
+      return {
+        ...t, revealed, onClick: () => this.toggleTerm(t.id),
+        flipStyle: `position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;transform:rotateY(${revealed ? 180 : 0}deg)`,
+        frontStyle: `position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;gap:8px;padding:13px`,
+        backStyle: `position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);display:flex;flex-direction:column;gap:8px;padding:13px;overflow:auto`,
+      };
+    });
+
+    const MINI_DATA = {
+      geschlecht: { question: 'Ein an Rot-Grün-Blindheit erkrankter Mann hat mit einer nicht-Anlageträgerin ein Kind. Ist eine Tochter davon betroffen oder Konduktorin?', options: ['Betroffen', 'Gesunde Konduktorin', 'Weder betroffen noch Konduktorin'], correct: 1, feedback: 'Die Tochter erhält vom Vater sicher das Xᵃ-Allel und von der Mutter ein Xᴬ-Allel — sie ist gesunde Konduktorin (XᴬXᵃ), nicht selbst betroffen.' },
+      chromosomen: { question: 'Was ist die direkte Ursache einer Trisomie 21?', options: ['Eine fehlerhafte Chromosomentrennung (Non-Disjunction) während der Meiose', 'Eine Mutation im Gen für Rot-Grün-Blindheit', 'Eine Verwandtenehe der Eltern'], correct: 0, feedback: 'Non-Disjunction führt dazu, dass eine Keimzelle zwei Kopien von Chromosom 21 statt einer erhält — nach der Befruchtung entstehen daraus drei Kopien in der Zygote.' },
+    };
+    const miniChecks = Object.keys(MINI_DATA).map(id => {
+      const m = MINI_DATA[id];
+      const sel = this.state.miniAnswers[id];
+      const answered = sel !== undefined;
+      const options = m.options.map((text, i) => ({
+        text,
+        style: this.optionStyle(answered, i === m.correct, i === sel),
+        onClick: () => this.selectMini(id, i),
+      }));
+      return {
+        id, question: m.question, options, answered,
+        feedback: answered ? ((sel === m.correct ? 'Richtig! ' : 'Nicht ganz. ') + m.feedback) : '',
+      };
+    });
+
+    const QUIZ_DATA = [
+      { type: 'mc', stem: 'Warum sind Männer von X-chromosomal-rezessiven Merkmalen deutlich häufiger betroffen als Frauen?', options: ['Weil Männer nur ein X-Chromosom besitzen und daher hemizygot sind — ein rezessives Allel reicht aus', 'Weil Männer generell mehr Mutationen ansammeln', 'Weil das Y-Chromosom das Merkmal verstärkt', 'Weil Frauen grundsätzlich resistent gegen rezessive Allele sind'], correct: 0, explain: 'Männer besitzen nur ein X-Chromosom und sind für X-chromosomale Gene hemizygot — ein einziges rezessives Allel reicht bei ihnen bereits für den Phänotyp aus.' },
+      { type: 'cloze', stem: 'Ein Junge erhält sein einziges X-Chromosom ausschließlich von seiner ___.', options: ['Mutter', 'Vater', 'beiden Elternteilen zu gleichen Teilen'], correct: 0, explain: 'Väter vererben ihren Söhnen nur das Y-Chromosom; das X-Chromosom eines Sohnes stammt immer von der Mutter.' },
+      { type: 'mc', stem: 'Ein Vater ist an einer X-chromosomal-rezessiven Krankheit erkrankt, die Mutter ist keine Anlageträgerin. Welche Aussage stimmt für die Kinder?', options: ['Alle Söhne sind gesund, alle Töchter sind gesunde Konduktorinnen', 'Alle Söhne sind betroffen', 'Alle Töchter sind betroffen', 'Söhne und Töchter haben je 50 % Risiko'], correct: 0, explain: 'Söhne erhalten vom Vater nur das Y-Chromosom und sind daher gesund. Töchter erhalten vom Vater sicher das betroffene X-Allel und sind damit obligate Konduktorinnen.' },
+      { type: 'mc', stem: 'Was beschreibt der Begriff „Kreuzvererbung" bei X-chromosomalen Merkmalen?', options: ['Das Merkmal springt vom betroffenen Großvater über eine unauffällige Tochter zum betroffenen Enkel', 'Das Merkmal wird von der Mutter direkt an den Vater weitergegeben', 'Zwei verschiedene Krankheiten kreuzen sich in einer Familie', 'Das Merkmal wird nur zwischen gleichgeschlechtlichen Verwandten übertragen'], correct: 0, explain: 'Weil Väter ihr X-Chromosom nur an Töchter weitergeben, taucht ein X-chromosomales Merkmal typischerweise erst wieder bei den Söhnen dieser (unauffälligen) Töchter auf.' },
+      { type: 'cloze', stem: 'Ein Karyogramm zeigt bei Trisomie 21 statt zwei ___ Kopien von Chromosom 21.', options: ['drei', 'vier', 'null'], correct: 0, explain: 'Bei Trisomie 21 liegt Chromosom 21 dreifach statt zweifach vor.' },
+      { type: 'mc', stem: 'Wodurch entsteht eine Trisomie in der Regel?', options: ['Durch Non-Disjunction (fehlerhafte Chromosomentrennung) während der Meiose', 'Durch eine Punktmutation in einem einzelnen Gen', 'Durch eine Verwandtenehe der Eltern', 'Durch eine Infektion während der Schwangerschaft'], correct: 0, explain: 'Non-Disjunction führt dazu, dass eine Keimzelle beide Kopien eines Chromosoms erhält — nach der Befruchtung entsteht daraus eine Zygote mit drei Kopien.' },
+      { type: 'mc', stem: 'Wie verändert sich das Risiko für Trisomie 21 mit steigendem Alter der Mutter?', options: ['Es steigt deutlich an', 'Es bleibt konstant', 'Es sinkt', 'Es ist nur vom Alter des Vaters abhängig'], correct: 0, explain: 'Mit zunehmendem Alter der Mutter steigt die Wahrscheinlichkeit einer Non-Disjunction bei der Eizellreifung deutlich an.' },
+      { type: 'mc', stem: 'Welche Aussage zu Rot-Grün-Blindheit (X-chromosomal-rezessiv) ist korrekt?', options: ['Eine Konduktorin zeigt selbst keine Symptome', 'Betroffene Frauen sind häufiger als betroffene Männer', 'Söhne erben das Merkmal immer vom Vater', 'Das Merkmal wird nie an Töchter weitergegeben'], correct: 0, explain: 'Konduktorinnen sind heterozygot und daher phänotypisch gesund — sie tragen das Allel unauffällig weiter.' },
+      { type: 'cloze', stem: 'Der Zustand, bei dem Männer nur eine einzige Kopie eines X-chromosomalen Gens besitzen, heißt ___.', options: ['Hemizygotie', 'Homozygotie', 'Heterozygotie'], correct: 0, explain: 'Hemizygotie beschreibt genau diesen Zustand: nur eine Genkopie ohne zweites Allel zum Vergleich.' },
+      { type: 'mc', stem: 'Welches Verfahren macht Chromosomenanomalien wie Trisomie 21 direkt sichtbar?', options: ['Ein Karyogramm (Chromosomenanalyse)', 'Ein Kreuzungsschema', 'Eine Blutgruppenbestimmung', 'Ein Stammbaum'], correct: 0, explain: 'Ein Karyogramm zeigt alle Chromosomen einer Zelle geordnet nach Größe — eine zusätzliche oder fehlende Kopie ist darin direkt erkennbar.' },
+    ];
+
+    const graded = this.state.graded;
+    let correctCount = 0;
+    const quiz = QUIZ_DATA.map((q, qi) => {
+      const id = 'q' + qi;
+      const sel = this.state.quizAnswers[id];
+      const answered = sel !== undefined && sel !== -1;
+      if (graded && answered && sel === q.correct) correctCount++;
+      const isMc = q.type === 'mc';
+      const isCloze = q.type === 'cloze';
+      const base = { id, num: qi + 1, stem: q.stem, isMc, isCloze, explain: q.explain };
+      if (isMc) {
+        base.options = q.options.map((text, i) => ({
+          text,
+          style: this.optionStyle(graded, i === q.correct, i === sel),
+          onClick: () => this.setQuizAnswer(id, i),
+        }));
+      } else {
+        base.options = q.options.map((text, i) => ({ text, value: String(i) }));
+        base.selectValue = sel !== undefined ? String(sel) : '-1';
+        const borderColor = graded ? (sel === q.correct ? 'var(--color-accent-2-600)' : (answered ? '#b04a3a' : 'var(--color-divider)')) : 'var(--color-divider)';
+        const selBg = graded ? (sel === q.correct ? 'var(--color-accent-2-100)' : (answered ? '#f8e2dc' : 'var(--color-bg)')) : 'var(--color-bg)';
+        base.selectStyle = `font-family:var(--font-body);font-size:15px;background:${selBg};border:1.5px solid ${borderColor};border-radius:999px;padding:8px 16px;color:var(--color-text);cursor:${graded ? 'default' : 'pointer'}`;
+        base.onSelectChange = (e) => this.setQuizAnswer(id, Number(e.target.value));
+      }
+      base.showExplain = graded;
+      base.resultLabel = graded ? (sel === q.correct ? 'Richtig!' : 'Nicht ganz.') : '';
+      return base;
+    });
+
+    const totalCount = QUIZ_DATA.length;
+    const answeredCount = Object.keys(this.state.quizAnswers).filter(k => this.state.quizAnswers[k] !== -1).length;
+    const scorePct = graded ? Math.round((correctCount / totalCount) * 100) : 0;
+    const scoreHead = graded
+      ? (scorePct >= 80 ? 'Stark!' : scorePct >= 50 ? 'Guter Start' : 'Noch üben')
+      : '—';
+    const scoreMsg = graded ? `${correctCount} von ${totalCount} Fragen richtig beantwortet.` : '';
+
+    const miniById = {};
+    miniChecks.forEach(m => { miniById[m.id] = m; });
+
+    return {
+      navProgressStyle: `position:absolute;left:0;bottom:0;height:3px;background:var(--color-accent);transition:width .1s linear;width:${this.state.scrollPct}%`,
+      showGrundbegriffe: this.props.showGrundbegriffe ?? true,
+      grundbegriffe,
+      xNodes, xLines, xInfo, xInfoEmpty,
+      exNodes, exLines, exChecked, exCorrectCount, exTotal: 5,
+      checkEx: () => this.checkEx(), resetEx: () => this.resetEx(),
+      karyoBars, karyoText,
+      karyoNormalChecked: karyoView === 'normal',
+      karyoTrisomyChecked: karyoView === 'trisomy',
+      setKaryoNormal: () => this.setKaryo('normal'),
+      setKaryoTrisomy: () => this.setKaryo('trisomy'),
+      miniGeschlecht: miniById.geschlecht, miniChromosomen: miniById.chromosomen,
+      quiz, totalCount, answeredCount,
+      graded,
+      scorePctLabel: scorePct + '%',
+      scoreRingBg: `conic-gradient(var(--color-accent) ${scorePct * 3.6}deg, var(--color-neutral-200) 0)`,
+      scoreHead, scoreMsg,
+      grade: () => this.grade(),
+      retry: () => this.retry(),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Arbeitstechniken der Genetik · Selbstlernseite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/styles.css">
+  <script src="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; }
+  </style>
+</helmet>
+<x-import component-from-global-scope="image-slot" from="./image-slot.js"></x-import>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:clip;text-wrap:pretty" data-screen-label="Selbstlernseite">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:24px;padding:13px clamp(20px,5vw,72px);background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(8px)">
+    <span style="display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:18px">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:32px;width:auto;display:block">
+      <span style="width:1px;height:24px;background:var(--color-divider)"></span>
+      <span style="font-family:var(--font-body);font-size:12px;line-height:1.15;color:color-mix(in srgb,var(--color-text) 62%,transparent);font-weight:600">GK Biologie 12<br>Genetik</span>
+    </span>
+    <span style="flex:1"></span>
+    <a href="index.html" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Übersicht</a>
+    <a href="#fingerabdruck" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Fingerabdruck</a>
+    <a href="#pcr" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">PCR</a>
+    <a href="#gel" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Gelelektrophorese</a>
+    <a href="#sequenzierung" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Sequenzierung</a>
+    <a href="#glossar" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Glossar</a>
+    <a class="btn btn-primary" href="#quiz">Zum Quiz</a>
+    <div style="{{ navProgressStyle }}"></div>
+  </nav>
+
+  <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <!-- HERO -->
+    <header style="position:relative;padding:73px 0 50px" data-screen-label="Intro">
+      <div style="position:absolute;right:-40px;top:-140px;width:380px;height:380px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;pointer-events:none"></div>
+      <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernwelten · Evangelisches Gymnasium · GK Biologie 12</span>
+      <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:20ch">Arbeitstechniken der Genetik</h1>
+      <p style="font-size:19px;line-height:28px;margin:20px 0 0;max-width:64ch;color:var(--color-text)">PCR, Gelelektrophorese und DNA-Sequenzierung — die drei Labormethoden, mit denen man DNA vervielfältigen, sichtbar machen und entschlüsseln kann. Am Ende dieser Seite verstehst du, wie aus einer winzigen Blutspur ein genetischer Fingerabdruck wird und wie man mit der Strangabbruchmethode eine unbekannte Basensequenz aufklärt.</p>
+      <div style="display:flex;gap:13px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-primary" href="#fingerabdruck">Los geht's</a>
+        <a class="btn btn-secondary" href="#quiz">Direkt zum Quiz</a>
+        <a class="btn btn-ghost" href="humangenetik-2.html">← Zurück zu Humangenetik II</a>
+        <a class="btn btn-ghost" href="klausurvorbereitung.html">Weiter zur Klausurvorbereitung →</a>
+      </div>
+    </header>
+
+    <!-- EINORDNUNG -->
+    <section style="padding:50px 0" data-screen-label="Einordnung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Der große Überblick</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Wo steht dieses Thema im Lernbereich?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Der Lernbereich „Grundlagen, Anwendungen und Perspektiven der Genetik" umfasst 9 Doppelstunden. Diese Seite deckt die erste Hälfte von Block 5 ab — danach folgt die Klausurvorbereitung, dann die Klausur selbst.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:28px">
+        <a href="klassische-genetik-1.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 1</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Klass. Genetik I</span>
+        </a>
+        <a href="klassische-genetik-2.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 2</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Klass. Genetik II</span>
+        </a>
+        <a href="humangenetik-1.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 3</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Humangenetik I</span>
+        </a>
+        <a href="humangenetik-2.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 4</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Humangenetik II</span>
+        </a>
+        <div style="flex:1 1 140px;background:var(--color-accent-100);box-shadow:inset 0 0 0 2px var(--color-accent-300);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 5 · Ustd 9–10</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Arbeitstechniken</span>
+        </div>
+        <a style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 6 · Ustd 11–12</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Klausur</span>
+        </a>
+        <a href="gentherapie-1.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 7</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Gentherapie I</span>
+        </a>
+        <a href="gentherapie-2.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 8</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Gentherapie II</span>
+        </a>
+      </div>
+      <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">💡</span>
+        <div>
+          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Neuer Themenblock</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.5">Bisher ging es um <b>Vererbungslogik</b> — welche Merkmale wie weitergegeben werden. Jetzt wechseln wir die Perspektive: Wie untersucht man DNA im Labor eigentlich <b>praktisch</b>? Diese Techniken sind die Grundlage für Vaterschaftstests, Tatortanalysen, Gentests und auch für die Gentherapie, die in den nächsten Blöcken kommt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRUNDBEGRIFFE -->
+    <section id="grundbegriffe" style="padding:50px 0" data-screen-label="Grundbegriffe">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Genetik-ABC, Teil 3</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Grundbegriffe zum Aufwärmen</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Klick auf ein Kärtchen — überleg erst selbst, ob du den Begriff schon kennst, bevor du die Erklärung aufdeckst.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <sc-for list="{{ grundbegriffe }}" as="term" hint-placeholder-count="8">
+          <button type="button" onClick="{{ term.onClick }}" style="position:relative;height:168px;perspective:1200px;background:transparent;border:none;padding:0;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit">
+            <div style="{{ term.flipStyle }}">
+              <div class="card" style="{{ term.frontStyle }}">
+                <span class="card-kicker">{{ term.kicker }}</span>
+                <div class="card-title">{{ term.title }}</div>
+                <span style="margin-top:auto;font-size:12px;color:var(--color-accent-700);text-decoration:underline;text-decoration-style:dotted">Klicken zum Umdrehen</span>
+              </div>
+              <div class="card" style="{{ term.backStyle }};background:var(--color-accent-100)">
+                <span class="card-kicker">{{ term.title }}</span>
+                <p class="card-body">{{ term.body }}</p>
+              </div>
+            </div>
+          </button>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- GENETISCHER FINGERABDRUCK -->
+    <section id="fingerabdruck" style="padding:50px 0" data-screen-label="Genetischer Fingerabdruck">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Einstiegsbeispiel</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Der genetische Fingerabdruck</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Stell dir vor, Ermittler finden am Tatort Blutspuren und wollen wissen, von wie vielen Personen sie stammen und ob sie zu einer verdächtigen Person passen. Die Lösung: eine <b>DNA-Typisierung</b>. Die codierenden Gene sind bei fast allen Menschen fast identisch — interessant sind die <b>nicht codierenden</b> Bereiche (95 % des Genoms), die stark variieren. Kurze Wiederholungssequenzen wie ATATAT… nennt man <b>Mikrosatelliten</b> oder <b>STR-Gene</b> (Short Tandem Repeats) — ihre Länge ist von Person zu Person unterschiedlich.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:22px;margin-top:28px;align-items:start" data-comment-anchor="fp-grid">
+        <div>
+          <div class="card elev-sm">
+            <span class="card-kicker">Was wird verglichen?</span>
+            <div class="card-title">STR-Gene an mehreren Genorten</div>
+            <p class="card-body">Für jeden Genort bestimmt man die Länge der Wiederholung auf beiden Chromosomen (ein Zahlenpaar). Über mehrere Genorte hinweg entsteht ein individuelles Zahlenmuster — das DNA-Profil.</p>
+          </div>
+          <div style="margin-top:13px;overflow-x:auto">
+            <table class="table">
+              <thead><tr><th>STR-Gen</th><th>Tatort-DNA</th><th>Verdächtiger 1</th><th>Verdächtiger 2</th></tr></thead>
+              <tbody>
+                <tr><td>VWA</td><td>14 / 17</td><td>14 / 17</td><td>16 / 18</td></tr>
+                <tr><td>TH01</td><td>6 / 9.3</td><td>6 / 9.3</td><td>7 / 9.3</td></tr>
+                <tr><td>FGA</td><td>20 / 20</td><td>20 / 20</td><td>21 / 23</td></tr>
+                <tr><td>D18S51</td><td>17 / 18</td><td>17 / 18</td><td>13 / 13</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:13.5px;line-height:1.5;margin-top:9px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Beispielhafte Werte. An allen vier Genorten stimmen Tatort-DNA und Verdächtiger 1 überein — Verdächtiger 2 passt an keinem einzigen Genort.</p>
+        </div>
+        <image-slot id="fp-gelbild" shape="rounded" radius="20" placeholder="Bild: DNA-Bandenmuster / Gelelektrophorese" style="width:100%;height:280px"></image-slot>
+      </div>
+
+      <div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniFinger.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniFinger.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniFinger.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniFinger.feedback }}</p>
+        </sc-if>
+      </div>
+
+      <details style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:18px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px">Wichtig: Was der Fingerabdruck NICHT zeigt</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0">Ein genetischer Fingerabdruck gibt keine Auskunft über Aussehen, Charakter oder Krankheiten einer Person — er nutzt bewusst nicht codierende Bereiche. Übereinstimmung liefert außerdem keinen automatischen Schuldbeweis: DNA-Material kann zufällig oder absichtlich an einen Ort gelangt sein, und eineiige Mehrlinge besitzen nahezu identische DNA.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- PCR -->
+    <section id="pcr" style="padding:50px 0" data-screen-label="PCR">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">DNA vervielfältigen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">PCR — Polymerase-Kettenreaktion</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Für eine DNA-Typisierung braucht man mehr DNA, als eine winzige Spur liefert. Die <b>PCR</b> (polymerase chain reaction), entwickelt von Kary B. Mullis (Nobelpreis 1993), vervielfältigt einen bestimmten DNA-Abschnitt millionenfach. Ein Ansatz enthält die Proben-DNA, ausreichend Nucleotide (A, T, G, C), eine <b>hitzestabile DNA-Polymerase</b> und zwei <b>Primer</b>, die Anfangs- und Endpunkt des zu kopierenden Abschnitts festlegen.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">Schritt 1</span>
+          <div class="card-title">Denaturierung</div>
+          <p class="card-body">Erhitzen auf ca. 95 °C trennt den DNA-Doppelstrang in zwei Einzelstränge.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Schritt 2</span>
+          <div class="card-title">Hybridisierung</div>
+          <p class="card-body">Abkühlen auf ca. 55–65 °C lässt die Primer sich komplementär an die Einzelstränge anlagern (Primer-Annealing).</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Schritt 3</span>
+          <div class="card-title">Verlängerung (Elongation)</div>
+          <p class="card-body">Die Polymerase verlängert die Primer bei ca. 72 °C zu vollständigen komplementären Strängen.</p>
+        </div>
+      </div>
+      <p style="font-size:15px;line-height:1.55;margin-top:18px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese drei Schritte wiederholen sich zyklisch — nach ca. 35 Zyklen liegt genügend DNA für eine Analyse vor. Da sich mit jedem Zyklus die Menge verdoppelt, wächst die DNA-Menge <b>exponentiell</b>.</p>
+
+      <div style="background:var(--color-accent-100);border-radius:31px;padding:22px;margin-top:18px">
+        <h4 style="margin:0 0 4px;font-size:19px;font-family:var(--font-heading);font-weight:400">Aufgabe</h4>
+        <p style="margin:0 0 13px;font-size:15px;line-height:1.55">Erkläre, warum bei der PCR eine <b>hitzestabile</b> DNA-Polymerase nötig ist. Klick auf „Antwort zeigen", wenn du eine eigene Erklärung hast.</p>
+        <button type="button" class="btn btn-secondary" onClick="{{ toggleAntwortPcr }}">{{ antwortPcrLabel }}</button>
+        <sc-if value="{{ showAntwortPcr }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14.5px;line-height:1.55;background:var(--color-bg);border-radius:16px;padding:13px 18px">In der PCR wird der Ansatz wiederholt auf ca. 95 °C erhitzt, um die DNA in Einzelstränge zu trennen, und dann wieder abgekühlt. Eine normale Polymerase würde bei diesen Temperaturen denaturieren (ihre Struktur verlieren) und unbrauchbar werden — man müsste nach jedem Erhitzen neue Polymerase zugeben. Hitzestabile Polymerasen (meist aus hitzeliebenden Bakterien wie <i>Thermus aquaticus</i>) überstehen viele Zyklen, ohne ihre Funktion zu verlieren.</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- GELELEKTROPHORESE -->
+    <section id="gel" style="padding:50px 0" data-screen-label="Gelelektrophorese">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">DNA-Fragmente sichtbar machen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Gelelektrophorese</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Nach der PCR liegen viele Kopien eines DNA-Abschnitts vor — jetzt müssen die unterschiedlich langen Fragmente (z. B. verschiedene Mikrosatelliten-Längen) getrennt und verglichen werden. Man lädt die Proben in ein Gel und legt eine Spannung an: Da DNA negativ geladen ist, wandern die Fragmente zur Anode. <b>Kurze Fragmente wandern schneller</b> (weiter) durch die Gelporen als lange — es entsteht ein charakteristisches <b>Bandenmuster</b>, das sich zwischen Proben vergleichen lässt.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:22px;margin-top:28px;align-items:start">
+        <image-slot id="gel-prinzip" shape="rounded" radius="20" placeholder="Bild/Skizze: Prinzip der Gelelektrophorese" style="width:100%;height:260px"></image-slot>
+        <div class="card elev-sm">
+          <span class="card-kicker">Merksatz</span>
+          <div class="card-title">Kurz = schnell, lang = langsam</div>
+          <p class="card-body">Je kürzer ein DNA-Fragment, desto leichter passt es durch die Gelporen und desto weiter wandert es in derselben Zeit. Die Laufstrecke einer Bande zeigt also direkt die Fragmentlänge an — vergleichbare Laufstrecken bei zwei Proben bedeuten gleiche Fragmentlänge.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEQUENZIERUNG -->
+    <section id="sequenzierung" style="padding:50px 0" data-screen-label="Sequenzierung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Die Basenfolge entschlüsseln</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">DNA-Sequenzierung: die Strangabbruchmethode</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Während PCR und Gelelektrophorese nur Fragmentlängen vergleichen, will man bei der <b>Sequenzierung</b> die genaue <b>Basenfolge</b> eines DNA-Abschnitts kennen — etwa um Genmutationen nachzuweisen. Die von Frederick Sanger entwickelte Strangabbruchmethode (Kettenabbruch-Synthese, Nobelpreis 1958 &amp; 1980) nutzt spezielle Nucleotide, denen die OH-Gruppe fehlt: Baut die Polymerase eines davon ein, <b>bricht die Synthese sofort ab</b>. So entstehen unterschiedlich lange Fragmente, die jeweils mit einem markierten (fluoreszenzgefärbten) Nucleotid enden.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">Ansatz enthält</span>
+          <div class="card-title">Probe + Primer + Polymerase</div>
+          <p class="card-body">Einzelsträngige Proben-DNA, ein Primer, DNA-Polymerase, normale Nucleotide (A, T, G, C) und Strangabbruch-Nucleotide (A*, T*, G*, C*).</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Auswertung</span>
+          <div class="card-title">Gel-Kapillare + Fluoreszenzdetektor</div>
+          <p class="card-body">Die Fragmente werden nach Größe aufgetrennt; ein Detektor liest die Farbe des jeweils letzten (markierten) Nucleotids aus.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px" data-comment-anchor="seq-modell">
+        <span class="tag tag-accent-2" style="margin-bottom:9px">Modellversuch</span>
+        <h4 style="margin:0 0 4px;font-size:20px;font-family:var(--font-heading);font-weight:400">Entschlüssele die unbekannte DNA selbst</h4>
+        <p style="margin:0 0 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Im echten Modellversuch bastelt man Papierstreifen unterschiedlicher Länge, die jeweils mit einem markierten Buchstaben enden — das steht für die verschieden langen, strangabgebrochenen Kopien. Unten siehst du 15 solcher „Fragmente", schon nach Länge sortiert (so würden sie im Gel wandern: kurz oben = schnell, lang unten = langsam). Trag für jedes Fragment den <b>letzten (markierten) Buchstaben</b> ein.</p>
+        <div style="overflow-x:auto">
+          <table class="table">
+            <thead><tr><th>Länge nach Primer</th><th>Fragment</th><th>Letzter (markierter) Buchstabe</th></tr></thead>
+            <tbody>
+              <sc-for list="{{ seqRows }}" as="row" hint-placeholder-count="15">
+                <tr>
+                  <td>{{ row.len }}</td>
+                  <td style="font-family:monospace">{{ row.fragment }}</td>
+                  <td><input type="text" maxlength="1" value="{{ row.val }}" onChange="{{ row.onChange }}" style="{{ row.inputStyle }}"></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:18px">
+          <button type="button" class="btn btn-primary" onClick="{{ checkSeq }}">Prüfen</button>
+          <button type="button" class="btn btn-secondary" onClick="{{ resetSeq }}">Zurücksetzen</button>
+          <sc-if value="{{ seqChecked }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent-2">{{ seqCorrectCount }} / 15 richtig</span>
+          </sc-if>
+        </div>
+
+        <div style="background:var(--color-bg);border-radius:28px;padding:18px;margin-top:18px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+          <p style="margin:0 0 9px;font-size:14.5px;line-height:1.5">Liest man die eingetragenen Buchstaben von oben (kurz) nach unten (lang), erhält man den <b>neu synthetisierten</b> Strang: <span style="font-family:monospace;font-weight:600">{{ seqSynthesized }}</span></p>
+          <p style="margin:0 0 13px;font-size:14.5px;line-height:1.5">Dieser Strang ist komplementär zur gesuchten unbekannten DNA (A↔T, C↔G). Trag die gesuchte Sequenz ein:</p>
+          <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+            <input type="text" value="{{ seqFinalVal }}" onChange="{{ onSeqFinalChange }}" placeholder="z. B. TTAGC…" style="{{ seqFinalStyle }}">
+            <button type="button" class="btn btn-primary" onClick="{{ checkSeqFinal }}">Prüfen</button>
+          </div>
+          <sc-if value="{{ seqFinalChecked }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:13px 0 0;font-size:14.5px;line-height:1.5">{{ seqFinalFeedback }}</p>
+          </sc-if>
+        </div>
+      </div>
+
+      <details style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:18px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px">Modernere Verfahren im Überblick</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0">Craig Venter entschlüsselte 2001 als einer der Ersten das menschliche Genom. Heute nutzen Labore automatisierte Kapillar-Sequenzierer (Weiterentwicklung der Sanger-Methode) oder „Next Generation Sequencing", das parallel Millionen kurzer Fragmente liest — das Grundprinzip „Fragment + markiertes Ende + Größentrennung" bleibt aber verwandt.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- GLOSSAR -->
+    <section id="glossar" style="padding:50px 0" data-screen-label="Glossar">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nachschlagen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Glossar der Fachbegriffe</h2>
+      </div>
+      <dl style="margin:28px 0 0;display:grid;grid-template-columns:220px 1fr;gap:0">
+        <sc-for list="{{ glossar }}" as="g" hint-placeholder-count="8">
+          <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">{{ g.term }}</dt>
+          <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ g.def }}</dd>
+        </sc-for>
+      </dl>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" style="padding:50px 0 73px" data-screen-label="Quiz">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernkontrolle</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Teste dich selbst</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Zehn Fragen zu PCR, Gelelektrophorese, Sequenzierung und dem genetischen Fingerabdruck. Beantworte so viele du kannst und klick auf „Auswerten".</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:calc(28px*1.05);padding:clamp(20px,4vw,40px);margin-top:28px">
+        <div style="display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:9px">
+          <span class="tag tag-accent-2">{{ answeredCount }} / {{ totalCount }} beantwortet</span>
+        </div>
+
+        <sc-for list="{{ quiz }}" as="q" hint-placeholder-count="10">
+          <div style="padding:26px 0;border-top:1px solid var(--color-divider)">
+            <span class="tag tag-outline" style="margin-bottom:9px">Frage {{ q.num }}</span>
+            <h4 style="font-family:var(--font-heading);font-size:20px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ q.stem }}</h4>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">
+                  <span style="flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--color-neutral-400);display:grid;place-items:center"></span>
+                  <span style="flex:1">{{ opt.text }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ q.showExplain }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:13px;font-size:14px;line-height:1.5;background:var(--color-bg);border-radius:16px;padding:13px 18px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+                <b style="color:var(--color-accent-800)">{{ q.resultLabel }} </b>{{ q.explain }}
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:28px">
+          <button type="button" class="btn btn-primary" onClick="{{ grade }}">Auswerten</button>
+          <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+            <button type="button" class="btn btn-secondary" onClick="{{ retry }}">Nochmal versuchen</button>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;margin-top:28px;background:var(--color-bg);border-radius:28px;padding:18px;box-shadow:var(--shadow-sm);align-items:center;gap:18px">
+            <div style="flex:none;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:{{ scoreRingBg }}">
+              <div style="width:92px;height:92px;border-radius:50%;background:var(--color-bg);display:grid;place-items:center;text-align:center">
+                <div>
+                  <span style="font-family:var(--font-heading);font-size:26px;line-height:1;display:block">{{ scorePctLabel }}</span>
+                  <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Punkte</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin:0 0 4px;font-size:24px;font-family:var(--font-heading);font-weight:400">{{ scoreHead }}</h3>
+              <p style="margin:0;font-size:15px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ scoreMsg }}</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="padding:40px clamp(20px,5vw,72px) 73px;font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);max-width:1120px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:40px;width:auto">
+        <span>Arbeitstechniken der Genetik · GK Biologie 12 · Lernwelten – Evangelisches Gymnasium</span>
+      </div>
+      <a class="btn btn-ghost" href="klausurvorbereitung.html">Weiter zur Klausurvorbereitung →</a>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    scrollPct: 0,
+    revealedTerms: {},
+    miniAnswers: {},
+    showAntwortPcr: false,
+    seqEx: {},
+    seqChecked: false,
+    seqFinalVal: '',
+    seqFinalChecked: false,
+    quizAnswers: {},
+    graded: false,
+  };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      this.setState({ scrollPct: pct });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+
+  toggleTerm(id) { this.setState(s => ({ revealedTerms: { ...s.revealedTerms, [id]: !s.revealedTerms[id] } })); }
+  selectMini(id, i) { this.setState(s => ({ miniAnswers: { ...s.miniAnswers, [id]: i } })); }
+  toggleAntwortPcr() { this.setState(s => ({ showAntwortPcr: !s.showAntwortPcr })); }
+
+  setSeq(idx, val) { this.setState(s => ({ seqEx: { ...s.seqEx, [idx]: (val || '').toUpperCase().slice(0, 1) } })); }
+  checkSeq() { this.setState({ seqChecked: true }); }
+  resetSeq() { this.setState({ seqEx: {}, seqChecked: false }); }
+  onSeqFinalChange(val) { this.setState({ seqFinalVal: val }); }
+  checkSeqFinal() { this.setState({ seqFinalChecked: true }); }
+
+  setQuizAnswer(id, i) {
+    if (this.state.graded) return;
+    this.setState(s => ({ quizAnswers: { ...s.quizAnswers, [id]: i } }));
+  }
+  grade() { this.setState({ graded: true }); }
+  retry() { this.setState({ quizAnswers: {}, graded: false }); }
+
+  optionStyle(locked, isCorrect, isSelected) {
+    let border = 'var(--color-divider)';
+    let bg = 'var(--color-bg)';
+    let opacity = '1';
+    if (locked) {
+      if (isCorrect) { border = 'var(--color-accent-2-600)'; bg = 'var(--color-accent-2-100)'; }
+      else if (isSelected) { border = '#b04a3a'; bg = '#f8e2dc'; }
+      else { opacity = '0.55'; }
+    } else if (isSelected) {
+      border = 'var(--color-accent)'; bg = 'var(--color-accent-100)';
+    }
+    return `display:flex;align-items:center;gap:10px;background:${bg};border:1.5px solid ${border};border-radius:999px;padding:11px 16px;cursor:${locked ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);opacity:${opacity};width:100%;transition:border-color .15s,background .15s`;
+  }
+
+  renderVals() {
+    const GRUNDBEGRIFFE_DATA = [
+      { id: 'hybridisierung', kicker: 'Basenpaarung', title: 'Hybridisierung', body: 'Anlagerung eines Einzelstrangs (z. B. Primer oder Sonde) an einen komplementären DNA-Abschnitt durch Basenpaarung.' },
+      { id: 'genmarker', kicker: 'Kennzeichnung', title: 'Genmarker', body: 'Ein bekannter, variabler DNA-Abschnitt (z. B. STR-Gen), der zur Identifikation oder Unterscheidung genutzt wird.' },
+      { id: 'primer', kicker: 'PCR', title: 'Primer', body: 'Kurzer Einzelstrang, der sich komplementär anlagert und den Startpunkt für die DNA-Polymerase festlegt.' },
+      { id: 'polymerase', kicker: 'Enzym', title: 'DNA-Polymerase', body: 'Enzym, das einen neuen DNA-Strang komplementär zu einer Matrize synthetisiert.' },
+      { id: 'str', kicker: 'Fingerabdruck', title: 'Mikrosatellit / STR-Gen', body: 'Kurze, sich wiederholende DNA-Sequenz (Short Tandem Repeat), deren Länge individuell verschieden ist.' },
+      { id: 'gel', kicker: 'Trennmethode', title: 'Gelelektrophorese', body: 'Verfahren, das DNA-Fragmente im elektrischen Feld nach ihrer Länge auftrennt — kurze Fragmente wandern weiter.' },
+      { id: 'strangabbruch', kicker: 'Sequenzierung', title: 'Strangabbruch-Nucleotid', body: 'Nucleotid ohne OH-Gruppe; nach seinem Einbau kann die Polymerase keine weitere Base anhängen — die Synthese bricht ab.' },
+      { id: 'denaturierung', kicker: 'PCR', title: 'Denaturierung', body: 'Auftrennung des DNA-Doppelstrangs in zwei Einzelstränge, meist durch Erhitzen.' },
+    ];
+    const grundbegriffe = GRUNDBEGRIFFE_DATA.map(t => {
+      const revealed = !!this.state.revealedTerms[t.id];
+      return {
+        ...t, revealed, onClick: () => this.toggleTerm(t.id),
+        flipStyle: `position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;transform:rotateY(${revealed ? 180 : 0}deg)`,
+        frontStyle: `position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;gap:8px;padding:13px`,
+        backStyle: `position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);display:flex;flex-direction:column;gap:8px;padding:13px;overflow:auto`,
+      };
+    });
+
+    const MINI_DATA = {
+      finger: { question: 'Warum eignen sich gerade nicht codierende DNA-Bereiche (Mikrosatelliten) für den genetischen Fingerabdruck?', options: ['Weil codierende Gene bei allen Menschen fast identisch sind, nicht codierende Bereiche aber stark variieren', 'Weil nicht codierende Bereiche leichter zu vervielfältigen sind', 'Weil sie Auskunft über Krankheiten geben'], correct: 0, feedback: 'Codierende Gene sind zwischen Menschen kaum unterschiedlich — die individuelle Variation steckt in den nicht codierenden, sich wiederholenden Abschnitten.' },
+    };
+    const miniChecks = Object.keys(MINI_DATA).map(id => {
+      const m = MINI_DATA[id];
+      const sel = this.state.miniAnswers[id];
+      const answered = sel !== undefined;
+      const options = m.options.map((text, i) => ({
+        text, style: this.optionStyle(answered, i === m.correct, i === sel), onClick: () => this.selectMini(id, i),
+      }));
+      return { id, question: m.question, options, answered, feedback: answered ? ((sel === m.correct ? 'Richtig! ' : 'Nicht ganz. ') + m.feedback) : '' };
+    });
+    const miniById = {}; miniChecks.forEach(m => { miniById[m.id] = m; });
+
+    // Sanger model fragments, already sorted by length; last letters spell TTAGCATCGCCGGAA (complement) / synth AATCGTAGCGGCCTT
+    const SEQ_DATA = [
+      { len: 1, fragment: 'Primer–A*', letter: 'A' },
+      { len: 2, fragment: 'Primer–X–A*', letter: 'A' },
+      { len: 3, fragment: 'Primer–XX–T*', letter: 'T' },
+      { len: 4, fragment: 'Primer–XXX–C*', letter: 'C' },
+      { len: 5, fragment: 'Primer–XXXX–G*', letter: 'G' },
+      { len: 6, fragment: 'Primer–XXXXX–T*', letter: 'T' },
+      { len: 7, fragment: 'Primer–XXXXXX–A*', letter: 'A' },
+      { len: 8, fragment: 'Primer–XXXXXXX–G*', letter: 'G' },
+      { len: 9, fragment: 'Primer–XXXXXXXX–C*', letter: 'C' },
+      { len: 10, fragment: 'Primer–XXXXXXXXX–G*', letter: 'G' },
+      { len: 11, fragment: 'Primer–XXXXXXXXXX–G*', letter: 'G' },
+      { len: 12, fragment: 'Primer–XXXXXXXXXXX–C*', letter: 'C' },
+      { len: 13, fragment: 'Primer–XXXXXXXXXXXX–C*', letter: 'C' },
+      { len: 14, fragment: 'Primer–XXXXXXXXXXXXX–T*', letter: 'T' },
+      { len: 15, fragment: 'Primer–XXXXXXXXXXXXXX–T*', letter: 'T' },
+    ];
+    const seqChecked = this.state.seqChecked;
+    const seqRows = SEQ_DATA.map((row, idx) => {
+      const val = (this.state.seqEx[idx] || '').toUpperCase();
+      const correct = seqChecked ? val === row.letter : null;
+      let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+      if (seqChecked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+      return {
+        idx, len: row.len, fragment: row.fragment, val,
+        inputStyle: `width:48px;height:40px;text-align:center;text-transform:uppercase;font-family:var(--font-heading);font-size:16px;border-radius:12px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
+        onChange: (e) => this.setSeq(idx, e.target.value),
+      };
+    });
+    const seqCorrectCount = seqRows.filter((r, i) => seqChecked && r.val === SEQ_DATA[i].letter).length;
+    const seqSynthesized = seqRows.map(r => r.val || '_').join('');
+    const complementMap = { A: 'T', T: 'A', C: 'G', G: 'C' };
+    const seqExpectedFinal = SEQ_DATA.map(r => complementMap[r.letter]).join('');
+    const seqFinalNorm = (this.state.seqFinalVal || '').toUpperCase().replace(/\s+/g, '');
+    let seqFinalStyle = `flex:1;min-width:220px;font-family:var(--font-heading);font-size:16px;letter-spacing:.05em;border-radius:999px;border:1.5px solid var(--color-divider);background:var(--color-bg);color:var(--color-text);padding:10px 18px`;
+    let seqFinalFeedback = '';
+    if (this.state.seqFinalChecked) {
+      const ok = seqFinalNorm === seqExpectedFinal;
+      seqFinalStyle = `flex:1;min-width:220px;font-family:var(--font-heading);font-size:16px;letter-spacing:.05em;border-radius:999px;border:1.5px solid ${ok ? 'var(--color-accent-2-600)' : '#b04a3a'};background:${ok ? 'var(--color-accent-2-100)' : '#f8e2dc'};color:var(--color-text);padding:10px 18px`;
+      seqFinalFeedback = ok
+        ? `Richtig! Die gesuchte Sequenz ist ${seqExpectedFinal}. Sie ergibt sich, indem man jede Base des synthetisierten Strangs komplementär umschreibt (A↔T, C↔G).`
+        : `Noch nicht ganz. Die richtige Lösung ist ${seqExpectedFinal} — bilde zu jeder Base des synthetisierten Strangs (${seqSynthesized}) die komplementäre Base.`;
+    }
+
+    const GLOSSAR_DATA = [
+      { term: 'Hybridisierung', def: 'Anlagerung komplementärer Einzelstränge (z. B. Primer an Matrize).' },
+      { term: 'PCR', def: 'Polymerase-Kettenreaktion — vervielfältigt einen DNA-Abschnitt zyklisch über Denaturierung, Hybridisierung und Verlängerung.' },
+      { term: 'Primer', def: 'Kurzer Einzelstrang, der den Start- bzw. Endpunkt der DNA-Synthese festlegt.' },
+      { term: 'Gelelektrophorese', def: 'Auftrennung von DNA-Fragmenten nach Länge im elektrischen Feld; kurze Fragmente wandern weiter.' },
+      { term: 'Genetischer Fingerabdruck', def: 'Individuelles Muster aus Mikrosatelliten-Längen an mehreren Genorten, genutzt zur Personenidentifikation.' },
+      { term: 'Mikrosatellit / STR-Gen', def: 'Kurze, wiederholte, nicht codierende DNA-Sequenz mit individuell verschiedener Länge.' },
+      { term: 'Strangabbruchmethode', def: 'Sequenzierverfahren nach Sanger: Strangabbruch-Nucleotide beenden die Synthese, die Fragmentlänge und das markierte Ende verraten die Basenfolge.' },
+      { term: 'Fluoreszenzdetektor', def: 'Gerät, das die Farbmarkierung der Strangabbruch-Nucleotide am Ende jedes Fragments ausliest.' },
+    ];
+
+    const QUIZ_DATA = [
+      { stem: 'Wofür steht die Abkürzung PCR?', options: ['Polymerase-Kettenreaktion', 'Protein-Codierungs-Reaktion', 'Primer-Coating-Reaktion', 'Plasmid-Cloning-Reaktion'], correct: 0, explain: 'PCR = polymerase chain reaction, zu Deutsch Polymerase-Kettenreaktion.' },
+      { stem: 'Welche drei Schritte laufen in einem PCR-Zyklus ab?', options: ['Denaturierung, Hybridisierung, Verlängerung', 'Transkription, Translation, Reifung', 'Restriktion, Ligation, Transformation', 'Isolierung, Zentrifugation, Färbung'], correct: 0, explain: 'Ein PCR-Zyklus besteht aus Denaturierung (Auftrennen), Hybridisierung (Primer-Anlagerung) und Verlängerung (Synthese).' },
+      { stem: 'Warum braucht die PCR eine hitzestabile DNA-Polymerase?', options: ['Weil der Ansatz jeden Zyklus stark erhitzt wird, um die DNA zu denaturieren', 'Weil hohe Temperaturen die Primer aktivieren', 'Weil sonst die Nucleotide verklumpen', 'Weil Kälte die Polymerase zerstört'], correct: 0, explain: 'Die wiederholte Erhitzung auf ca. 95 °C würde eine normale Polymerase denaturieren; hitzestabile Varianten überstehen viele Zyklen.' },
+      { stem: 'Was bestimmt bei der PCR den Start- und Endpunkt des kopierten Abschnitts?', options: ['Die beiden Primer', 'Die Menge der Nucleotide', 'Die Temperatur', 'Die Länge des Gels'], correct: 0, explain: 'Der erste Primer legt den Anfangspunkt, der zweite den Endpunkt des zu kopierenden DNA-Abschnitts fest.' },
+      { stem: 'In der Gelelektrophorese wandern …', options: ['kurze DNA-Fragmente weiter als lange', 'lange DNA-Fragmente weiter als kurze', 'alle Fragmente gleich weit', 'nur einzelsträngige Fragmente'], correct: 0, explain: 'Kurze Fragmente kommen leichter durch die Gelporen und wandern daher weiter als lange.' },
+      { stem: 'Warum sind für den genetischen Fingerabdruck nicht codierende DNA-Bereiche geeignet?', options: ['Weil sie zwischen Menschen stark variieren, im Gegensatz zu den codierenden Genen', 'Weil sie leichter zu isolieren sind', 'Weil sie Krankheiten anzeigen', 'Weil sie keine Basen enthalten'], correct: 0, explain: 'Codierende Gene sind bei allen Menschen sehr ähnlich; die individuelle Variation liegt in den nicht codierenden Wiederholungssequenzen (Mikrosatelliten).' },
+      { stem: 'Was zeigt eine Übereinstimmung im genetischen Fingerabdruck NICHT automatisch?', options: ['Die Schuld eines Verdächtigen', 'Die Blutgruppe einer Person', 'Das Geschlecht einer Person', 'Das Alter einer Person'], correct: 0, explain: 'DNA-Material kann zufällig oder absichtlich an einen Ort gelangt sein — eine Übereinstimmung ist kein automatischer Schuldbeweis.' },
+      { stem: 'Was passiert beim Einbau eines Strangabbruch-Nucleotids (z. B. A*) in der Sanger-Sequenzierung?', options: ['Die Synthese des Strangs bricht sofort ab', 'Der Strang wird sofort verdoppelt', 'Die Polymerase löst sich ab, ohne etwas einzubauen', 'Es entsteht ein zweiter Primer'], correct: 0, explain: 'Strangabbruch-Nucleotiden fehlt die OH-Gruppe — nach ihrem Einbau kann kein weiteres Nucleotid mehr angehängt werden.' },
+      { stem: 'Wie liest man bei der Strangabbruchmethode die gesuchte Basenfolge letztlich ab?', options: ['Man liest die markierten Endbuchstaben der nach Länge sortierten Fragmente und bildet dazu die komplementäre Sequenz', 'Man zählt einfach die Anzahl der Fragmente', 'Man vergleicht die Fragmente mit einer Datenbank', 'Man liest die Primer-Sequenz direkt ab'], correct: 0, explain: 'Nach Länge sortiert ergeben die markierten Endbuchstaben den neu synthetisierten Strang; seine komplementäre Sequenz ist die gesuchte unbekannte DNA.' },
+      { stem: 'Was haben PCR, Gelelektrophorese und Sequenzierung gemeinsam?', options: ['Sie sind grundlegende Labortechniken zur Untersuchung von DNA', 'Sie verändern gezielt Gene', 'Sie funktionieren nur bei Bakterien', 'Sie ersetzen die Meiose'], correct: 0, explain: 'Alle drei sind Arbeitstechniken, mit denen man DNA vervielfältigt (PCR), nach Länge trennt (Gelelektrophorese) oder ihre Basenfolge liest (Sequenzierung) — ohne die DNA selbst zu verändern.' },
+    ];
+    const graded = this.state.graded;
+    let correctCount = 0;
+    const quiz = QUIZ_DATA.map((q, qi) => {
+      const id = 'q' + qi;
+      const sel = this.state.quizAnswers[id];
+      const answered = sel !== undefined;
+      if (graded && answered && sel === q.correct) correctCount++;
+      return {
+        id, num: qi + 1, stem: q.stem, explain: q.explain,
+        options: q.options.map((text, i) => ({ text, style: this.optionStyle(graded, i === q.correct, i === sel), onClick: () => this.setQuizAnswer(id, i) })),
+        showExplain: graded,
+        resultLabel: graded ? (sel === q.correct ? 'Richtig!' : 'Nicht ganz.') : '',
+      };
+    });
+    const totalCount = QUIZ_DATA.length;
+    const answeredCount = Object.keys(this.state.quizAnswers).length;
+    const scorePct = graded ? Math.round((correctCount / totalCount) * 100) : 0;
+    const scoreHead = graded ? (scorePct >= 80 ? 'Stark!' : scorePct >= 50 ? 'Guter Start' : 'Noch üben') : '—';
+    const scoreMsg = graded ? `${correctCount} von ${totalCount} Fragen richtig beantwortet.` : '';
+
+    return {
+      navProgressStyle: `position:absolute;left:0;bottom:0;height:3px;background:var(--color-accent);transition:width .1s linear;width:${this.state.scrollPct}%`,
+      grundbegriffe,
+      miniFinger: miniById.finger,
+      showAntwortPcr: this.state.showAntwortPcr,
+      antwortPcrLabel: this.state.showAntwortPcr ? 'Antwort ausblenden' : 'Antwort zeigen',
+      toggleAntwortPcr: () => this.toggleAntwortPcr(),
+      seqRows, seqChecked, seqCorrectCount, seqSynthesized,
+      checkSeq: () => this.checkSeq(), resetSeq: () => this.resetSeq(),
+      seqFinalVal: this.state.seqFinalVal, onSeqFinalChange: (e) => this.onSeqFinalChange(e.target.value), seqFinalStyle,
+      seqFinalChecked: this.state.seqFinalChecked, checkSeqFinal: () => this.checkSeqFinal(), seqFinalFeedback,
+      glossar: GLOSSAR_DATA,
+      quiz, totalCount, answeredCount,
+      graded, scorePctLabel: scorePct + '%',
+      scoreRingBg: `conic-gradient(var(--color-accent) ${scorePct * 3.6}deg, var(--color-neutral-200) 0)`,
+      scoreHead, scoreMsg,
+      grade: () => this.grade(), retry: () => this.retry(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

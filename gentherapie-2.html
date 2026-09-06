@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Gentherapie II · Selbstlernseite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/styles.css">
+  <script src="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; }
+  </style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:clip;text-wrap:pretty" data-screen-label="Selbstlernseite">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:24px;padding:13px clamp(20px,5vw,72px);background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(8px)">
+    <span style="display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:18px">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:32px;width:auto;display:block">
+      <span style="width:1px;height:24px;background:var(--color-divider)"></span>
+      <span style="font-family:var(--font-body);font-size:12px;line-height:1.15;color:color-mix(in srgb,var(--color-text) 62%,transparent);font-weight:600">GK Biologie 12<br>Genetik</span>
+    </span>
+    <span style="flex:1"></span>
+    <a href="index.html" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Übersicht</a>
+    <a href="#stammzellen" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Stammzellen</a>
+    <a href="#recht" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Rechtsrahmen</a>
+    <a href="#debatte" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Debatte</a>
+    <a href="#glossar" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Glossar</a>
+    <a class="btn btn-primary" href="#quiz">Zum Quiz</a>
+    <div style="{{ navProgressStyle }}"></div>
+  </nav>
+
+  <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <!-- HERO -->
+    <header style="position:relative;padding:73px 0 50px" data-screen-label="Intro">
+      <div style="position:absolute;right:-40px;top:-140px;width:380px;height:380px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;pointer-events:none"></div>
+      <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernwelten · Evangelisches Gymnasium · GK Biologie 12</span>
+      <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:20ch">Gentherapie II — Rahmen &amp; Debatte</h1>
+      <p style="font-size:19px;line-height:28px;margin:20px 0 0;max-width:64ch;color:var(--color-text)">Stammzellen, Embryonenschutzgesetz und Präimplantationsdiagnostik stecken den rechtlichen und ethischen Rahmen ab, in dem sich Gentherapie bewegen darf. Am Ende bereitest du dich mit deiner Rollenkarte auf die bewertete Debatte vor.</p>
+      <div style="display:flex;gap:13px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-primary" href="#stammzellen">Los geht's</a>
+        <a class="btn btn-secondary" href="#debatte">Direkt zur Debattenvorbereitung</a>
+        <a class="btn btn-ghost" href="gentherapie-1.html">← Zurück zu Gentherapie I</a>
+      </div>
+    </header>
+
+    <!-- EINORDNUNG -->
+    <section style="padding:50px 0" data-screen-label="Einordnung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Der große Überblick</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Wo steht dieses Thema im Lernbereich?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Dies ist der letzte Block, bevor die eigentliche Debatte im Unterricht stattfindet — sie ersetzt eine zweite Klausur als alternative Leistungsermittlung. Diese Seite ist deine Vorbereitung dafür: Inhalte + Rollenkarte + Bewertungsraster.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:28px">
+        <a href="gentherapie-1.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 7</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Gentherapie I</span>
+        </a>
+        <div style="flex:1 1 140px;background:var(--color-accent-100);box-shadow:inset 0 0 0 2px var(--color-accent-300);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 8 · Ustd 15–16</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Gentherapie II</span>
+        </div>
+        <div style="flex:1 1 140px;background:var(--color-neutral-200);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 60%,transparent);font-weight:600">Block 9 · Ustd 17–18</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Bewertete Debatte</span>
+          <span style="font-size:12.5px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Im Unterricht — keine Selbstlernseite</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAMMZELLEN -->
+    <section id="stammzellen" style="padding:50px 0" data-screen-label="Stammzellen">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Grundlage vieler Therapieansätze</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Stammzellen</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Stammzellen können sich unbegrenzt teilen und sich zu verschiedenen Zelltypen weiterentwickeln (differenzieren). Für die Medizin — auch für manche gentherapeutischen Ansätze — sind sie deshalb besonders interessant. Man unterscheidet vor allem zwei Arten:</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">Aus dem Embryo</span>
+          <div class="card-title">Embryonale Stammzellen</div>
+          <p class="card-body">Totipotent bzw. pluripotent — können sich zu praktisch jedem Zelltyp entwickeln. Ihre Gewinnung zerstört meist den Embryo, aus dem sie stammen — deshalb ethisch und rechtlich stark umstritten.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Aus Gewebe eines Menschen</span>
+          <div class="card-title">Adulte Stammzellen</div>
+          <p class="card-body">Kommen z. B. im Knochenmark vor. Ihr Entwicklungspotenzial ist eingeschränkter (meist multipotent), ihre Gewinnung ist aber ethisch weit weniger umstritten.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECHTSRAHMEN -->
+    <section id="recht" style="padding:50px 0" data-screen-label="Rechtsrahmen">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Was ist erlaubt?</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Embryonenschutzgesetz &amp; PID</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">In Deutschland regelt das <b>Embryonenschutzgesetz (ESchG)</b>, was mit menschlichen Embryonen geschehen darf. Es verbietet u. a. die Veränderung der Keimbahn (siehe Block 7) und schränkt die Forschung an Embryonen stark ein — Embryonen genießen einen besonderen Schutzstatus.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">Verfahren</span>
+          <div class="card-title">Präimplantationsdiagnostik (PID)</div>
+          <p class="card-body">Untersuchung eines im Rahmen einer künstlichen Befruchtung erzeugten Embryos auf genetische Auffälligkeiten, <b>bevor</b> er in die Gebärmutter eingesetzt wird.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Rechtslage in Deutschland</span>
+          <div class="card-title">Eng begrenzt erlaubt</div>
+          <p class="card-body">PID ist nur in Ausnahmefällen zulässig — etwa bei hohem Risiko einer schweren Erbkrankheit — und an eine Ethikkommission sowie ärztliche Beratung gebunden.</p>
+        </div>
+      </div>
+      <div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniPid.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniPid.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniPid.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniPid.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- CHANCEN & RISIKEN -->
+    <section style="padding:50px 0" data-screen-label="Chancen und Risiken">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Abwägen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Möglichkeiten &amp; Risiken</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Für deine Debattenrolle brauchst du beide Seiten — auch wenn deine Rolle für eine bestimmte Position steht.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">Chancen</span>
+          <div class="card-title">Heilung an der Ursache</div>
+          <p class="card-body">Bisher unheilbare Erbkrankheiten könnten behoben statt nur behandelt werden; teils reicht eine einmalige Behandlung.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Risiken</span>
+          <div class="card-title">Unklare Langzeitfolgen</div>
+          <p class="card-body">Neue Verfahren haben oft nur kurze Beobachtungszeiträume; unerwartete Nebenwirkungen sind nicht ausgeschlossen.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Gerechtigkeit</span>
+          <div class="card-title">Hohe Kosten</div>
+          <p class="card-body">Gentherapien zählen zu den teuersten Medikamenten überhaupt — das wirft Fragen zu Zugang und Finanzierung auf.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Ethik</span>
+          <div class="card-title">Wo verläuft die Grenze?</div>
+          <p class="card-body">Reine Heilung ist gesellschaftlich meist akzeptiert — Diskussionen entstehen an den Rändern (z. B. „Enhancement" statt Therapie).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEBATTENVORBEREITUNG -->
+    <section id="debatte" style="padding:50px 0" data-screen-label="Debattenvorbereitung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Alternative Leistungsermittlung · Block 9</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Vorbereitung der Podiumsdebatte</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Die Debatte fragt: „Sich positionieren zu Möglichkeiten und Risiken der Gentherapie am Menschen." Du übernimmst eine Rolle mit einer eigenen Perspektive — klick auf deine Rollenkarte, um Ausgangsposition und Recherche-Auftrag zu sehen.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <sc-for list="{{ rollenkarten }}" as="r" hint-placeholder-count="5">
+          <button type="button" onClick="{{ r.onClick }}" style="position:relative;height:210px;perspective:1200px;background:transparent;border:none;padding:0;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit">
+            <div style="{{ r.flipStyle }}">
+              <div class="card" style="{{ r.frontStyle }}">
+                <span class="card-kicker">Rolle</span>
+                <div class="card-title">{{ r.title }}</div>
+                <p class="card-body">{{ r.teaser }}</p>
+                <span style="margin-top:auto;font-size:12px;color:var(--color-accent-700);text-decoration:underline;text-decoration-style:dotted">Klicken für Auftrag</span>
+              </div>
+              <div class="card" style="{{ r.backStyle }};background:var(--color-accent-100)">
+                <span class="card-kicker">{{ r.title }}</span>
+                <p class="card-body">{{ r.body }}</p>
+              </div>
+            </div>
+          </button>
+        </sc-for>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px;overflow-x:auto">
+        <h4 style="margin:0 0 13px;font-size:19px;font-family:var(--font-heading);font-weight:400">Bewertungsraster (Summe 100 %)</h4>
+        <table class="table">
+          <thead><tr><th>Kriterium</th><th>Kompetenz</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+            <tr><td>Fachliche Richtigkeit</td><td>FW</td><td>Korrekte Fachbegriffe &amp; Zusammenhänge (Vektoren, somatische Gentherapie, PID, ESchG).</td></tr>
+            <tr><td>Argumentation &amp; Positionierung</td><td>BE</td><td>Schlüssige, kriteriengeleitete Abwägung von Chancen und Risiken, begründete eigene Position.</td></tr>
+            <tr><td>Kommunikation &amp; Fachsprache</td><td>KO</td><td>Klare, adressatengerechte Darstellung, angemessene Fachsprache.</td></tr>
+            <tr><td>Diskurs-/Reflexionsfähigkeit</td><td>KO/BE</td><td>Perspektivwechsel, Eingehen auf Gegenargumente, Gesprächsführung.</td></tr>
+            <tr><td>Vorbereitung &amp; Recherche</td><td>EG</td><td>Nachvollziehbare Quellen, Vollständigkeit der Vorbereitung.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- GLOSSAR -->
+    <section id="glossar" style="padding:50px 0" data-screen-label="Glossar">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nachschlagen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Glossar der Fachbegriffe</h2>
+      </div>
+      <dl style="margin:28px 0 0;display:grid;grid-template-columns:220px 1fr;gap:0">
+        <sc-for list="{{ glossar }}" as="g" hint-placeholder-count="7">
+          <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">{{ g.term }}</dt>
+          <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ g.def }}</dd>
+        </sc-for>
+      </dl>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" style="padding:50px 0 73px" data-screen-label="Quiz">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernkontrolle</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Teste dich selbst</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Zehn Fragen zu Stammzellen, Rechtsrahmen und dem, was du für deine Debattenrolle wissen solltest.</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:calc(28px*1.05);padding:clamp(20px,4vw,40px);margin-top:28px">
+        <div style="display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:9px">
+          <span class="tag tag-accent-2">{{ answeredCount }} / {{ totalCount }} beantwortet</span>
+        </div>
+
+        <sc-for list="{{ quiz }}" as="q" hint-placeholder-count="10">
+          <div style="padding:26px 0;border-top:1px solid var(--color-divider)">
+            <span class="tag tag-outline" style="margin-bottom:9px">Frage {{ q.num }}</span>
+            <h4 style="font-family:var(--font-heading);font-size:20px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ q.stem }}</h4>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">
+                  <span style="flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--color-neutral-400);display:grid;place-items:center"></span>
+                  <span style="flex:1">{{ opt.text }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ q.showExplain }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:13px;font-size:14px;line-height:1.5;background:var(--color-bg);border-radius:16px;padding:13px 18px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+                <b style="color:var(--color-accent-800)">{{ q.resultLabel }} </b>{{ q.explain }}
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:28px">
+          <button type="button" class="btn btn-primary" onClick="{{ grade }}">Auswerten</button>
+          <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+            <button type="button" class="btn btn-secondary" onClick="{{ retry }}">Nochmal versuchen</button>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;margin-top:28px;background:var(--color-bg);border-radius:28px;padding:18px;box-shadow:var(--shadow-sm);align-items:center;gap:18px">
+            <div style="flex:none;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:{{ scoreRingBg }}">
+              <div style="width:92px;height:92px;border-radius:50%;background:var(--color-bg);display:grid;place-items:center;text-align:center">
+                <div>
+                  <span style="font-family:var(--font-heading);font-size:26px;line-height:1;display:block">{{ scorePctLabel }}</span>
+                  <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Punkte</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin:0 0 4px;font-size:24px;font-family:var(--font-heading);font-weight:400">{{ scoreHead }}</h3>
+              <p style="margin:0;font-size:15px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ scoreMsg }}</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="padding:40px clamp(20px,5vw,72px) 73px;font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);max-width:1120px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:40px;width:auto">
+        <span>Gentherapie II · GK Biologie 12 · Lernwelten – Evangelisches Gymnasium</span>
+      </div>
+      <a class="btn btn-ghost" href="gentherapie-1.html">← Zurück zu Gentherapie I</a>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrollPct: 0, miniAnswers: {}, revealedRoles: {}, quizAnswers: {}, graded: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      this.setState({ scrollPct: pct });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
+
+  selectMini(id, i) { this.setState(s => ({ miniAnswers: { ...s.miniAnswers, [id]: i } })); }
+  toggleRole(id) { this.setState(s => ({ revealedRoles: { ...s.revealedRoles, [id]: !s.revealedRoles[id] } })); }
+  setQuizAnswer(id, i) {
+    if (this.state.graded) return;
+    this.setState(s => ({ quizAnswers: { ...s.quizAnswers, [id]: i } }));
+  }
+  grade() { this.setState({ graded: true }); }
+  retry() { this.setState({ quizAnswers: {}, graded: false }); }
+
+  optionStyle(locked, isCorrect, isSelected) {
+    let border = 'var(--color-divider)', bg = 'var(--color-bg)', opacity = '1';
+    if (locked) {
+      if (isCorrect) { border = 'var(--color-accent-2-600)'; bg = 'var(--color-accent-2-100)'; }
+      else if (isSelected) { border = '#b04a3a'; bg = '#f8e2dc'; }
+      else { opacity = '0.55'; }
+    } else if (isSelected) { border = 'var(--color-accent)'; bg = 'var(--color-accent-100)'; }
+    return `display:flex;align-items:center;gap:10px;background:${bg};border:1.5px solid ${border};border-radius:999px;padding:11px 16px;cursor:${locked ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);opacity:${opacity};width:100%;transition:border-color .15s,background .15s`;
+  }
+
+  renderVals() {
+    const MINI_DATA = {
+      pid: { question: 'Warum ist die PID in Deutschland nur in Ausnahmefällen erlaubt?', options: ['Weil das Embryonenschutzgesetz Embryonen einen besonderen Schutzstatus zuschreibt', 'Weil die Methode technisch nicht ausgereift ist', 'Weil sie ausschließlich im Ausland durchgeführt werden darf', 'Weil sie nur bei Männern angewendet werden kann'], correct: 0, feedback: 'Das ESchG schränkt Eingriffe an Embryonen stark ein — PID ist deshalb nur unter engen Voraussetzungen zulässig.' },
+    };
+    const miniChecks = Object.keys(MINI_DATA).map(id => {
+      const m = MINI_DATA[id];
+      const sel = this.state.miniAnswers[id];
+      const answered = sel !== undefined;
+      const options = m.options.map((text, i) => ({ text, style: this.optionStyle(answered, i === m.correct, i === sel), onClick: () => this.selectMini(id, i) }));
+      return { id, question: m.question, options, answered, feedback: answered ? ((sel === m.correct ? 'Richtig! ' : 'Nicht ganz. ') + m.feedback) : '' };
+    });
+    const miniById = {}; miniChecks.forEach(m => { miniById[m.id] = m; });
+
+    const ROLLEN_DATA = [
+      { id: 'betroffene', title: 'Betroffene / Angehörige', teaser: 'Leben mit einer Erbkrankheit oder pflegen einen Angehörigen.', body: 'Position: Hoffnung auf Heilung, oft hohe Dringlichkeit. Recherche-Auftrag: Sammle konkrete Beispiele, wie eine Gentherapie den Alltag verändern könnte — und welche Erfahrungsberichte es bereits gibt.' },
+      { id: 'aerzte', title: 'Ärzteschaft', teaser: 'Behandeln Patient:innen und bewerten Nutzen gegen Risiko.', body: 'Position: Wirksamkeit und Sicherheit stehen im Vordergrund. Recherche-Auftrag: Informiere dich über bekannte Nebenwirkungen und Zulassungsvoraussetzungen von Gentherapien.' },
+      { id: 'ethikrat', title: 'Ethikrat', teaser: 'Berät Gesellschaft und Politik zu ethischen Grenzfragen.', body: 'Position: Abwägung zwischen individuellem Nutzen und gesellschaftlichen Folgen. Recherche-Auftrag: Sammle Argumente zu den Grenzen zwischen Heilung und „Enhancement" sowie zum Embryonenschutz.' },
+      { id: 'kostentraeger', title: 'Kostenträger (Krankenkasse)', teaser: 'Entscheiden, welche Behandlungen finanziert werden.', body: 'Position: Kosten-Nutzen-Verhältnis und Verteilungsgerechtigkeit. Recherche-Auftrag: Finde heraus, wie teuer aktuelle Gentherapien sind und wie über ihre Finanzierung entschieden wird.' },
+      { id: 'forschung', title: 'Forschung', teaser: 'Entwickeln neue Verfahren und Vektoren.', body: 'Position: Fortschritt und wissenschaftliche Chancen. Recherche-Auftrag: Informiere dich über aktuelle Entwicklungen (z. B. CRISPR/Cas) und offene technische Herausforderungen.' },
+    ];
+    const rollenkarten = ROLLEN_DATA.map(t => {
+      const revealed = !!this.state.revealedRoles[t.id];
+      return {
+        ...t, revealed, onClick: () => this.toggleRole(t.id),
+        flipStyle: `position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;transform:rotateY(${revealed ? 180 : 0}deg)`,
+        frontStyle: `position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;gap:8px;padding:13px`,
+        backStyle: `position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);display:flex;flex-direction:column;gap:8px;padding:13px;overflow:auto`,
+      };
+    });
+
+    const GLOSSAR_DATA = [
+      { term: 'Stammzelle', def: 'Zelle, die sich unbegrenzt teilen und zu verschiedenen Zelltypen weiterentwickeln kann.' },
+      { term: 'Embryonale Stammzelle', def: 'Stammzelle aus einem frühen Embryo mit sehr breitem Entwicklungspotenzial; ihre Gewinnung ist ethisch umstritten.' },
+      { term: 'Adulte Stammzelle', def: 'Stammzelle aus Gewebe eines geborenen Menschen mit eingeschränkterem Entwicklungspotenzial.' },
+      { term: 'Embryonenschutzgesetz (ESchG)', def: 'Deutsches Gesetz, das den Schutzstatus menschlicher Embryonen regelt und Keimbahneingriffe verbietet.' },
+      { term: 'Präimplantationsdiagnostik (PID)', def: 'Untersuchung eines Embryos auf genetische Auffälligkeiten vor dem Einsetzen in die Gebärmutter; in Deutschland eng begrenzt erlaubt.' },
+      { term: 'Enhancement', def: 'Verbesserung von Eigenschaften über das gesunde Maß hinaus — abzugrenzen von der Therapie einer Krankheit.' },
+      { term: 'Bewertungsraster', def: 'Kriterienkatalog zur Bewertung der Debattenleistung: fachliche Richtigkeit, Argumentation, Kommunikation, Diskursfähigkeit, Vorbereitung.' },
+    ];
+
+    const QUIZ_DATA = [
+      { stem: 'Was unterscheidet embryonale von adulten Stammzellen vor allem?', options: ['Embryonale Stammzellen haben ein breiteres Entwicklungspotenzial, ihre Gewinnung ist aber ethisch umstrittener', 'Adulte Stammzellen können sich zu jedem Zelltyp entwickeln', 'Embryonale Stammzellen kommen im Knochenmark vor', 'Es gibt keinen Unterschied'], correct: 0, explain: 'Embryonale Stammzellen sind pluripotenter, ihre Gewinnung zerstört aber meist den Embryo — adulte Stammzellen sind eingeschränkter, aber unumstrittener zu gewinnen.' },
+      { stem: 'Was regelt das Embryonenschutzgesetz (ESchG) in Deutschland?', options: ['Den besonderen Schutzstatus menschlicher Embryonen, u. a. das Verbot von Keimbahneingriffen', 'Die Zulassung von Medikamenten', 'Die Finanzierung von Krankenkassenleistungen', 'Die Ausbildung von Ärzten'], correct: 0, explain: 'Das ESchG schützt menschliche Embryonen und verbietet z. B. Eingriffe in die Keimbahn.' },
+      { stem: 'Was ist die Präimplantationsdiagnostik (PID)?', options: ['Untersuchung eines Embryos auf genetische Auffälligkeiten vor dem Einsetzen in die Gebärmutter', 'Ein Gentest nach der Geburt', 'Eine Form der Gentherapie', 'Eine Methode zur DNA-Sequenzierung'], correct: 0, explain: 'PID untersucht einen bei künstlicher Befruchtung erzeugten Embryo, bevor er implantiert wird.' },
+      { stem: 'Warum ist die PID in Deutschland nur in Ausnahmefällen erlaubt?', options: ['Weil Embryonen durch das ESchG besonders geschützt sind', 'Weil sie technisch unmöglich ist', 'Weil sie gesetzlich komplett verboten ist', 'Weil sie nur im Ausland stattfinden darf'], correct: 0, explain: 'Der besondere Schutzstatus von Embryonen führt dazu, dass PID nur bei engen, gesetzlich definierten Voraussetzungen zulässig ist.' },
+      { stem: 'Welches Argument gehört eher zu den Chancen der Gentherapie?', options: ['Behandlung der genetischen Ursache statt nur der Symptome', 'Unklare Langzeitfolgen', 'Sehr hohe Kosten', 'Ethische Debatten um Enhancement'], correct: 0, explain: 'Ein zentraler Vorteil ist, dass die Ursache der Krankheit behoben werden kann, teils mit einer einmaligen Behandlung.' },
+      { stem: 'Welches Argument gehört eher zu den Risiken der Gentherapie?', options: ['Unklare Langzeitfolgen bei neuen Verfahren', 'Heilung an der Ursache', 'Einmalige statt dauerhafte Behandlung', 'Bessere Lebensqualität für Betroffene'], correct: 0, explain: 'Da viele Verfahren noch neu sind, liegen oft nur kurze Beobachtungszeiträume vor — Langzeitrisiken sind noch nicht vollständig bekannt.' },
+      { stem: 'Was unterscheidet „Therapie" von „Enhancement"?', options: ['Therapie behandelt eine Krankheit, Enhancement verbessert Eigenschaften über das gesunde Maß hinaus', 'Enhancement ist immer illegal, Therapie nie', 'Therapie betrifft nur Erwachsene', 'Es gibt keinen Unterschied'], correct: 0, explain: 'Diese Abgrenzung ist zentral für die ethische Debatte um die Grenzen der Gentherapie.' },
+      { stem: 'Welches Kriterium fließt laut Bewertungsraster NICHT direkt in die Bewertung der Debatte ein?', options: ['Die Miete des Debattenraums', 'Fachliche Richtigkeit', 'Argumentation & Positionierung', 'Vorbereitung & Recherche'], correct: 0, explain: 'Bewertet werden fachliche Richtigkeit, Argumentation, Kommunikation, Diskursfähigkeit und Vorbereitung — organisatorische Fragen wie der Raum spielen keine Rolle.' },
+      { stem: 'Welche Rolle würde in der Debatte am ehesten die Kosten-Nutzen-Frage in den Vordergrund stellen?', options: ['Kostenträger (Krankenkasse)', 'Betroffene', 'Forschung', 'Ethikrat'], correct: 0, explain: 'Kostenträger entscheiden über die Finanzierung von Behandlungen und wägen deshalb besonders das Kosten-Nutzen-Verhältnis ab.' },
+      { stem: 'Warum ist gerade der Perspektivwechsel für die Debatte wichtig?', options: ['Weil die Bewertung auch Diskurs- und Reflexionsfähigkeit einschließt, also das Eingehen auf andere Positionen', 'Weil nur die eigene Meinung zählt', 'Weil jede Rolle exakt dieselbe Position vertritt', 'Weil es in der Debatte keine Gegenargumente gibt'], correct: 0, explain: 'Das Bewertungsraster verlangt ausdrücklich Reflexionsfähigkeit — also das Eingehen auf Gegenargumente und andere Perspektiven.' },
+    ];
+    const graded = this.state.graded;
+    let correctCount = 0;
+    const quiz = QUIZ_DATA.map((q, qi) => {
+      const id = 'q' + qi;
+      const sel = this.state.quizAnswers[id];
+      const answered = sel !== undefined;
+      if (graded && answered && sel === q.correct) correctCount++;
+      return {
+        id, num: qi + 1, stem: q.stem, explain: q.explain,
+        options: q.options.map((text, i) => ({ text, style: this.optionStyle(graded, i === q.correct, i === sel), onClick: () => this.setQuizAnswer(id, i) })),
+        showExplain: graded,
+        resultLabel: graded ? (sel === q.correct ? 'Richtig!' : 'Nicht ganz.') : '',
+      };
+    });
+    const totalCount = QUIZ_DATA.length;
+    const answeredCount = Object.keys(this.state.quizAnswers).length;
+    const scorePct = graded ? Math.round((correctCount / totalCount) * 100) : 0;
+    const scoreHead = graded ? (scorePct >= 80 ? 'Stark!' : scorePct >= 50 ? 'Guter Start' : 'Noch üben') : '—';
+    const scoreMsg = graded ? `${correctCount} von ${totalCount} Fragen richtig beantwortet.` : '';
+
+    return {
+      navProgressStyle: `position:absolute;left:0;bottom:0;height:3px;background:var(--color-accent);transition:width .1s linear;width:${this.state.scrollPct}%`,
+      miniPid: miniById.pid,
+      rollenkarten,
+      glossar: GLOSSAR_DATA,
+      quiz, totalCount, answeredCount, graded,
+      scorePctLabel: scorePct + '%',
+      scoreRingBg: `conic-gradient(var(--color-accent) ${scorePct * 3.6}deg, var(--color-neutral-200) 0)`,
+      scoreHead, scoreMsg,
+      grade: () => this.grade(), retry: () => this.retry(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

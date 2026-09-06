@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Klassische Genetik I · Selbstlernseite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/styles.css">
+  <script src="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; }
+  </style>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:clip;text-wrap:pretty" data-screen-label="Selbstlernseite">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:24px;padding:13px clamp(20px,5vw,72px);background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(8px)">
+    <span style="display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:18px">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:32px;width:auto;display:block">
+      <span style="width:1px;height:24px;background:var(--color-divider)"></span>
+      <span style="font-family:var(--font-body);font-size:12px;line-height:1.15;color:color-mix(in srgb,var(--color-text) 62%,transparent);font-weight:600">GK Biologie 12<br>Genetik</span>
+    </span>
+    <span style="flex:1"></span>
+    <a href="index.html" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Übersicht</a>
+    <a href="#regeln" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Regeln</a>
+    <a href="#symbole" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Symbole</a>
+    <a href="#mono" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Monohybrid</a>
+    <a href="#di" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Dihybrid</a>
+    <a href="#inter" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Intermediär</a>
+    <a href="#glossar" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Glossar</a>
+    <a class="btn btn-primary" href="#quiz">Zum Quiz</a>
+    <div style="{{ navProgressStyle }}"></div>
+  </nav>
+
+  <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <!-- HERO -->
+    <header style="position:relative;padding:73px 0 50px" data-screen-label="Intro">
+      <div style="position:absolute;right:-40px;top:-140px;width:380px;height:380px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;pointer-events:none"></div>
+      <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernwelten · Evangelisches Gymnasium · GK Biologie 12</span>
+      <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:18ch">Klassische Genetik I</h1>
+      <p style="font-size:19px;line-height:28px;margin:20px 0 0;max-width:64ch;color:var(--color-text)">Mendelsche Regeln, Kreuzungsschemata &amp; intermediärer Erbgang — Wiederholung und Erweiterung dessen, was du aus Klasse 10 kennst. Am Ende dieser Seite kannst du monohybride und dihybride Kreuzungen selbst durchrechnen, weißt, wodurch sich intermediärer Erbgang und Kodominanz unterscheiden — und kannst dich im Quiz selbst testen.</p>
+      <div style="display:flex;gap:13px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-primary" href="#regeln">Los geht's</a>
+        <a class="btn btn-secondary" href="#quiz">Direkt zum Quiz</a>
+        <a class="btn btn-ghost" href="https://studyflix.de/biologie/erbgange-6167?topic_id=388" target="_blank" rel="noopener">▶ Video: Erbgänge (Studyflix)</a>
+        <a class="btn btn-ghost" href="klassische-genetik-2.html">Weiter zu Klassische Genetik II →</a>
+        <a class="btn btn-ghost" href="humangenetik-1.html">Weiter zu Humangenetik I →</a>
+      </div>
+    </header>
+
+    <!-- EINORDNUNG: LERNBEREICH -->
+    <section style="padding:50px 0" data-screen-label="Einordnung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Der große Überblick</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Wo steht dieses Thema im Lernbereich?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Der Lernbereich „Grundlagen, Anwendungen und Perspektiven der Genetik" umfasst 9 Doppelstunden. Diese Seite deckt den ersten Block ab — die Basis, auf der alles Weitere aufbaut.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:28px">
+        <div style="flex:1 1 150px;background:var(--color-accent-100);box-shadow:inset 0 0 0 2px var(--color-accent-300);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 1 · Ustd 1–2</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Klassische Genetik I</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Mendelsche Regeln, Kreuzungsschemata</span>
+        </div>
+        <a href="klassische-genetik-2.html" style="text-decoration:none;color:inherit;flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 2 · Ustd 3–4</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Klassische Genetik II</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Multiple Allele, Blutgruppen, Epistasie</span>
+        </a>
+        <a href="humangenetik-1.html" style="text-decoration:none;color:inherit;flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 3 · Ustd 5–6</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Humangenetik I</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Autosomale Erbgänge, Stammbaumanalyse</span>
+        </a>
+        <a href="humangenetik-2.html" style="text-decoration:none;color:inherit;flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 4 · Ustd 7–8</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Humangenetik II</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Geschlechtsgebunden, Chromosomenanomalien</span>
+        </a>
+        <div style="flex:1 1 150px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 5–9 · Ustd 9–18</span>
+          <span style="font-family:var(--font-heading);font-size:18px;line-height:1.15">Arbeitstechniken &amp; Gentherapie</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">PCR, Gelelektrophorese, CRISPR, Debatte</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">💡</span>
+        <div>
+          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Rückgriff auf Klasse 10</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.5">Die Mendelschen Regeln und einfache Kreuzungsschemata hast du in Klasse 10 (LB 1) schon einmal kennengelernt. Hier wiederholen und erweitern wir das — unter anderem um dihybride Kreuzungen und den intermediären Erbgang.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARUM WICHTIG -->
+    <section style="padding:50px 0" data-screen-label="Warum wichtig">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Warum sich das lohnt</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Wozu Kreuzungsschemata beherrschen?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese Rechentechnik ist die Grundlage für fast alles, was im Lernbereich Genetik noch folgt.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <div class="card">
+          <span class="card-kicker">Pflanzenzüchtung</span>
+          <div class="card-title">Gezielt neue Sorten erzeugen</div>
+          <p class="card-body">Kreuzungsschemata sagen vorher, welche Merkmalskombinationen in welcher Häufigkeit zu erwarten sind — Grundlage jeder Sortenzüchtung.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker">Tierzucht</span>
+          <div class="card-title">Zuchtplanung</div>
+          <p class="card-body">Ob Fellfarbe oder Milchleistung — Züchter nutzen genau dieselbe Logik, um Nachkommen gezielt zu planen.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker">Humangenetik</span>
+          <div class="card-title">Grundlage der Stammbaumanalyse</div>
+          <p class="card-body">Die Erbgänge, die du hier lernst, brauchst du direkt wieder, um Erbkrankheiten in Stammbäumen zu analysieren (Block 3–4).</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker">Nächster Block</span>
+          <div class="card-title">Blutgruppen &amp; multiple Allele</div>
+          <p class="card-body">Das AB0-System (Block 2) kombiniert mehrere Allele mit Dominanz <em>und</em> Kodominanz — genau die Bausteine von dieser Seite.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRUNDBEGRIFFE -->
+    <sc-if value="{{ showGrundbegriffe }}" hint-placeholder-val="{{ true }}">
+      <section id="grundbegriffe" style="padding:50px 0" data-screen-label="Grundbegriffe">
+        <div style="max-width:64ch">
+          <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Genetik-ABC</span>
+          <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Grundbegriffe zum Aufwärmen</h2>
+          <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese acht Begriffe brauchst du für alles Weitere auf dieser Seite. Klick auf ein Kärtchen — überleg erst selbst, ob du den Begriff noch kennst, bevor du die Erklärung aufdeckst.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+          <sc-for list="{{ grundbegriffe }}" as="term" hint-placeholder-count="8">
+            <button type="button" onClick="{{ term.onClick }}" style="position:relative;height:168px;perspective:1200px;background:transparent;border:none;padding:0;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit">
+              <div style="{{ term.flipStyle }}">
+                <div class="card" style="{{ term.frontStyle }}">
+                  <span class="card-kicker">{{ term.kicker }}</span>
+                  <div class="card-title">{{ term.title }}</div>
+                  <span style="margin-top:auto;font-size:12px;color:var(--color-accent-700);text-decoration:underline;text-decoration-style:dotted">Klicken zum Umdrehen</span>
+                </div>
+                <div class="card" style="{{ term.backStyle }};background:var(--color-accent-100)">
+                  <span class="card-kicker">{{ term.title }}</span>
+                  <p class="card-body">{{ term.body }}</p>
+                </div>
+              </div>
+            </button>
+          </sc-for>
+        </div>
+      </section>
+    </sc-if>
+
+    <!-- DIE DREI MENDELSCHEN REGELN -->
+    <section id="regeln" style="padding:50px 0" data-screen-label="Mendelsche Regeln">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Die Basis</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Die drei Mendelschen Regeln</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Gregor Mendel kreuzte im 19. Jahrhundert tausende Erbsenpflanzen und entdeckte dabei feste Zahlenverhältnisse. Diese drei Regeln fassen zusammen, was er fand.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">1. Regel</span>
+          <div class="card-title">Uniformitätsregel</div>
+          <p class="card-body">Kreuzt man zwei reinerbige (homozygote) Individuen, die sich in einem Merkmal unterscheiden, sind alle Nachkommen der F1-Generation in Genotyp und Phänotyp einheitlich.</p>
+          <span class="card-meta"><span class="tag tag-accent">F1: einheitlich</span></span>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">2. Regel</span>
+          <div class="card-title">Spaltungsregel</div>
+          <p class="card-body">Kreuzt man zwei Individuen der F1-Generation, spaltet sich die F2-Generation in einem festen, vorhersagbaren Zahlenverhältnis auf.</p>
+          <span class="card-meta"><span class="tag tag-accent">F2: 3 : 1 (monohybrid)</span></span>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">3. Regel</span>
+          <div class="card-title">Unabhängigkeitsregel</div>
+          <p class="card-body">Liegen zwei Merkmale auf unterschiedlichen Chromosomen, werden sie unabhängig voneinander und frei kombinierbar vererbt.</p>
+          <span class="card-meta"><span class="tag tag-accent">F2: 9 : 3 : 3 : 1 (dihybrid)</span></span>
+        </div>
+      </div>
+
+<div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniRegeln.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniRegeln.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniRegeln.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniRegeln.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- SYMBOLWAHL -->
+    <section id="symbole" style="padding:50px 0" data-screen-label="Symbole festlegen">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Bevor es losgeht</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Symbole richtig wählen</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Bevor man ein Kreuzungsschema aufstellt, muss man sich auf Buchstaben für die Allele festlegen. Häufiger Fehler: für die beiden Ausprägungen eines Merkmals werden zwei <em>verschiedene</em> Buchstaben gewählt (z. B. <b>r</b> für „runzlig" und <b>G</b> für „glatt"). Richtig ist: <b>ein</b> Buchstabe pro Merkmal — groß für die dominante, klein für die rezessive Ausprägung.</p>
+      </div>
+      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:18px">
+        <sc-for list="{{ symbolTraits }}" as="t" hint-placeholder-count="3">
+          <div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:13px">
+              <span style="font-family:var(--font-heading);font-size:17px;min-width:150px">{{ t.name }}</span>
+              <span style="font-size:14px">{{ t.domLabel }} (dominant)</span>
+              <input type="text" maxlength="1" value="{{ t.domVal }}" onChange="{{ t.onDomChange }}" style="{{ t.domStyle }}">
+              <span style="font-size:14px">{{ t.recLabel }} (rezessiv)</span>
+              <input type="text" maxlength="1" value="{{ t.recVal }}" onChange="{{ t.onRecChange }}" style="{{ t.recStyle }}">
+            </div>
+            <sc-if value="{{ t.showFeedback }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:8px 0 0;font-size:13.5px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ t.feedback }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+          <button type="button" class="btn btn-primary" onClick="{{ checkSymbols }}">Prüfen</button>
+          <button type="button" class="btn btn-secondary" onClick="{{ resetSymbols }}">Zurücksetzen</button>
+          <sc-if value="{{ symbolAllOk }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent-2">Alle drei richtig!</span>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONOHYBRID -->
+    <section id="mono" style="padding:50px 0" data-screen-label="Monohybrider Erbgang">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Kreuzungsschema I</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Monohybrider Erbgang</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">„Monohybrid" heißt: Wir betrachten <b>ein</b> Merkmal. Beispiel: {{ monoTraitLabel }} bei der Erbse. Zwei heterozygote F1-Pflanzen ({{ monoDomAllele }}{{ monoRecAllele }} × {{ monoDomAllele }}{{ monoRecAllele }}) werden gekreuzt. Klick auf ein Feld im Kreuzungsschema, um Genotyp und Phänotyp zu sehen.</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px;box-shadow:var(--shadow-sm)">
+        <div style="display:grid;grid-template-columns:60px 1fr 1fr;gap:6px;max-width:420px;margin:0 auto 22px">
+          <div></div>
+          <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ monoDomAllele }}</div>
+          <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ monoRecAllele }}</div>
+          <sc-for list="{{ monoRows }}" as="row" hint-placeholder-count="2">
+            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ row.label }}</div>
+            <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="2">
+              <button type="button" onClick="{{ cell.onClick }}" style="{{ cell.style }}">
+                <span style="font-family:var(--font-heading);font-size:22px">{{ cell.genotype }}</span>
+                <span style="font-size:11px;letter-spacing:.02em">{{ cell.phenoLabel }}</span>
+              </button>
+            </sc-for>
+          </sc-for>
+        </div>
+
+        <div style="background:var(--color-bg);border-radius:28px;padding:13px 18px;min-height:76px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+          <sc-if value="{{ monoInfo }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent" style="margin-bottom:6px">{{ monoInfo.tagLabel }}</span>
+            <h4 style="font-size:19px;margin:0 0 4px;font-family:var(--font-heading);font-weight:400">{{ monoInfo.genotype }} — {{ monoInfo.phenoLabel }}</h4>
+            <p style="margin:0;font-size:14.5px;line-height:1.5">{{ monoInfo.text }}</p>
+          </sc-if>
+          <sc-if value="{{ monoInfoEmpty }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;color:color-mix(in srgb,var(--color-text) 55%,transparent);font-size:14.5px">Noch nichts ausgewählt — klick oben auf ein Feld im Kreuzungsschema.</p>
+          </sc-if>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:18px">
+          <div style="display:grid;grid-template-columns:170px 1fr 90px;align-items:center;gap:13px;font-size:14px">
+            <span>{{ monoDomLabel }} (dominant)</span>
+            <span style="height:22px;background:var(--color-neutral-200);border-radius:999px;overflow:hidden;display:block"><span style="height:100%;border-radius:999px;background:var(--color-accent-400);width:75%;display:block"></span></span>
+            <span style="text-align:right;font-family:var(--font-heading);font-size:17px">3 / 4</span>
+          </div>
+          <div style="display:grid;grid-template-columns:170px 1fr 90px;align-items:center;gap:13px;font-size:14px">
+            <span>{{ monoRecLabel }} (rezessiv)</span>
+            <span style="height:22px;background:var(--color-neutral-200);border-radius:999px;overflow:hidden;display:block"><span style="height:100%;border-radius:999px;background:var(--color-accent-2-500);width:25%;display:block"></span></span>
+            <span style="text-align:right;font-family:var(--font-heading);font-size:17px">1 / 4</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--color-accent-100);border-radius:31px;padding:22px;margin-top:18px">
+        <h4 style="margin:0 0 4px;font-size:19px;font-family:var(--font-heading);font-weight:400">Jetzt du: trag die Genotypen ein</h4>
+        <p style="margin:0 0 18px;font-size:14.5px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Fülle das leere Kreuzungsschema selbst aus (z. B. „{{ monoDomAllele }}{{ monoRecAllele }}") und klick auf „Prüfen".</p>
+        <div style="display:grid;grid-template-columns:60px 1fr 1fr;gap:6px;max-width:420px;margin:0 auto 18px">
+          <div></div>
+          <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ monoDomAllele }}</div>
+          <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ monoRecAllele }}</div>
+          <sc-for list="{{ monoExRows }}" as="row" hint-placeholder-count="2">
+            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ row.label }}</div>
+            <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="2">
+              <input type="text" maxlength="2" value="{{ cell.val }}" onChange="{{ cell.onChange }}" style="{{ cell.inputStyle }}">
+            </sc-for>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+          <button type="button" class="btn btn-primary" onClick="{{ checkMonoEx }}">Prüfen</button>
+          <button type="button" class="btn btn-secondary" onClick="{{ resetMonoEx }}">Zurücksetzen</button>
+          <sc-if value="{{ monoExChecked }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent-2">{{ monoExCorrectCount }} / {{ monoExTotal }} richtig</span>
+          </sc-if>
+        </div>
+      </div>
+
+<div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniMono.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniMono.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniMono.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniMono.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- DIHYBRID -->
+    <section id="di" style="padding:50px 0" data-screen-label="Dihybrider Erbgang">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Kreuzungsschema II</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Dihybrider Erbgang</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">„Dihybrid" heißt: Wir betrachten <b>zwei</b> Merkmale gleichzeitig — Mendels Klassiker: Samenform (rund <b>R</b> / runzlig <b>r</b>) und Samenfarbe (gelb <b>G</b> / grün <b>g</b>). Kreuzung zweier doppelt-heterozygoter Pflanzen (RrGg × RrGg) ergibt ein 4×4-Schema mit 16 Feldern. Klick ein Feld an.</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px;box-shadow:var(--shadow-sm);overflow-x:auto">
+        <div style="display:grid;grid-template-columns:64px repeat(4,1fr);gap:5px;min-width:520px;max-width:640px;margin:0 auto 22px">
+          <div></div>
+          <sc-for list="{{ diGametes }}" as="g" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:15px">{{ g }}</div>
+          </sc-for>
+          <sc-for list="{{ diRows }}" as="row" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:15px">{{ row.label }}</div>
+            <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
+              <button type="button" onClick="{{ cell.onClick }}" style="{{ cell.style }}">
+                <span style="font-family:var(--font-heading);font-size:14px">{{ cell.genotype }}</span>
+              </button>
+            </sc-for>
+          </sc-for>
+        </div>
+
+        <div style="background:var(--color-bg);border-radius:28px;padding:13px 18px;min-height:76px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+          <sc-if value="{{ diInfo }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent" style="margin-bottom:6px">{{ diInfo.tagLabel }}</span>
+            <h4 style="font-size:19px;margin:0 0 4px;font-family:var(--font-heading);font-weight:400">{{ diInfo.genotype }} — {{ diInfo.phenoLabel }}</h4>
+            <p style="margin:0;font-size:14.5px;line-height:1.5">{{ diInfo.text }}</p>
+          </sc-if>
+          <sc-if value="{{ diInfoEmpty }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;color:color-mix(in srgb,var(--color-text) 55%,transparent);font-size:14.5px">Noch nichts ausgewählt — klick oben auf ein Feld im 4×4-Schema.</p>
+          </sc-if>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">
+          <span class="tag tag-accent">9/16 rund, gelb</span>
+          <span class="tag tag-accent-2">3/16 rund, grün</span>
+          <span class="tag tag-accent-2">3/16 runzlig, gelb</span>
+          <span class="tag tag-neutral">1/16 runzlig, grün</span>
+        </div>
+      </div>
+
+      <div style="background:var(--color-accent-100);border-radius:31px;padding:22px;margin-top:18px;overflow-x:auto">
+        <h4 style="margin:0 0 4px;font-size:19px;font-family:var(--font-heading);font-weight:400">Jetzt du: trag die Genotypen ein</h4>
+        <p style="margin:0 0 18px;font-size:14.5px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Fülle alle 16 Felder selbst aus (z. B. „RrGg") und klick auf „Prüfen".</p>
+        <div style="display:grid;grid-template-columns:64px repeat(4,1fr);gap:5px;min-width:520px;max-width:640px;margin:0 auto 18px">
+          <div></div>
+          <sc-for list="{{ diGametes }}" as="g" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:15px">{{ g }}</div>
+          </sc-for>
+          <sc-for list="{{ diExRows }}" as="row" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:15px">{{ row.label }}</div>
+            <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
+              <input type="text" maxlength="4" value="{{ cell.val }}" onChange="{{ cell.onChange }}" style="{{ cell.inputStyle }}">
+            </sc-for>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+          <button type="button" class="btn btn-primary" onClick="{{ checkDiEx }}">Prüfen</button>
+          <button type="button" class="btn btn-secondary" onClick="{{ resetDiEx }}">Zurücksetzen</button>
+          <sc-if value="{{ diExChecked }}" hint-placeholder-val="{{ false }}">
+            <span class="tag tag-accent-2">{{ diExCorrectCount }} / {{ diExTotal }} richtig</span>
+          </sc-if>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">🔗</span>
+        <div>
+          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Voraussetzung: unabhängige Vererbung</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.5">Das 9:3:3:1-Verhältnis gilt nur, wenn die beiden Gene auf verschiedenen Chromosomen liegen (oder weit genug voneinander entfernt sind). Liegen sie eng gekoppelt auf demselben Chromosom, weicht das Verhältnis davon ab — das ist eine Ausnahme, die Mendel selbst noch nicht kennen konnte.</p>
+        </div>
+      </div>
+
+<div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniDi.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniDi.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniDi.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniDi.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- INTERMEDIÄR & KODOMINANZ -->
+    <section id="inter" style="padding:50px 0" data-screen-label="Intermediär und Kodominanz">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Wenn keiner sich durchsetzt</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Intermediärer Erbgang &amp; Kodominanz</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Nicht jedes Allel setzt sich vollständig durch. Diese zwei Sonderfälle zeigen, was passiert, wenn keines der beiden Allele „gewinnt".</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px clamp(28px,5vw,72px);margin-top:28px;align-items:start" data-two-col="true">
+        <div>
+          <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 8px">Fall 1</span>
+          <h3 style="font-size:22px;margin:0 0 8px;font-family:var(--font-heading);font-weight:400">Intermediärer Erbgang</h3>
+          <p style="font-size:16.5px;line-height:28px;max-width:100%">Bei der Wunderblume (Mirabilis jalapa) ergibt rot × weiß in der F1 <b>rosa</b> Blüten — eine echte Mischform. Kreuzt man zwei rosa F1-Pflanzen, spaltet sich die F2 in <b>1 rot : 2 rosa : 1 weiß</b> auf — Genotyp- und Phänotyp-Verhältnis stimmen hier überein, weil jeder Genotyp sichtbar unterschiedlich aussieht.</p>
+          <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:13px">
+            <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">🌸</span>
+            <div>
+              <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Bild: Farben mischen</h4>
+              <p style="margin:0;font-size:14.5px;line-height:1.5">Stell dir zwei Farbtöpfe vor, die zu gleichen Teilen gemischt werden. Weder Rot noch Weiß dominiert — das Ergebnis liegt genau in der Mitte.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 8px">Fall 2</span>
+          <h3 style="font-size:22px;margin:0 0 8px;font-family:var(--font-heading);font-weight:400">Kodominanz</h3>
+          <p style="font-size:16.5px;line-height:28px;max-width:100%">Beim MN-Blutgruppensystem beim Menschen tragen heterozygote Personen (M/N) <b>beide</b> Merkmale gleichzeitig und unvermischt — sowohl das M- als auch das N-Antigen sind auf den roten Blutkörperchen nachweisbar, nicht als Mischform, sondern <b>nebeneinander</b>.</p>
+          <div style="display:flex;gap:13px;background:var(--color-accent-100);border-radius:28px;padding:13px 18px;margin-top:13px">
+            <span style="flex:none;color:var(--color-accent-700);margin-top:2px" aria-hidden="true">🩸</span>
+            <div>
+              <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Nicht verwechseln</h4>
+              <p style="margin:0;font-size:14.5px;line-height:1.5">Kodominanz ≠ Mischfarbe. Beide Merkmale bleiben einzeln erkennbar. Das AB0-Blutgruppensystem (nächster Block) kombiniert sogar Kodominanz <em>und</em> Dominanz in einem System.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;overflow-x:auto">
+        <table class="table">
+          <thead>
+            <tr><th>Merkmal</th><th>Dominant–rezessiv</th><th>Intermediär</th><th>Kodominant</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>F1 (reinerbig × reinerbig)</td><td>einheitlich wie ein Elternteil</td><td>Mischform</td><td>beide Merkmale sichtbar</td></tr>
+            <tr><td>F2-Phänotyp-Verhältnis</td><td>3 : 1</td><td>1 : 2 : 1</td><td>1 : 2 : 1</td></tr>
+            <tr><td>Genotyp = Phänotyp?</td><td>nein (AA = Aa)</td><td>ja, alle 3 unterscheidbar</td><td>ja, alle 3 unterscheidbar</td></tr>
+            <tr><td>Beispiel</td><td>Blütenfarbe Erbse</td><td>Wunderblume (rot×weiß→rosa)</td><td>MN-Blutgruppensystem</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniInter.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniInter.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniInter.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniInter.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- VERTIEFUNG -->
+    <section style="padding:50px 0" data-screen-label="Vertiefung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Für Neugierige</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Vertiefung</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Klapp die Boxen auf für mehr Tiefe.</p>
+      </div>
+
+      <details open="" style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:13px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px;display:flex;align-items:center;gap:10px">Rückkreuzung (Testkreuzung): den Genotyp aufdecken</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0 0 8px">Sieht man einer Pflanze mit dominantem Phänotyp nicht an, ob sie AA oder Aa ist, hilft eine Testkreuzung mit einem homozygot-rezessiven Partner (aa).</p>
+          <p style="margin:0">Sind <b>alle</b> Nachkommen dominant, war das Testtier reinerbig (AA). Spalten sich die Nachkommen <b>1:1</b> auf, war es mischerbig (Aa).</p>
+        </div>
+      </details>
+
+      <details style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:9px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px;display:flex;align-items:center;gap:10px">Kopplung: wenn die Unabhängigkeitsregel nicht gilt</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0">Liegen zwei Gene eng benachbart auf demselben Chromosom, werden sie meist gemeinsam vererbt (Kopplung) — das 9:3:3:1-Verhältnis gilt dann nicht mehr exakt. Nur seltene Crossing-over-Ereignisse während der Meiose trennen gekoppelte Gene wieder.</p>
+        </div>
+      </details>
+
+      <details style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:9px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px;display:flex;align-items:center;gap:10px">Wie sicher sind die Zahlenverhältnisse wirklich?</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0">3:1 oder 9:3:3:1 sind statistische Erwartungswerte, die sich erst bei vielen Nachkommen einstellen — bei wenigen Individuen weicht das beobachtete Verhältnis oft ab. Mit dem Chi-Quadrat-Test lässt sich prüfen, ob eine beobachtete Abweichung noch zufällig ist oder auf eine andere Erklärung (z. B. Kopplung) hindeutet.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- GLOSSAR -->
+    <section id="glossar" style="padding:50px 0" data-screen-label="Glossar">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nachschlagen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Glossar der Fachbegriffe</h2>
+      </div>
+      <dl style="margin:28px 0 0;display:grid;grid-template-columns:220px 1fr;gap:0">
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Genotyp / Phänotyp</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Genotyp = genetische Ausstattung (Allelkombination); Phänotyp = äußerlich erkennbares Erscheinungsbild.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">homozygot / heterozygot</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">homozygot (reinerbig): beide Allele gleich (AA, aa). heterozygot (mischerbig): beide Allele unterschiedlich (Aa).</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">dominant / rezessiv</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Ein dominantes Allel setzt sich im Phänotyp durch; ein rezessives erscheint nur ohne dominantes Gegenstück.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Kreuzungsschema</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Tabellarische Darstellung (Punnett-Quadrat), die alle möglichen Gameten-Kombinationen einer Kreuzung übersichtlich anordnet.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Rückkreuzung (Testkreuzung)</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Kreuzung mit einem homozygot-rezessiven Partner, um den unbekannten Genotyp eines Individuums zu ermitteln.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">intermediärer Erbgang</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Weder Allel dominiert vollständig; die F1 zeigt eine Mischform zwischen beiden Elternmerkmalen.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Kodominanz</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Beide Allele werden im Phänotyp gleichzeitig und unvermischt sichtbar — keine Mischfarbe, sondern beide Merkmale nebeneinander.</dd>
+      </dl>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" style="padding:50px 0 73px" data-screen-label="Quiz">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernkontrolle</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Teste dich selbst</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Zehn Fragen. Beantworte so viele du kannst und klick auf „Auswerten" — du bekommst deine Punktzahl und zu jeder Frage die Erklärung.</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:calc(28px*1.05);padding:clamp(20px,4vw,40px);margin-top:28px">
+        <div style="display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:9px">
+          <span class="tag tag-accent-2">{{ answeredCount }} / {{ totalCount }} beantwortet</span>
+        </div>
+
+        <sc-for list="{{ quiz }}" as="q" hint-placeholder-count="10">
+          <div style="padding:26px 0;border-top:1px solid var(--color-divider)">
+            <span class="tag tag-outline" style="margin-bottom:9px">Frage {{ q.num }}</span>
+            <h4 style="font-family:var(--font-heading);font-size:20px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ q.stem }}</h4>
+
+            <sc-if value="{{ q.isMc }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                  <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">
+                    <span style="flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--color-neutral-400);display:grid;place-items:center"></span>
+                    <span style="flex:1">{{ opt.text }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ q.isCloze }}" hint-placeholder-val="{{ false }}">
+              <select onChange="{{ q.onSelectChange }}" value="{{ q.selectValue }}" style="{{ q.selectStyle }}">
+                <option value="-1">— wählen —</option>
+                <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                  <option value="{{ opt.value }}">{{ opt.text }}</option>
+                </sc-for>
+              </select>
+            </sc-if>
+
+            <sc-if value="{{ q.showExplain }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:13px;font-size:14px;line-height:1.5;background:var(--color-bg);border-radius:16px;padding:13px 18px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+                <b style="color:var(--color-accent-800)">{{ q.resultLabel }} </b>{{ q.explain }}
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:28px">
+          <button type="button" class="btn btn-primary" onClick="{{ grade }}">Auswerten</button>
+          <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+            <button type="button" class="btn btn-secondary" onClick="{{ retry }}">Nochmal versuchen</button>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;margin-top:28px;background:var(--color-bg);border-radius:28px;padding:18px;box-shadow:var(--shadow-sm);align-items:center;gap:18px">
+            <div style="flex:none;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:{{ scoreRingBg }}">
+              <div style="width:92px;height:92px;border-radius:50%;background:var(--color-bg);display:grid;place-items:center;text-align:center">
+                <div>
+                  <span style="font-family:var(--font-heading);font-size:26px;line-height:1;display:block">{{ scorePctLabel }}</span>
+                  <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Punkte</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin:0 0 4px;font-size:24px;font-family:var(--font-heading);font-weight:400">{{ scoreHead }}</h3>
+              <p style="margin:0;font-size:15px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ scoreMsg }}</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="padding:40px clamp(20px,5vw,72px) 73px;font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);max-width:1120px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:40px;width:auto">
+      <span>Selbstlernseite Klassische Genetik I · GK Biologie 12 · Lernwelten – Evangelisches Gymnasium</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1400,&quot;height&quot;:1000},&quot;showGrundbegriffe&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Inhalt&quot;},&quot;monohybridTrait&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;farbe&quot;,&quot;options&quot;:[&quot;farbe&quot;,&quot;form&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Inhalt&quot;}}">
+class Component extends DCLogic {
+  state = {
+    scrollPct: 0,
+    monoSel: null,
+    diSel: null,
+    miniAnswers: {},
+    quizAnswers: {},
+    graded: false,
+    revealedTerms: {},
+    monoEx: {},
+    monoExChecked: false,
+    diEx: {},
+    diExChecked: false,
+    symbolEx: {},
+    symbolChecked: false,
+  };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      this.setState({ scrollPct: pct });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+
+  pairAlleles(a, b) {
+    const aDom = a === a.toUpperCase();
+    const bDom = b === b.toUpperCase();
+    if (aDom && !bDom) return a + b;
+    if (bDom && !aDom) return b + a;
+    return a + b;
+  }
+
+  selectMono(i) { this.setState({ monoSel: i }); }
+  selectDi(i) { this.setState({ diSel: i }); }
+  selectMini(id, i) {
+    this.setState(s => ({ miniAnswers: { ...s.miniAnswers, [id]: i } }));
+  }
+  setQuizAnswer(id, i) {
+    if (this.state.graded) return;
+    this.setState(s => ({ quizAnswers: { ...s.quizAnswers, [id]: i } }));
+  }
+  grade() { this.setState({ graded: true }); }
+  retry() { this.setState({ quizAnswers: {}, graded: false, monoSel: null, diSel: null }); }
+
+  toggleTerm(id) {
+    this.setState(s => ({ revealedTerms: { ...s.revealedTerms, [id]: !s.revealedTerms[id] } }));
+  }
+
+  setMonoEx(idx, val) { this.setState(s => ({ monoEx: { ...s.monoEx, [idx]: val } })); }
+  checkMonoEx() { this.setState({ monoExChecked: true }); }
+  resetMonoEx() { this.setState({ monoEx: {}, monoExChecked: false }); }
+
+  setDiEx(idx, val) { this.setState(s => ({ diEx: { ...s.diEx, [idx]: val } })); }
+  checkDiEx() { this.setState({ diExChecked: true }); }
+  resetDiEx() { this.setState({ diEx: {}, diExChecked: false }); }
+
+  genotypeVariants(genotype) {
+    if (genotype.length === 2) {
+      return [genotype, genotype[1] + genotype[0]];
+    }
+    const l1 = genotype.slice(0, 2), l2 = genotype.slice(2, 4);
+    const perms1 = [l1, l1[1] + l1[0]];
+    const perms2 = [l2, l2[1] + l2[0]];
+    const out = [];
+    perms1.forEach(a => perms2.forEach(b => out.push(a + b)));
+    return out;
+  }
+
+  isExAnswerCorrect(input, genotype) {
+    if (!input) return false;
+    return this.genotypeVariants(genotype).indexOf(input.trim()) !== -1;
+  }
+
+  setSymbol(traitId, which, val) {
+    this.setState(s => ({
+      symbolEx: { ...s.symbolEx, [traitId]: { ...s.symbolEx[traitId], [which]: val } },
+    }));
+  }
+  checkSymbols() { this.setState({ symbolChecked: true }); }
+  resetSymbols() { this.setState({ symbolEx: {}, symbolChecked: false }); }
+
+  evalSymbolPair(dom, rec) {
+    const domT = (dom || '').trim();
+    const recT = (rec || '').trim();
+    if (!domT || !recT) return { status: 'incomplete', msg: 'Trag für beide Ausprägungen einen Buchstaben ein.' };
+    if (domT.length !== 1 || recT.length !== 1) {
+      return { status: 'wrong', msg: 'Verwende jeweils genau einen Buchstaben.' };
+    }
+    if (domT.toLowerCase() !== recT.toLowerCase()) {
+      return { status: 'wrong', msg: `Für ein Merkmal wird nur ein Buchstabe verwendet — „${domT}" und „${recT}" sehen nach zwei verschiedenen Merkmalen aus. Wähle für beide Ausprägungen denselben Buchstaben, nur in unterschiedlicher Groß-/Kleinschreibung.` };
+    }
+    if (domT !== domT.toUpperCase()) {
+      return { status: 'wrong', msg: 'Das dominante Allel wird groß geschrieben.' };
+    }
+    if (recT !== recT.toLowerCase()) {
+      return { status: 'wrong', msg: 'Das rezessive Allel wird klein geschrieben.' };
+    }
+    return { status: 'ok', msg: 'Richtig! Ein Buchstabe für beide Ausprägungen — groß für dominant, klein für rezessiv.' };
+  }
+
+  optionStyle(locked, isCorrect, isSelected) {
+    let border = 'var(--color-divider)';
+    let bg = 'var(--color-bg)';
+    let opacity = '1';
+    if (locked) {
+      if (isCorrect) { border = 'var(--color-accent-2-600)'; bg = 'var(--color-accent-2-100)'; }
+      else if (isSelected) { border = '#b04a3a'; bg = '#f8e2dc'; }
+      else { opacity = '0.55'; }
+    } else if (isSelected) {
+      border = 'var(--color-accent)'; bg = 'var(--color-accent-100)';
+    }
+    return `display:flex;align-items:center;gap:10px;background:${bg};border:1.5px solid ${border};border-radius:999px;padding:11px 16px;cursor:${locked ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);opacity:${opacity};width:100%;transition:border-color .15s,background .15s`;
+  }
+
+  renderVals() {
+    const trait = this.props.monohybridTrait ?? 'farbe';
+    const monoDomAllele = trait === 'form' ? 'R' : 'G';
+    const monoRecAllele = trait === 'form' ? 'r' : 'g';
+    const monoDomLabel = trait === 'form' ? 'rund' : 'gelb';
+    const monoRecLabel = trait === 'form' ? 'runzlig' : 'grün';
+    const monoTraitLabel = trait === 'form' ? 'Samenform' : 'Samenfarbe';
+
+    const monoAlleles = [monoDomAllele, monoRecAllele];
+    const monoRows = monoAlleles.map((rowAllele, ri) => ({
+      label: rowAllele,
+      cells: monoAlleles.map((colAllele, ci) => {
+        const idx = ri * 2 + ci;
+        const genotype = this.pairAlleles(rowAllele, colAllele);
+        const isDominant = genotype.indexOf(monoDomAllele) !== -1;
+        const phenoLabel = isDominant ? monoDomLabel : monoRecLabel;
+        const selected = this.state.monoSel === idx;
+        const bg = isDominant ? 'var(--color-accent-100)' : 'var(--color-accent-2-100)';
+        return {
+          genotype, phenoLabel,
+          style: `display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:64px;border-radius:16px;background:${bg};border:none;cursor:pointer;box-shadow:${selected ? 'inset 0 0 0 3px var(--color-accent)' : 'none'};color:var(--color-text)`,
+          onClick: () => this.selectMono(idx),
+        };
+      }),
+    }));
+    let monoInfo = null, monoInfoEmpty = true;
+    if (this.state.monoSel !== null) {
+      const ri = Math.floor(this.state.monoSel / 2), ci = this.state.monoSel % 2;
+      const cell = monoRows[ri].cells[ci];
+      monoInfoEmpty = false;
+      monoInfo = {
+        genotype: cell.genotype,
+        phenoLabel: cell.phenoLabel,
+        tagLabel: cell.phenoLabel === monoDomLabel ? 'dominanter Phänotyp' : 'rezessiver Phänotyp',
+        text: cell.phenoLabel === monoDomLabel
+          ? `Genotyp ${cell.genotype}: mindestens ein dominantes Allel (${monoDomAllele}) ist vorhanden, daher zeigt sich der dominante Phänotyp „${monoDomLabel}".`
+          : `Genotyp ${cell.genotype}: kein dominantes Allel vorhanden — nur dann erscheint der rezessive Phänotyp „${monoRecLabel}".`,
+      };
+    }
+
+    const monoExRows = monoAlleles.map((rowAllele, ri) => ({
+      label: rowAllele,
+      cells: monoAlleles.map((colAllele, ci) => {
+        const idx = ri * 2 + ci;
+        const genotype = monoRows[ri].cells[ci].genotype;
+        const val = this.state.monoEx[idx] || '';
+        const checked = this.state.monoExChecked;
+        const correct = checked ? this.isExAnswerCorrect(val, genotype) : null;
+        let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+        if (checked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+        return {
+          idx, genotype, val, checked, correct,
+          inputStyle: `width:56px;height:56px;text-align:center;font-family:var(--font-heading);font-size:20px;border-radius:16px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
+          onChange: (e) => this.setMonoEx(idx, e.target.value),
+        };
+      }),
+    }));
+    const monoExAnswered = Object.keys(this.state.monoEx).filter(k => (this.state.monoEx[k] || '').trim() !== '').length;
+    const monoExCorrectCount = monoExRows.flatMap(r => r.cells).filter(c => c.checked && c.correct).length;
+
+    const diGametes = ['RG', 'Rg', 'rG', 'rg'];
+    const diRows = diGametes.map((rowG, ri) => ({
+      label: rowG,
+      cells: diGametes.map((colG, ci) => {
+        const idx = ri * 4 + ci;
+        const locus1 = this.pairAlleles(rowG[0], colG[0]);
+        const locus2 = this.pairAlleles(rowG[1], colG[1]);
+        const genotype = locus1 + locus2;
+        const hasR = locus1.indexOf('R') !== -1;
+        const hasG = locus2.indexOf('G') !== -1;
+        const phenoLabel = (hasR ? 'rund' : 'runzlig') + ', ' + (hasG ? 'gelb' : 'grün');
+        const selected = this.state.diSel === idx;
+        const bg = hasR && hasG ? 'var(--color-accent-100)' : (!hasR && !hasG ? 'var(--color-neutral-200)' : 'var(--color-accent-2-100)');
+        return {
+          genotype, phenoLabel,
+          style: `display:flex;align-items:center;justify-content:center;height:44px;border-radius:12px;background:${bg};border:none;cursor:pointer;box-shadow:${selected ? 'inset 0 0 0 3px var(--color-accent)' : 'none'};color:var(--color-text)`,
+          onClick: () => this.selectDi(idx),
+        };
+      }),
+    }));
+    let diInfo = null, diInfoEmpty = true;
+    if (this.state.diSel !== null) {
+      const ri = Math.floor(this.state.diSel / 4), ci = this.state.diSel % 4;
+      const cell = diRows[ri].cells[ci];
+      diInfoEmpty = false;
+      const frac = cell.phenoLabel === 'rund, gelb' ? '9/16' : (cell.phenoLabel === 'runzlig, grün' ? '1/16' : '3/16');
+      diInfo = {
+        genotype: cell.genotype,
+        phenoLabel: cell.phenoLabel,
+        tagLabel: frac + ' der F2',
+        text: `Genotyp ${cell.genotype} führt zum Phänotyp „${cell.phenoLabel}". Dieser Phänotyp macht ${frac} der gesamten F2-Generation aus.`,
+      };
+    }
+
+    const diExRows = diGametes.map((rowG, ri) => ({
+      label: rowG,
+      cells: diGametes.map((colG, ci) => {
+        const idx = ri * 4 + ci;
+        const genotype = diRows[ri].cells[ci].genotype;
+        const val = this.state.diEx[idx] || '';
+        const checked = this.state.diExChecked;
+        const correct = checked ? this.isExAnswerCorrect(val, genotype) : null;
+        let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+        if (checked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+        return {
+          idx, genotype, val, checked, correct,
+          inputStyle: `width:100%;height:40px;text-align:center;font-family:var(--font-heading);font-size:14px;border-radius:12px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
+          onChange: (e) => this.setDiEx(idx, e.target.value),
+        };
+      }),
+    }));
+    const diExAnswered = Object.keys(this.state.diEx).filter(k => (this.state.diEx[k] || '').trim() !== '').length;
+    const diExCorrectCount = diExRows.flatMap(r => r.cells).filter(c => c.checked && c.correct).length;
+
+    const GRUNDBEGRIFFE_DATA = [
+      { id: 'gen', kicker: 'Erbanlage', title: 'Gen', body: 'Abschnitt der DNA, der die Information für ein Merkmal trägt.' },
+      { id: 'allel', kicker: 'Erbanlage', title: 'Allel', body: 'Eine von mehreren möglichen Ausprägungen eines Gens (z. B. „gelb" oder „grün").' },
+      { id: 'genotyp', kicker: 'Ausstattung', title: 'Genotyp', body: 'Die genetische Ausstattung eines Individuums — welche Allele es trägt.' },
+      { id: 'phaenotyp', kicker: 'Erscheinung', title: 'Phänotyp', body: 'Das äußerlich erkennbare Erscheinungsbild — Ergebnis von Genotyp und Umwelt.' },
+      { id: 'homozygot', kicker: 'Allelkombination', title: 'homozygot (reinerbig)', body: 'Beide Allele eines Gens sind identisch, z. B. AA oder aa.' },
+      { id: 'heterozygot', kicker: 'Allelkombination', title: 'heterozygot (mischerbig)', body: 'Die beiden Allele eines Gens unterscheiden sich, z. B. Aa.' },
+      { id: 'dominant', kicker: 'Durchsetzung', title: 'dominant', body: 'Ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt (Großbuchstabe).' },
+      { id: 'rezessiv', kicker: 'Durchsetzung', title: 'rezessiv', body: 'Ein Allel, das nur dann im Phänotyp erscheint, wenn kein dominantes Allel vorhanden ist.' },
+    ];
+    const grundbegriffe = GRUNDBEGRIFFE_DATA.map(t => {
+      const revealed = !!this.state.revealedTerms[t.id];
+      return {
+        ...t, revealed, onClick: () => this.toggleTerm(t.id),
+        flipStyle: `position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;transform:rotateY(${revealed ? 180 : 0}deg)`,
+        frontStyle: `position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;gap:8px;padding:13px`,
+        backStyle: `position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);display:flex;flex-direction:column;gap:8px;padding:13px;overflow:auto`,
+      };
+    });
+
+    const SYMBOL_TRAITS = [
+      { id: 'stengel', name: 'Stängellänge', domLabel: 'hoch', recLabel: 'niedrig' },
+      { id: 'huelse', name: 'Hülsenfarbe', domLabel: 'grün', recLabel: 'gelb' },
+      { id: 'bluete', name: 'Blütenfarbe', domLabel: 'violett', recLabel: 'weiß' },
+    ];
+    const symbolChecked = this.state.symbolChecked;
+    const symbolTraits = SYMBOL_TRAITS.map(t => {
+      const ex = this.state.symbolEx[t.id] || {};
+      const evalResult = symbolChecked ? this.evalSymbolPair(ex.dom, ex.rec) : null;
+      const fieldStyle = (ok) => {
+        let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+        if (symbolChecked) { border = ok ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = ok ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+        return `width:56px;height:48px;text-align:center;font-family:var(--font-heading);font-size:18px;border-radius:14px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`;
+      };
+      const isOk = evalResult && evalResult.status === 'ok';
+      return {
+        ...t,
+        domVal: ex.dom || '', recVal: ex.rec || '',
+        domStyle: fieldStyle(isOk), recStyle: fieldStyle(isOk),
+        onDomChange: (e) => this.setSymbol(t.id, 'dom', e.target.value),
+        onRecChange: (e) => this.setSymbol(t.id, 'rec', e.target.value),
+        feedback: evalResult ? evalResult.msg : '',
+        showFeedback: !!evalResult,
+        feedbackOk: isOk,
+      };
+    });
+    const symbolAllOk = symbolChecked && symbolTraits.every(t => t.feedbackOk);
+
+    const MINI_DATA = {
+      regeln: { question: 'Welche Regel besagt, dass die Nachkommen der F1-Generation aus einer Kreuzung reinerbiger Eltern in Genotyp und Phänotyp einheitlich sind?', options: ['Spaltungsregel', 'Uniformitätsregel', 'Unabhängigkeitsregel'], correct: 1, feedback: 'Die Uniformitätsregel beschreibt genau diese Einheitlichkeit der F1.' },
+      mono: { question: `Kreuzt man zwei F1-Individuen (${monoDomAllele}${monoRecAllele} × ${monoDomAllele}${monoRecAllele}), welches Phänotyp-Verhältnis erwartet man in der F2?`, options: ['1 : 1', '3 : 1', '9 : 3 : 3 : 1'], correct: 1, feedback: 'Beim monohybriden Erbgang gilt die Spaltungsregel: 3 dominant : 1 rezessiv.' },
+      di: { question: 'Welche Voraussetzung braucht die Unabhängigkeitsregel (freie Kombinierbarkeit)?', options: ['Die Gene liegen eng gekoppelt auf demselben Chromosom', 'Die Gene liegen auf verschiedenen Chromosomen (oder sind unabhängig)', 'Es muss Kodominanz vorliegen'], correct: 1, feedback: 'Nur bei unabhängiger Lage können sich die Merkmale frei neu kombinieren und das 9:3:3:1-Verhältnis ergibt sich.' },
+      inter: { question: 'Wodurch unterscheidet sich Kodominanz vom intermediären Erbgang?', options: ['Bei Kodominanz sind beide Allele im Phänotyp gleichzeitig und unvermischt sichtbar; beim intermediären Erbgang entsteht eine Mischform', 'Kodominanz gibt es nur bei Tieren', 'Beim intermediären Erbgang wird nur ein Allel exprimiert'], correct: 0, feedback: 'Kodominanz zeigt beide Merkmale nebeneinander, der intermediäre Erbgang eine echte Mischform.' },
+    };
+    const miniChecks = Object.keys(MINI_DATA).map(id => {
+      const m = MINI_DATA[id];
+      const sel = this.state.miniAnswers[id];
+      const answered = sel !== undefined;
+      const options = m.options.map((text, i) => ({
+        text,
+        style: this.optionStyle(answered, i === m.correct, i === sel),
+        onClick: () => this.selectMini(id, i),
+      }));
+      return {
+        id, question: m.question, options, answered,
+        feedback: answered ? ((sel === m.correct ? 'Richtig! ' : 'Nicht ganz. ') + m.feedback) : '',
+      };
+    });
+
+    const QUIZ_DATA = [
+      { type: 'mc', stem: 'Reinerbige (homozygote) Elternpflanzen mit rot- bzw. weißblühenden Blüten (dominant-rezessiver Erbgang) werden gekreuzt. Wie sehen die Blüten der F1-Generation aus?', options: ['Alle rot', 'Alle weiß', 'Alle rosa (Mischfarbe)', 'Aufspaltung 3 rot : 1 weiß'], correct: 0, explain: 'Nach der Uniformitätsregel ist die F1 einer Kreuzung reinerbiger Eltern einheitlich — hier einheitlich rot, weil Rot dominant über Weiß ist.' },
+      { type: 'mc', stem: 'Was besagt die Spaltungsregel (2. Mendelsche Regel)?', options: ['Kreuzt man zwei F1-Individuen, spaltet sich die F2 in einem festen, vorhersagbaren Zahlenverhältnis auf', 'Alle Nachkommen der F1 sind untereinander und mit den Eltern identisch', 'Zwei Merkmale werden immer unabhängig voneinander vererbt', 'Rezessive Allele verschwinden nach einer Generation vollständig'], correct: 0, explain: 'Die Spaltungsregel beschreibt das Aufspalten in der F2 — beim monohybriden Erbgang im Verhältnis 3:1 (Phänotyp) bzw. 1:2:1 (Genotyp).' },
+      { type: 'cloze', stem: 'Kreuzt man zwei heterozygote F1-Individuen (Aa × Aa), ergibt sich in der F2 ein Genotyp-Verhältnis von ___.', options: ['1 : 2 : 1', '3 : 1', '9 : 3 : 3 : 1', '1 : 1'], correct: 0, explain: '1 AA : 2 Aa : 1 aa — dieses Genotyp-Verhältnis entspricht dem Phänotyp-Verhältnis 3:1, da AA und Aa denselben Phänotyp zeigen.' },
+      { type: 'mc', stem: 'Welches Phänotyp-Verhältnis erwartet man bei einer dihybriden Kreuzung AaBb × AaBb, wenn beide Gene unabhängig voneinander vererbt werden?', options: ['9 : 3 : 3 : 1', '3 : 1', '1 : 1 : 1 : 1', '1 : 2 : 1'], correct: 0, explain: 'Die Unabhängigkeitsregel sagt für zwei unabhängige, dihybride Merkmale ein Phänotyp-Verhältnis von 9:3:3:1 in der F2 voraus.' },
+      { type: 'cloze', stem: 'Ein Merkmal, bei dem Kreuzungsnachkommen aus zwei reinerbigen Eltern eine Mischform zwischen beiden Elternmerkmalen zeigen, nennt man ___.', options: ['intermediären Erbgang', 'dominant-rezessiven Erbgang', 'Rückkreuzung'], correct: 0, explain: 'Beim intermediären Erbgang setzt sich kein Allel vollständig durch — die F1 zeigt eine Mischform, z. B. rosa Blüten aus rot × weiß.' },
+      { type: 'mc', stem: 'Bei der Wunderblume (Mirabilis jalapa) ergibt rot × weiß in der F1 rosa Blüten. Was erwartet man bei Kreuzung zweier rosa F1-Pflanzen?', options: ['1 rot : 2 rosa : 1 weiß', '3 rot : 1 weiß', 'Alle Nachkommen rosa', '9 rot : 3 rosa : 3 weiß : 1 andere'], correct: 0, explain: 'Beim intermediären Erbgang entspricht das Genotyp-Verhältnis 1:2:1 direkt dem Phänotyp-Verhältnis, weil jeder Genotyp eine eigene, sichtbare Mischfarbe zeigt.' },
+      { type: 'mc', stem: 'Warum zeigt die F1 beim intermediären Erbgang eine Mischform, obwohl je ein Allel von jedem Elternteil geerbt wird?', options: ['Weil keines der beiden Allele das andere vollständig dominiert — beide tragen anteilig zum Phänotyp bei', 'Weil sich die DNA beider Eltern im Zellkern chemisch vermischt', 'Weil eines der Allele durch Mutation verändert wurde', 'Weil die Merkmale auf demselben Chromosom liegen'], correct: 0, explain: 'Intermediär heißt: weder das eine noch das andere Allel ist vollständig dominant, daher liegt der Phänotyp „in der Mitte".' },
+      { type: 'mc', stem: 'Welche Aussage zur Kodominanz ist richtig?', options: ['Beide Allele werden im Phänotyp gleichzeitig und unvermischt sichtbar', 'Ein Allel unterdrückt das andere vollständig', 'Es entsteht immer eine gleichmäßige Mischfarbe wie beim intermediären Erbgang', 'Kodominanz tritt nur bei rezessiven Allelen auf'], correct: 0, explain: 'Bei Kodominanz (z. B. MN-Blutgruppensystem) werden beide Allele eigenständig und nebeneinander erkennbar exprimiert — anders als die Mischfarbe des intermediären Erbgangs.' },
+      { type: 'mc', stem: 'Wozu dient eine Rückkreuzung (Testkreuzung) mit einem homozygot-rezessiven Partner?', options: ['Um den unbekannten Genotyp eines phänotypisch dominanten Individuums zu bestimmen', 'Um die Chromosomenzahl einer Art zu bestimmen', 'Um gezielt eine neue Mutation auszulösen', 'Um zwei verschiedene Arten zu kreuzen'], correct: 0, explain: 'Da der rezessive Partner keine dominanten Allele einbringt, verrät das Nachkommen-Verhältnis, ob das Testtier homozygot oder heterozygot war.' },
+      { type: 'mc', stem: 'Genotyp und Phänotyp — welche Aussage ist korrekt?', options: ['Der Genotyp ist die genetische Ausstattung, der Phänotyp das äußerlich erkennbare Erscheinungsbild', 'Genotyp und Phänotyp sind gleichbedeutend', 'Der Phänotyp bestimmt immer eindeutig den Genotyp', 'Der Genotyp verändert sich im Laufe des Lebens'], correct: 0, explain: 'Aa und AA können denselben dominanten Phänotyp zeigen, obwohl ihr Genotyp unterschiedlich ist.' },
+    ];
+
+    const graded = this.state.graded;
+    let correctCount = 0;
+    const quiz = QUIZ_DATA.map((q, qi) => {
+      const id = 'q' + qi;
+      const sel = this.state.quizAnswers[id];
+      const answered = sel !== undefined && sel !== -1;
+      if (graded && answered && sel === q.correct) correctCount++;
+      const isMc = q.type === 'mc';
+      const isCloze = q.type === 'cloze';
+      const base = { id, num: qi + 1, stem: q.stem, isMc, isCloze, explain: q.explain };
+      if (isMc) {
+        base.options = q.options.map((text, i) => ({
+          text,
+          style: this.optionStyle(graded, i === q.correct, i === sel),
+          onClick: () => this.setQuizAnswer(id, i),
+        }));
+      } else {
+        base.options = q.options.map((text, i) => ({ text, value: String(i) }));
+        base.selectValue = sel !== undefined ? String(sel) : '-1';
+        const borderColor = graded ? (sel === q.correct ? 'var(--color-accent-2-600)' : (answered ? '#b04a3a' : 'var(--color-divider)')) : 'var(--color-divider)';
+        const selBg = graded ? (sel === q.correct ? 'var(--color-accent-2-100)' : (answered ? '#f8e2dc' : 'var(--color-bg)')) : 'var(--color-bg)';
+        base.selectStyle = `font-family:var(--font-body);font-size:15px;background:${selBg};border:1.5px solid ${borderColor};border-radius:999px;padding:8px 16px;color:var(--color-text);cursor:${graded ? 'default' : 'pointer'}`;
+        base.onSelectChange = (e) => this.setQuizAnswer(id, Number(e.target.value));
+      }
+      base.showExplain = graded;
+      base.resultLabel = graded ? (sel === q.correct ? 'Richtig!' : 'Nicht ganz.') : '';
+      return base;
+    });
+
+    const totalCount = QUIZ_DATA.length;
+    const answeredCount = Object.keys(this.state.quizAnswers).filter(k => this.state.quizAnswers[k] !== -1).length;
+    const scorePct = graded ? Math.round((correctCount / totalCount) * 100) : 0;
+    const scoreHead = graded
+      ? (scorePct >= 80 ? 'Stark!' : scorePct >= 50 ? 'Guter Start' : 'Noch üben')
+      : '—';
+    const scoreMsg = graded ? `${correctCount} von ${totalCount} Fragen richtig beantwortet.` : '';
+
+    const miniById = {};
+    miniChecks.forEach(m => { miniById[m.id] = m; });
+
+    return {
+      navProgressStyle: `position:absolute;left:0;bottom:0;height:3px;background:var(--color-accent);transition:width .1s linear;width:${this.state.scrollPct}%`,
+      showGrundbegriffe: this.props.showGrundbegriffe ?? true,
+      grundbegriffe,
+      symbolTraits, symbolChecked, symbolAllOk,
+      checkSymbols: () => this.checkSymbols(), resetSymbols: () => this.resetSymbols(),
+      monoDomAllele, monoRecAllele, monoDomLabel, monoRecLabel, monoTraitLabel,
+      monoRows, monoInfo, monoInfoEmpty,
+      monoExRows, monoExChecked: this.state.monoExChecked, monoExAnswered, monoExCorrectCount, monoExTotal: 4,
+      checkMonoEx: () => this.checkMonoEx(), resetMonoEx: () => this.resetMonoEx(),
+      diGametes, diRows, diInfo, diInfoEmpty,
+      diExRows, diExChecked: this.state.diExChecked, diExAnswered, diExCorrectCount, diExTotal: 16,
+      checkDiEx: () => this.checkDiEx(), resetDiEx: () => this.resetDiEx(),
+      miniRegeln: miniById.regeln, miniMono: miniById.mono, miniDi: miniById.di, miniInter: miniById.inter,
+      quiz, totalCount, answeredCount,
+      graded,
+      scorePctLabel: scorePct + '%',
+      scoreRingBg: `conic-gradient(var(--color-accent) ${scorePct * 3.6}deg, var(--color-neutral-200) 0)`,
+      scoreHead, scoreMsg,
+      grade: () => this.grade(),
+      retry: () => this.retry(),
+    };
+  }
+}
+</script>
+</body>
+</html>

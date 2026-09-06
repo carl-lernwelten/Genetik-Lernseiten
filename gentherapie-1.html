@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Gentherapie I · Selbstlernseite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/styles.css">
+  <script src="_ds/organic-61b2241e-121d-4a7c-8b0a-d5816f7eba61/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; }
+  </style>
+  <script src="./image-slot.js"></script>
+</helmet>
+
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:clip;text-wrap:pretty" data-screen-label="Selbstlernseite">
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:24px;padding:13px clamp(20px,5vw,72px);background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(8px)">
+    <span style="display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:18px">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:32px;width:auto;display:block">
+      <span style="width:1px;height:24px;background:var(--color-divider)"></span>
+      <span style="font-family:var(--font-body);font-size:12px;line-height:1.15;color:color-mix(in srgb,var(--color-text) 62%,transparent);font-weight:600">GK Biologie 12<br>Genetik</span>
+    </span>
+    <span style="flex:1"></span>
+    <a href="index.html" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Übersicht</a>
+    <a href="#fallbeispiel" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Fallbeispiel</a>
+    <a href="#vektoren" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Vektoren</a>
+    <a href="#crispr" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">CRISPR/Cas</a>
+    <a href="#glossar" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Glossar</a>
+    <a class="btn btn-primary" href="#quiz">Zum Quiz</a>
+    <div style="{{ navProgressStyle }}"></div>
+  </nav>
+
+  <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <!-- HERO -->
+    <header style="position:relative;padding:73px 0 50px" data-screen-label="Intro">
+      <div style="position:absolute;right:-40px;top:-140px;width:380px;height:380px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;pointer-events:none"></div>
+      <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernwelten · Evangelisches Gymnasium · GK Biologie 12</span>
+      <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:20ch">Gentherapie I — Grundlagen</h1>
+      <p style="font-size:19px;line-height:28px;margin:20px 0 0;max-width:64ch;color:var(--color-text)">Wie bringt man ein gesundes Gen in eine kranke Zelle? Am Beispiel der somatischen Gentherapie bei spinaler Muskelatrophie lernst du Vektoren, Transformationsmethoden und die Genschere CRISPR/Cas kennen.</p>
+      <div style="display:flex;gap:13px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-primary" href="#einstieg">Los geht's</a>
+        <a class="btn btn-secondary" href="#quiz">Direkt zum Quiz</a>
+        <a class="btn btn-ghost" href="gentherapie-2.html">Weiter zu Gentherapie II →</a>
+      </div>
+    </header>
+
+    <!-- EINORDNUNG -->
+    <section style="padding:50px 0" data-screen-label="Einordnung">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Der große Überblick</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Wo steht dieses Thema im Lernbereich?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Was macht man eigentlich, wenn man eine Erbkrankheit nicht nur erkennen, sondern tatsächlich behandeln will? Genau an diesem Punkt setzt dieser Block an. Die Klausur hat die Diagnostik abgeschlossen — du weißt jetzt, wie man Erbkrankheiten über Stammbäume, Karyogramme oder Gentests nachweist. Jetzt geht es um die nächste, deutlich schwierigere Frage: Wie greift man gezielt ins Erbgut ein, um eine Krankheit tatsächlich zu therapieren? Dieser Block liefert dir dafür das molekularbiologische Handwerkszeug — Vektoren, Transformationsmethoden und die Genschere CRISPR/Cas. Block 8 baut direkt darauf auf und fragt, was davon erlaubt sein sollte und wo ethische Grenzen liegen.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:28px">
+        <a href="arbeitstechniken.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 5</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Arbeitstechniken</span>
+        </a>
+        <a style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 6</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Klausur</span>
+        </a>
+        <div style="flex:1 1 140px;background:var(--color-accent-100);box-shadow:inset 0 0 0 2px var(--color-accent-300);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 7 · Ustd 13–14</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Gentherapie I</span>
+        </div>
+        <a href="gentherapie-2.html" style="text-decoration:none;color:inherit;flex:1 1 140px;background:var(--color-surface);border-radius:28px;padding:13px 18px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--color-accent-700);font-weight:600">Block 8</span>
+          <span style="font-family:var(--font-heading);font-size:16px;line-height:1.15">Gentherapie II</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- EINSTIEGSFRAGEN -->
+    <section id="einstieg" style="padding:50px 0" data-screen-label="Einstiegsfragen">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Bevor es los geht</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Einstiegsfragen</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Nimm dir zunächst <b><u>15 Minuten Zeit</u></b>. Überlege dir zu jeder Frage kurz eine eigene Antwort, bevor du weiterliest — es gibt hier kein „richtig" oder „falsch". Am Ende des Blocks lohnt es sich, nochmal draufzuschauen: Hat sich deine Einschätzung verändert?</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:28px">
+        <sc-for list="{{ einstiegsfragen }}" as="f" hint-placeholder-count="7">
+          <details style="background:var(--color-surface);border-radius:20px;padding:0;overflow:hidden">
+            <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:16px;display:flex;gap:10px"><span style="color:var(--color-accent-700);flex:none">{{ f.num }}.</span>{{ f.text }}</summary>
+            <div style="padding:0 18px 16px;font-size:14px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ f.hint }}</div>
+          </details>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- SOMATISCH VS KEIMBAHN -->
+    <section style="padding:50px 0" data-screen-label="Somatisch vs Keimbahn">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Grundunterscheidung</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Was ist Gentherapie überhaupt?</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Stell dir vor, ein einziger fehlerhafter Abschnitt in deiner DNA entscheidet darüber, ob deine Muskeln funktionieren oder nicht — bei vielen Erbkrankheiten ist genau das der Fall. Die Gentherapie setzt an dieser Stelle an: Sie schleust gezielt Erbmaterial in Zellen eines Patienten ein, um eine Krankheit direkt an ihrer genetischen Ursache zu behandeln — meist, indem ein defektes Gen durch eine funktionsfähige Kopie ergänzt wird. Doch nicht jede Zelle im Körper eignet sich gleich gut dafür, und die Wahl der Zielzellen hat weitreichende Folgen. Wird nur eine Körperzelle verändert, betrifft die Therapie ausschließlich die behandelte Person. Verändert man dagegen Keimzellen oder frühe Embryonen, würde sich die Veränderung an alle nachfolgenden Generationen weitervererben. Genau <b>diese</b> Unterscheidung entscheidet darüber, was medizinisch möglich und was gesetzlich erlaubt ist.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">In Deutschland zulässig</span>
+          <div class="card-title">Somatische Gentherapie</div>
+          <p class="card-body">Nur Körperzellen (z. B. Muskel-, Leber- oder Nervenzellen) des Patienten werden verändert. Die Veränderung wirkt nur bei dieser Person und wird <b>nicht</b> an Nachkommen weitergegeben.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">In Deutschland verboten</span>
+          <div class="card-title">Keimbahntherapie</div>
+          <p class="card-body">Eizellen, Samenzellen oder frühe Embryonen würden verändert — die Veränderung wäre vererbbar. Das Embryonenschutzgesetz verbietet dies (mehr dazu in Block 8).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FALLBEISPIEL -->
+    <section id="fallbeispiel" style="padding:50px 0" data-screen-label="Fallbeispiel">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Fallbeispiel</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Spinale Muskelatrophie &amp; Zolgensma</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Was, wenn eine einzige Infusion darüber entscheiden könnte, ob ein Kind jemals frei sitzen oder selbstständig atmen kann? Bei der spinalen Muskelatrophie ist genau das inzwischen möglich. Die spinale Muskelatrophie (SMA) ist eine seltene, autosomal-rezessiv vererbte Erkrankung: Eine Mutation im <b>SMN1-Gen</b> führt dazu, dass Motoneuronen — die Nervenzellen, die deine Muskulatur steuern — nach und nach absterben. Unbehandelt verlieren betroffene Kinder in schweren Fällen zunehmend die Kontrolle über ihre Muskeln und können nie frei sitzen oder selbstständig atmen. Je früher die Erkrankung erkannt wird, desto mehr Motoneuronen lassen sich retten — deshalb gehört SMA in vielen Ländern inzwischen zum Neugeborenen-Screening. Genau hier setzt die Gentherapie Zolgensma an, die du im Folgenden näher kennenlernst.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:22px;margin-top:28px;align-items:start">
+        <image-slot id="th-zolgensma" shape="rounded" radius="20" placeholder="Bild: Infusion / Vektorpartikel (Illustration)" style="width:100%;height:260px"></image-slot>
+        <div>
+          <div class="card elev-sm">
+            <span class="card-kicker">Wirkprinzip</span>
+            <div class="card-title">Genersatz statt Symptombehandlung</div>
+            <p class="card-body">Reicht wirklich eine einzige Infusion für eine dauerhafte Wirkung? Bei Zolgensma lautet der Anspruch genau so. Das Medikament schleust mithilfe eines viralen Vektors eine funktionsfähige Kopie des SMN1-Gens in die Motoneuronen ein — mit nur einer einzigen intravenösen Infusion. Die Zellen lesen das neue Gen ab und bilden daraus selbst wieder ausreichend SMN-Protein, das ihnen bisher fehlte. Damit wird die genetische Ursache der Erkrankung direkt behoben und nicht nur ihre Folgen gelindert. Je früher die Behandlung erfolgt, desto mehr Motoneuronen lassen sich auf diese Weise retten.</p>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniZolgensma.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniZolgensma.options }}" as="opt" hint-placeholder-count="3">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniZolgensma.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniZolgensma.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- VEKTOREN / TRANSFORMATIONSMETHODEN -->
+    <section id="vektoren" style="padding:50px 0" data-screen-label="Vektoren">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Wie kommt das Gen in die Zelle?</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Transformationsmethoden &amp; Vektoren</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Wie schmuggelt man ein ganzes Gen an der Zellmembran vorbei, ohne die Zelle dabei zu beschädigen? Genau dieses Problem muss jede Gentherapie lösen, bevor sie überhaupt wirken kann. Die Lösung heißt <b>Vektor</b> — eine Art „Genfähre", die fremde DNA sicher in eine Zelle hineinbringt. Das Grundprinzip kennst du bereits aus der Gentechnik bei Bakterien: Man schneidet ein <b>Plasmid</b> mit einem Restriktionsenzym auf, fügt die gewünschte DNA ein und verschließt es wieder mit Ligase. Das rekombinante Plasmid wird anschließend in die Zielzelle eingebracht — diesen Vorgang nennt man Transformation. Beim Menschen ist die Aufgabe jedoch ungleich komplizierter, denn hier reicht kein einfaches Bakterium als Zielzelle mehr, sondern es müssen gezielt bestimmte Körperzellen erreicht werden.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">Bei Bakterien</span>
+          <div class="card-title">Plasmid-Vektoren</div>
+          <p class="card-body">Ringförmige DNA-Moleküle, die zusätzlich zum Bakterienchromosom vorkommen und leicht mit Fremd-DNA beladen werden können.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Beim Menschen</span>
+          <div class="card-title">Virale Vektoren</div>
+          <p class="card-body">Ungefährlich gemachte Viren (z. B. Adeno-assoziierte Viren, AAV) schleusen ihr Erbgut von Natur aus effizient in Zellen ein — man nutzt diese Fähigkeit, um stattdessen ein Therapiegen einzubringen.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Ohne Virus</span>
+          <div class="card-title">Nicht-virale Methoden</div>
+          <p class="card-body">Elektroporation (kurze Stromstöße machen die Zellmembran durchlässig) oder Lipid-Nanopartikel (Fetthüllen, die mit der Zellmembran verschmelzen) transportieren DNA/RNA ohne Virus.</p>
+        </div>
+      </div>
+      <details style="background:var(--color-surface);border-radius:28px;padding:0;margin-top:18px;overflow:hidden">
+        <summary style="list-style:none;cursor:pointer;padding:13px 18px;font-family:var(--font-heading);font-size:17px">Warum AAV9 bei Zolgensma besonders geeignet ist</summary>
+        <div style="padding:0 18px 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 85%,transparent)">
+          <p style="margin:0">Warum ausgerechnet ein Virus als Werkzeug, wenn Viren doch normalerweise Krankheiten auslösen? Die Antwort liegt in ihrer Fähigkeit, äußerst effizient in Zellen einzudringen — genau diese Eigenschaft macht man sich in der Gentherapie zunutze. Der Vektor bei Zolgensma basiert auf einem Adeno-assoziierten Virus vom Serotyp 9 (AAV9). Dieser Serotyp kann die Blut-Hirn-Schranke überwinden und so auch Motoneuronen im Rückenmark und Gehirn erreichen, die für viele andere Wirkstoffe unzugänglich bleiben. Der Vektor ist zudem gentechnisch so verändert, dass er sich nicht mehr selbst vermehren kann und sich nicht in das Erbgut der Wirtszelle einbaut. Das Therapiegen bleibt stattdessen als separates, ringförmiges Molekül im Zellkern erhalten und wird von der Zelle wie ein eigenes Gen abgelesen.</p>
+        </div>
+      </details>
+
+      <div style="background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-2-700);margin-bottom:6px"><span aria-hidden="true">✓</span> Kurz geprüft</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ miniVektoren.question }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ miniVektoren.options }}" as="opt" hint-placeholder-count="4">
+            <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">{{ opt.text }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ miniVektoren.answered }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ miniVektoren.feedback }}</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- CRISPR -->
+    <section id="crispr" style="padding:50px 0" data-screen-label="CRISPR/Cas">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Die „Genschere"</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">CRISPR/Cas</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Was, wenn man nicht nur ein zusätzliches Gen einschleusen, sondern das Erbgut direkt an Ort und Stelle umschreiben könnte? Genau das ermöglicht <b>CRISPR/Cas</b> — eines der einflussreichsten Werkzeuge der modernen Biologie. Während Zolgensma ein zusätzliches, funktionsfähiges Gen einschleust, kann man mit CRISPR/Cas das Erbgut direkt an einer bestimmten Stelle verändern — daher der Spitzname „Genschere". Ursprünglich ist CRISPR/Cas gar keine menschliche Erfindung, sondern ein bakterielles Abwehrsystem: Bakterien nutzen es, um sich das Erbgut eindringender Viren zu „merken" und es beim nächsten Angriff gezielt zu zerschneiden. Forschende haben dieses natürliche System so umgebaut, dass es an praktisch jeder gewünschten Stelle im Genom schneiden kann. Damit lässt sich Erbgut heute so gezielt bearbeiten wie nie zuvor.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
+        <div class="card elev-sm">
+          <span class="card-kicker">Bauteil 1</span>
+          <div class="card-title">guide-RNA</div>
+          <p class="card-body">Eine kurze RNA-Sequenz, die komplementär zur Zielsequenz im Genom ist — sie „navigiert" das System zur richtigen Stelle.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Bauteil 2</span>
+          <div class="card-title">Cas-Protein (Schere)</div>
+          <p class="card-body">Ein Enzym, das an der von der guide-RNA markierten Stelle die DNA durchschneidet.</p>
+        </div>
+        <div class="card elev-sm">
+          <span class="card-kicker">Danach</span>
+          <div class="card-title">Zelleigene Reparatur</div>
+          <p class="card-body">Die Zelle repariert den Doppelstrangbruch selbst — dabei kann ein Gen gezielt ausgeschaltet oder (mit passender Vorlage) korrigiert werden.</p>
+        </div>
+      </div>
+      <div style="background:var(--color-accent-100);border-radius:28px;padding:13px 18px;margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700);margin-bottom:6px"><span aria-hidden="true">⇅</span> Aufgabe</div>
+        <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.25;margin:0 0 13px;font-weight:400">Bringe die Schritte des CRISPR/Cas-Mechanismus in die richtige Reihenfolge.</p>
+        <p style="font-size:13.5px;line-height:1.5;margin:0 0 13px;color:color-mix(in srgb,var(--color-text) 75%,transparent)">Klicke die vier Kärtchen in der Reihenfolge an, in der die Schritte deiner Meinung nach ablaufen.</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ crisprSteps }}" as="step" hint-placeholder-count="4">
+            <button type="button" onClick="{{ step.onClick }}" style="{{ step.style }}">
+              <span style="{{ step.badgeStyle }}">{{ step.number }}</span>
+              <span style="flex:1">{{ step.text }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:13px">
+          <button type="button" class="btn btn-primary" disabled="{{ crisprCheckDisabled }}" onClick="{{ checkCrispr }}" style="{{ crisprCheckBtnStyle }}">Prüfen</button>
+          <button type="button" class="btn btn-secondary" onClick="{{ resetCrispr }}">Zurücksetzen</button>
+        </div>
+        <sc-if value="{{ crisprChecked }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:13px 0 0;font-size:14px;line-height:1.5">{{ crisprResultMsg }}</p>
+        </sc-if>
+      </div>
+
+      <p style="font-size:16.5px;line-height:28px;margin-top:18px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Klingt zu einfach, um wahr zu sein? Ganz so simpel ist CRISPR/Cas in der praktischen Anwendung dann doch nicht — aber im Vergleich zu älteren Genschere-Verfahren ist die Technik erstaunlich präzise, schnell und günstig herzustellen. Genau diese Kombination hat CRISPR/Cas innerhalb weniger Jahre zu einem der wichtigsten Werkzeuge der Forschung gemacht, von der Grundlagenforschung bis zu ersten zugelassenen Therapien. Gleichzeitig wächst mit der Präzision auch die Reichweite der Technik: Was heute einzelne Körperzellen heilt, könnte theoretisch auch dauerhaft ins Erbgut ganzer Populationen eingreifen. Genau diese Möglichkeit wirft drängende ethische Fragen auf — wer entscheidet, was „krank" ist und was verändert werden darf? Mit diesen Fragen beschäftigst du dich vertieft in Block 8.</p>
+    </section>
+
+    <!-- GLOSSAR -->
+    <section id="glossar" style="padding:50px 0" data-screen-label="Glossar">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nachschlagen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Glossar der Fachbegriffe</h2>
+      </div>
+      <dl style="margin:28px 0 0;display:grid;grid-template-columns:220px 1fr;gap:0">
+        <sc-for list="{{ glossar }}" as="g" hint-placeholder-count="8">
+          <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">{{ g.term }}</dt>
+          <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ g.def }}</dd>
+        </sc-for>
+      </dl>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" style="padding:50px 0 73px" data-screen-label="Quiz">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernkontrolle</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Teste dich selbst</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Zehn Fragen zu Gentherapie, Vektoren und CRISPR/Cas. Beantworte so viele du kannst und klick auf „Auswerten".</p>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:calc(28px*1.05);padding:clamp(20px,4vw,40px);margin-top:28px">
+        <div style="display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:9px">
+          <span class="tag tag-accent-2">{{ answeredCount }} / {{ totalCount }} beantwortet</span>
+        </div>
+
+        <sc-for list="{{ quiz }}" as="q" hint-placeholder-count="10">
+          <div style="padding:26px 0;border-top:1px solid var(--color-divider)">
+            <span class="tag tag-outline" style="margin-bottom:9px">Frage {{ q.num }}</span>
+            <h4 style="font-family:var(--font-heading);font-size:20px;line-height:1.25;margin:0 0 13px;font-weight:400">{{ q.stem }}</h4>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ q.options }}" as="opt" hint-placeholder-count="4">
+                <button type="button" onClick="{{ opt.onClick }}" style="{{ opt.style }}">
+                  <span style="flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--color-neutral-400);display:grid;place-items:center"></span>
+                  <span style="flex:1">{{ opt.text }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ q.showExplain }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:13px;font-size:14px;line-height:1.5;background:var(--color-bg);border-radius:16px;padding:13px 18px;box-shadow:inset 0 0 0 1px var(--color-divider)">
+                <b style="color:var(--color-accent-800)">{{ q.resultLabel }} </b>{{ q.explain }}
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:28px">
+          <button type="button" class="btn btn-primary" onClick="{{ grade }}">Auswerten</button>
+          <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+            <button type="button" class="btn btn-secondary" onClick="{{ retry }}">Nochmal versuchen</button>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ graded }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;margin-top:28px;background:var(--color-bg);border-radius:28px;padding:18px;box-shadow:var(--shadow-sm);align-items:center;gap:18px">
+            <div style="flex:none;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:{{ scoreRingBg }}">
+              <div style="width:92px;height:92px;border-radius:50%;background:var(--color-bg);display:grid;place-items:center;text-align:center">
+                <div>
+                  <span style="font-family:var(--font-heading);font-size:26px;line-height:1;display:block">{{ scorePctLabel }}</span>
+                  <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Punkte</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin:0 0 4px;font-size:24px;font-family:var(--font-heading);font-weight:400">{{ scoreHead }}</h3>
+              <p style="margin:0;font-size:15px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ scoreMsg }}</p>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="padding:40px clamp(20px,5vw,72px) 73px;font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);max-width:1120px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:40px;width:auto">
+        <span>Gentherapie I · GK Biologie 12 · Lernwelten – Evangelisches Gymnasium</span>
+      </div>
+      <a class="btn btn-ghost" href="gentherapie-2.html">Weiter zu Gentherapie II →</a>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrollPct: 0, miniAnswers: {}, quizAnswers: {}, graded: false, crisprOrder: [], crisprChecked: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      this.setState({ scrollPct: pct });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
+
+  selectMini(id, i) { this.setState(s => ({ miniAnswers: { ...s.miniAnswers, [id]: i } })); }
+  setQuizAnswer(id, i) {
+    if (this.state.graded) return;
+    this.setState(s => ({ quizAnswers: { ...s.quizAnswers, [id]: i } }));
+  }
+  grade() { this.setState({ graded: true }); }
+  retry() { this.setState({ quizAnswers: {}, graded: false }); }
+
+  pickCrisprStep(i) {
+    if (this.state.crisprChecked) return;
+    if (this.state.crisprOrder.includes(i)) return;
+    if (this.state.crisprOrder.length >= 4) return;
+    this.setState(s => ({ crisprOrder: [...s.crisprOrder, i] }));
+  }
+  resetCrispr() { this.setState({ crisprOrder: [], crisprChecked: false }); }
+  checkCrispr() { if (this.state.crisprOrder.length === 4) this.setState({ crisprChecked: true }); }
+
+  optionStyle(locked, isCorrect, isSelected) {
+    let border = 'var(--color-divider)', bg = 'var(--color-bg)', opacity = '1';
+    if (locked) {
+      if (isCorrect) { border = 'var(--color-accent-2-600)'; bg = 'var(--color-accent-2-100)'; }
+      else if (isSelected) { border = '#b04a3a'; bg = '#f8e2dc'; }
+      else { opacity = '0.55'; }
+    } else if (isSelected) { border = 'var(--color-accent)'; bg = 'var(--color-accent-100)'; }
+    return `display:flex;align-items:center;gap:10px;background:${bg};border:1.5px solid ${border};border-radius:999px;padding:11px 16px;cursor:${locked ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);opacity:${opacity};width:100%;transition:border-color .15s,background .15s`;
+  }
+
+  renderVals() {
+    const EINSTIEGSFRAGEN_DATA = [
+      { text: 'Was versteht ihr unter dem Begriff „Gentherapie"? Könnt ihr ein Beispiel nennen?', hint: 'Denk an Krankheiten, die durch ein defektes Gen verursacht werden.' },
+      { text: 'Was sind Gene und welche Rolle spielen sie in unserem Körper?', hint: 'Bausteine der Erbinformation, die Bauanleitungen für Proteine liefern.' },
+      { text: 'Wie könnten Gene manipuliert werden, um Krankheiten zu behandeln oder zu heilen?', hint: 'Ein defektes Gen ergänzen, ausschalten oder korrigieren.' },
+      { text: 'Was sind die potenziellen Vorteile der Gentherapie? Könnt ihr euch Situationen vorstellen, in denen sie besonders nützlich sein könnte?', hint: 'Ursache statt Symptome behandeln, ggf. einmalige Behandlung statt Dauertherapie.' },
+      { text: 'Was sind die potenziellen Nachteile oder Risiken der Gentherapie? Gibt es ethische Bedenken?', hint: 'Nebenwirkungen, hohe Kosten, ungewisse Langzeitfolgen, Fragen zu Zugang und Gerechtigkeit.' },
+      { text: 'Habt ihr von realen Fällen gehört, in denen die Gentherapie angewendet wurde? Was waren die Ergebnisse?', hint: 'Zolgensma bei SMA ist ein Beispiel, das du auf dieser Seite näher kennenlernst.' },
+      { text: 'Wie denkt ihr, wird die Gentherapie die Medizin in der Zukunft beeinflussen?', hint: 'Es gibt keine „richtige" Antwort — deine Einschätzung ist gefragt.' },
+    ];
+    const einstiegsfragen = EINSTIEGSFRAGEN_DATA.map((f, i) => ({ num: i + 1, ...f }));
+
+    const MINI_DATA = {
+      zolgensma: { question: 'Warum zählt die Behandlung mit Zolgensma zur somatischen (nicht zur Keimbahn-) Gentherapie?', options: ['Weil nur Körperzellen (Motoneuronen) behandelt werden, nicht Ei- oder Samenzellen', 'Weil sie nur bei erwachsenen Patienten angewendet wird', 'Weil kein Vektor verwendet wird', 'Weil sie das Erbgut dauerhaft in die DNA einbaut'], correct: 0, feedback: 'Die Veränderung betrifft ausschließlich Motoneuronen des Patienten — sie wird nicht an Nachkommen weitergegeben.' },
+      vektoren: { question: 'Was unterscheidet virale von nicht-viralen Vektoren?', options: ['Virale Vektoren nutzen die natürliche Fähigkeit von Viren, effizient in Zellen einzudringen; nicht-virale Methoden wie Elektroporation kommen ohne Virus aus', 'Nicht-virale Methoden funktionieren nur bei Pflanzenzellen', 'Virale Vektoren werden nie beim Menschen eingesetzt', 'Plasmide zählen zu den viralen Vektoren'], correct: 0, feedback: 'Beide Wege verfolgen dasselbe Ziel — DNA sicher in die Zelle zu bringen — nur mit unterschiedlichen Transportmitteln.' },
+    };
+    const miniChecks = Object.keys(MINI_DATA).map(id => {
+      const m = MINI_DATA[id];
+      const sel = this.state.miniAnswers[id];
+      const answered = sel !== undefined;
+      const options = m.options.map((text, i) => ({ text, style: this.optionStyle(answered, i === m.correct, i === sel), onClick: () => this.selectMini(id, i) }));
+      return { id, question: m.question, options, answered, feedback: answered ? ((sel === m.correct ? 'Richtig! ' : 'Nicht ganz. ') + m.feedback) : '' };
+    });
+    const miniById = {}; miniChecks.forEach(m => { miniById[m.id] = m; });
+
+    const GLOSSAR_DATA = [
+      { term: 'Somatische Gentherapie', def: 'Veränderung von Körperzellen eines Patienten — die Wirkung bleibt auf diese Person begrenzt und ist nicht vererbbar.' },
+      { term: 'Keimbahntherapie', def: 'Veränderung von Keimzellen oder frühen Embryonen — wäre vererbbar; in Deutschland durch das Embryonenschutzgesetz verboten.' },
+      { term: 'Vektor', def: 'Transportmittel (z. B. virale Hülle oder Plasmid), das therapeutische DNA in Zielzellen einschleust.' },
+      { term: 'AAV (Adeno-assoziiertes Virus)', def: 'Häufig genutzter, ungefährlich gemachter viraler Vektor für die Gentherapie.' },
+      { term: 'Transformation', def: 'Aufnahme fremder DNA (z. B. eines rekombinanten Vektors) durch eine Zelle.' },
+      { term: 'CRISPR/Cas', def: 'Molekulares Werkzeug („Genschere"), das mithilfe einer guide-RNA gezielt DNA an einer bestimmten Stelle schneidet.' },
+      { term: 'guide-RNA', def: 'Kurze RNA-Sequenz, die das Cas-Enzym zur passenden Zielsequenz im Genom lenkt.' },
+      { term: 'SMN1-Gen', def: 'Gen, dessen Mutation die spinale Muskelatrophie verursacht; codiert für ein für Motoneuronen wichtiges Protein.' },
+    ];
+
+    const CRISPR_STEPS = [
+      'Die guide-RNA bindet an die komplementäre Zielsequenz im Genom.',
+      'Das Cas-Enzym schneidet die DNA an dieser Stelle — es entsteht ein Doppelstrangbruch.',
+      'Die Zelle registriert den Schaden und aktiviert ihre körpereigene Reparatur.',
+      'Bei der Reparatur wird das Gen gezielt verändert — ausgeschaltet oder korrigiert.',
+    ];
+    const CRISPR_DISPLAY_ORDER = [2, 0, 3, 1];
+    const crisprOrder = this.state.crisprOrder;
+    const crisprChecked = this.state.crisprChecked;
+    const crisprSteps = CRISPR_DISPLAY_ORDER.map(correctIdx => {
+      const pos = crisprOrder.indexOf(correctIdx);
+      const chosen = pos >= 0;
+      const isCorrectPos = crisprChecked && chosen && pos === correctIdx;
+      const isWrongPos = crisprChecked && chosen && pos !== correctIdx;
+      let border = 'var(--color-divider)', bg = 'var(--color-bg)', badgeBg = 'transparent', badgeColor = 'var(--color-text)', badgeBorder = 'var(--color-neutral-400)';
+      if (isCorrectPos) { border = 'var(--color-accent-2-600)'; bg = 'var(--color-accent-2-100)'; badgeBg = 'var(--color-accent-2-600)'; badgeColor = '#fff'; badgeBorder = 'transparent'; }
+      else if (isWrongPos) { border = '#b04a3a'; bg = '#f8e2dc'; badgeBg = '#b04a3a'; badgeColor = '#fff'; badgeBorder = 'transparent'; }
+      else if (chosen) { border = 'var(--color-accent)'; bg = 'var(--color-accent-100)'; badgeBg = 'var(--color-accent)'; badgeColor = '#fff'; badgeBorder = 'transparent'; }
+      return {
+        text: CRISPR_STEPS[correctIdx],
+        number: chosen ? pos + 1 : null,
+        badgeStyle: `flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-heading);font-size:13px;background:${badgeBg};color:${badgeColor};border:1.5px solid ${badgeBorder}`,
+        style: `display:flex;align-items:center;gap:12px;background:${bg};border:1.5px solid ${border};border-radius:16px;padding:13px 16px;cursor:${(crisprChecked || chosen) ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);width:100%;transition:border-color .15s,background .15s`,
+        onClick: () => this.pickCrisprStep(correctIdx),
+      };
+    });
+    const crisprCorrectCount = crisprOrder.filter((idx, pos) => idx === pos).length;
+    const crisprCheckDisabled = crisprOrder.length < 4 || crisprChecked;
+    const crisprCheckBtnStyle = crisprCheckDisabled ? 'opacity:.45;cursor:not-allowed' : '';
+    const crisprResultMsg = crisprChecked ? (crisprCorrectCount === 4 ? 'Perfekt! Alle vier Schritte stehen in der richtigen Reihenfolge.' : `${crisprCorrectCount} von 4 Schritten stehen an der richtigen Stelle — schau nochmal beim Wirkmechanismus oben vorbei.`) : '';
+
+    const QUIZ_DATA = [
+      { stem: 'Was ist der zentrale Unterschied zwischen somatischer Gentherapie und Keimbahntherapie?', options: ['Bei der somatischen Gentherapie werden nur Körperzellen verändert, bei der Keimbahntherapie Keimzellen/Embryonen', 'Somatische Gentherapie wirkt schneller', 'Keimbahntherapie ist überall gesetzlich erlaubt', 'Es gibt keinen Unterschied'], correct: 0, explain: 'Nur die Keimbahntherapie verändert vererbbares Erbgut — deshalb ist sie in Deutschland verboten, die somatische Gentherapie dagegen zulässig.' },
+      { stem: 'Was verursacht die spinale Muskelatrophie (SMA)?', options: ['Eine Mutation im SMN1-Gen, wodurch Motoneuronen absterben', 'Ein Überschuss an SMN-Protein', 'Eine bakterielle Infektion des Rückenmarks', 'Eine Chromosomenmutation'], correct: 0, explain: 'SMA ist eine autosomal-rezessive Erkrankung, verursacht durch eine Mutation im SMN1-Gen.' },
+      { stem: 'Wie wirkt Zolgensma?', options: ['Es schleust mit einem viralen Vektor eine funktionsfähige Kopie des SMN1-Gens in Motoneuronen ein', 'Es schneidet das defekte Gen mit CRISPR/Cas heraus', 'Es ersetzt die Motoneuronen durch Stammzellen', 'Es unterdrückt nur die Symptome durch Medikamente'], correct: 0, explain: 'Zolgensma ist eine Genersatztherapie: Ein viraler Vektor (AAV9) bringt eine funktionsfähige SMN1-Kopie in die Zielzellen.' },
+      { stem: 'Was ist ein Vektor im Kontext der Gentherapie?', options: ['Ein Transportmittel, das therapeutische DNA in Zielzellen einschleust', 'Ein Enzym, das DNA schneidet', 'Ein Messgerät zur Genanalyse', 'Ein Antikörper gegen fremde DNA'], correct: 0, explain: 'Vektoren wie virale Hüllen oder Plasmide „transportieren" die gewünschte DNA in die Zielzelle.' },
+      { stem: 'Warum eignet sich der Serotyp AAV9 besonders für Erkrankungen des Nervensystems?', options: ['Er kann die Blut-Hirn-Schranke überwinden', 'Er vermehrt sich besonders schnell im Körper', 'Er integriert sich fest ins Wirtsgenom', 'Er wirkt nur in der Leber'], correct: 0, explain: 'AAV9 kann die Blut-Hirn-Schranke passieren und so auch Motoneuronen in Rückenmark und Gehirn erreichen.' },
+      { stem: 'Welche nicht-virale Methode macht Zellmembranen kurzfristig durchlässig, um DNA einzuschleusen?', options: ['Elektroporation', 'Ligation', 'Denaturierung', 'Hybridisierung'], correct: 0, explain: 'Bei der Elektroporation machen kurze elektrische Impulse die Zellmembran vorübergehend durchlässig für DNA.' },
+      { stem: 'Woraus besteht das CRISPR/Cas-System grundlegend?', options: ['Einer guide-RNA und einem Cas-Enzym', 'Zwei Restriktionsenzymen', 'Einem Plasmid und einer Ligase', 'Einer DNA-Polymerase und Primern'], correct: 0, explain: 'Die guide-RNA lenkt das Cas-Enzym zur passenden Zielsequenz, wo es die DNA schneidet.' },
+      { stem: 'Was passiert, nachdem CRISPR/Cas die DNA geschnitten hat?', options: ['Die Zelle repariert den Doppelstrangbruch selbst, wobei ein Gen verändert werden kann', 'Die Zelle stirbt sofort ab', 'Das Cas-Enzym baut das fehlende Stück eigenständig ein', 'Die DNA bleibt dauerhaft offen'], correct: 0, explain: 'Die körpereigene Reparaturmaschinerie der Zelle schließt den Bruch — dabei lässt sich gezielt ein Gen ausschalten oder korrigieren.' },
+      { stem: 'Woher stammt CRISPR/Cas ursprünglich?', options: ['Aus einem bakteriellen Abwehrsystem gegen Viren', 'Aus menschlichen Immunzellen', 'Aus Pilzen', 'Aus Pflanzenchloroplasten'], correct: 0, explain: 'Bakterien nutzen CRISPR/Cas natürlicherweise, um eindringende Virus-DNA zu erkennen und zu zerschneiden.' },
+      { stem: 'Warum ist die somatische Gentherapie ethisch weniger umstritten als die Keimbahntherapie?', options: ['Weil ihre Wirkung auf die behandelte Person begrenzt bleibt und nicht an künftige Generationen weitergegeben wird', 'Weil sie billiger ist', 'Weil sie ohne Vektoren funktioniert', 'Weil sie nur bei Tieren angewendet wird'], correct: 0, explain: 'Da nur Körperzellen verändert werden, betreffen mögliche Risiken ausschließlich die behandelte Person — nicht deren Nachkommen.' },
+    ];
+    const graded = this.state.graded;
+    let correctCount = 0;
+    const quiz = QUIZ_DATA.map((q, qi) => {
+      const id = 'q' + qi;
+      const sel = this.state.quizAnswers[id];
+      const answered = sel !== undefined;
+      if (graded && answered && sel === q.correct) correctCount++;
+      return {
+        id, num: qi + 1, stem: q.stem, explain: q.explain,
+        options: q.options.map((text, i) => ({ text, style: this.optionStyle(graded, i === q.correct, i === sel), onClick: () => this.setQuizAnswer(id, i) })),
+        showExplain: graded,
+        resultLabel: graded ? (sel === q.correct ? 'Richtig!' : 'Nicht ganz.') : '',
+      };
+    });
+    const totalCount = QUIZ_DATA.length;
+    const answeredCount = Object.keys(this.state.quizAnswers).length;
+    const scorePct = graded ? Math.round((correctCount / totalCount) * 100) : 0;
+    const scoreHead = graded ? (scorePct >= 80 ? 'Stark!' : scorePct >= 50 ? 'Guter Start' : 'Noch üben') : '—';
+    const scoreMsg = graded ? `${correctCount} von ${totalCount} Fragen richtig beantwortet.` : '';
+
+    return {
+      navProgressStyle: `position:absolute;left:0;bottom:0;height:3px;background:var(--color-accent);transition:width .1s linear;width:${this.state.scrollPct}%`,
+      einstiegsfragen,
+      miniZolgensma: miniById.zolgensma,
+      miniVektoren: miniById.vektoren,
+      glossar: GLOSSAR_DATA,
+      crisprSteps, crisprChecked, crisprResultMsg, crisprCheckDisabled, crisprCheckBtnStyle,
+      checkCrispr: () => this.checkCrispr(), resetCrispr: () => this.resetCrispr(),
+      quiz, totalCount, answeredCount, graded,
+      scorePctLabel: scorePct + '%',
+      scoreRingBg: `conic-gradient(var(--color-accent) ${scorePct * 3.6}deg, var(--color-neutral-200) 0)`,
+      scoreHead, scoreMsg,
+      grade: () => this.grade(), retry: () => this.retry(),
+    };
+  }
+}
+
+</script>
+</body>
+</html>
