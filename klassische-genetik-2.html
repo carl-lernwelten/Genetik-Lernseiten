@@ -15,14 +15,6 @@
     html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body { margin: 0; }
-    @keyframes appearA   { 0%,4%  { opacity:0; transform:scale(.5); } 10% { opacity:1; transform:scale(1); } 86% { opacity:1; transform:scale(1); } 94%,100% { opacity:0; transform:scale(.5); } }
-    @keyframes appearAb1 { 0%,14% { opacity:0; transform:scale(.5); } 20% { opacity:1; transform:scale(1); } 86% { opacity:1; transform:scale(1); } 94%,100% { opacity:0; transform:scale(.5); } }
-    @keyframes appearB   { 0%,24% { opacity:0; transform:scale(.5); } 30% { opacity:1; transform:scale(1); } 86% { opacity:1; transform:scale(1); } 94%,100% { opacity:0; transform:scale(.5); } }
-    @keyframes appearAb2 { 0%,36% { opacity:0; transform:scale(.5); } 42% { opacity:1; transform:scale(1); } 86% { opacity:1; transform:scale(1); } 94%,100% { opacity:0; transform:scale(.5); } }
-    @keyframes appearC   { 0%,46% { opacity:0; transform:scale(.5); } 52% { opacity:1; transform:scale(1); } 86% { opacity:1; transform:scale(1); } 94%,100% { opacity:0; transform:scale(.5); } }
-    @media (prefers-reduced-motion: reduce) {
-      .agglutination-anim * { animation: none !important; }
-    }
   </style>
 </helmet>
 
@@ -41,7 +33,6 @@
     <a href="#abo" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">AB0-System</a>
     <a href="#blut" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Bluttransfusion</a>
     <a href="#epistase" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Epistasie</a>
-    <a href="#glossar" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Glossar</a>
     <a class="btn btn-primary" href="#quiz">Zum Quiz</a>
     <div style="{{ navProgressStyle }}"></div>
   </nav>
@@ -301,45 +292,71 @@
         <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Warum das im Alltag zählt</span>
         <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Blutgruppen &amp; Bluttransfusion</h2>
         <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Die Antigene A und B entscheiden nicht nur über die Genetik, sondern auch, welches Blut du bei einer Transfusion vertragen würdest. <b>Dein Immunsystem bildet nur gegen die Antigene Antikörper, die auf deinen <em>eigenen</em> Blutzellen <u>fehlen </u>— dein Körper „erkennt" sie als fremd.</b> Antikörper haben eine Y-Form mit zwei Bindungsstellen und können sich deshalb gleichzeitig an Antigene auf <b>mehreren</b> Blutzellen festsetzen. Bekommst du fremdes Blut mit einem Antigen, gegen das du Antikörper besitzt, verbinden diese Antikörper viele Blutzellen zu Klumpen (Agglutination) — diese Klumpen können kleine Blutgefäße verstopfen und lebensgefährlich sein.</p>
-        <div class="agglutination-anim" style="position:relative;height:190px;max-width:460px;margin:18px 0 0;background:var(--color-bg);border-radius:20px;box-shadow:inset 0 0 0 1px var(--color-divider)">
-          <!-- Blutzelle A -->
-          <div style="position:absolute;left:50%;top:50%;transform:translate(calc(-50% - 120px), calc(-50% - 30px));width:52px;height:52px">
-            <div style="position:relative;width:100%;height:100%;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600);animation:appearA 11s ease-in-out infinite">
-              <span style="position:absolute;bottom:-6px;right:2px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-            </div>
+        <div style="max-width:520px;margin:18px 0 0;background:var(--color-bg);border-radius:20px;box-shadow:inset 0 0 0 1px var(--color-divider);padding:16px 18px 14px">
+          <span style="display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700)">Beispiel: Blutgruppe B wird in einen Empfänger der Blutgruppe A übertragen</span>
+          <div style="display:flex;gap:7px;margin:11px 0 0;flex-wrap:wrap">
+            <sc-for list="{{ aggSteps }}" as="st" hint-placeholder-count="3">
+              <button type="button" onClick="{{ st.onClick }}" style="{{ st.style }}">{{ st.label }}</button>
+            </sc-for>
           </div>
-          <!-- Antikörper 1 -->
-          <div style="position:absolute;left:50%;top:50%;transform:translate(calc(-50% - 60px), calc(-50% + 25px));width:40px;height:34px">
-            <div style="position:relative;width:100%;height:100%;animation:appearAb1 11s ease-in-out infinite">
-              <span style="position:absolute;left:18.5px;top:14px;width:3px;height:16px;background:var(--color-accent-800);border-radius:2px"></span>
-              <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(-35deg)"></span>
-              <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(35deg)"></span>
-            </div>
+          <div style="height:150px;display:flex;align-items:center;justify-content:center;margin-top:13px">
+            <sc-if value="{{ agg1 }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;align-items:center;gap:34px">
+                <div style="display:flex;gap:14px">
+                  <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
+                    <span style="position:absolute;top:-6px;left:19px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
+                  </div>
+                  <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
+                    <span style="position:absolute;top:-6px;left:19px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
+                  </div>
+                </div>
+                <div style="display:flex;gap:16px">
+                  <div style="position:relative;width:40px;height:34px;flex:none">
+                    <span style="position:absolute;left:18.5px;top:14px;width:3px;height:16px;background:var(--color-accent-800);border-radius:2px"></span>
+                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(-35deg)"></span>
+                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(35deg)"></span>
+                  </div>
+                  <div style="position:relative;width:40px;height:34px;flex:none">
+                    <span style="position:absolute;left:18.5px;top:14px;width:3px;height:16px;background:var(--color-accent-800);border-radius:2px"></span>
+                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(-35deg)"></span>
+                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(35deg)"></span>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ agg2 }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:0">
+                <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
+                  <span style="position:absolute;top:22px;right:-7px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
+                </div>
+                <div style="position:relative;width:56px;height:34px;flex:none">
+                  <span style="position:absolute;top:15.5px;left:20px;width:16px;height:3px;background:var(--color-accent-800);border-radius:2px"></span>
+                  <span style="position:absolute;left:2px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:right center;transform:rotate(-35deg)"></span>
+                  <span style="position:absolute;left:2px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:right center;transform:rotate(35deg)"></span>
+                  <span style="position:absolute;left:36px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:left center;transform:rotate(35deg)"></span>
+                  <span style="position:absolute;left:36px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:left center;transform:rotate(-35deg)"></span>
+                </div>
+                <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
+                  <span style="position:absolute;top:22px;left:-7px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ agg3 }}" hint-placeholder-val="{{ false }}">
+              <div style="display:grid;grid-template-columns:repeat(2,52px);grid-template-rows:repeat(2,52px);gap:26px;position:relative">
+                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
+                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
+                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
+                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
+                <span style="position:absolute;left:52px;top:24.5px;width:26px;height:3px;background:var(--color-accent-800);border-radius:2px"></span>
+                <span style="position:absolute;left:52px;top:103.5px;width:26px;height:3px;background:var(--color-accent-800);border-radius:2px"></span>
+                <span style="position:absolute;left:24.5px;top:52px;width:3px;height:26px;background:var(--color-accent-800);border-radius:2px"></span>
+                <span style="position:absolute;left:103.5px;top:52px;width:3px;height:26px;background:var(--color-accent-800);border-radius:2px"></span>
+              </div>
+            </sc-if>
           </div>
-          <!-- Blutzelle B (zwei Antigene) -->
-          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%, calc(-50% - 30px));width:52px;height:52px">
-            <div style="position:relative;width:100%;height:100%;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600);animation:appearB 11s ease-in-out infinite">
-              <span style="position:absolute;bottom:-6px;left:2px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-              <span style="position:absolute;bottom:-6px;right:2px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-            </div>
-          </div>
-          <!-- Antikörper 2 -->
-          <div style="position:absolute;left:50%;top:50%;transform:translate(calc(-50% + 60px), calc(-50% + 25px));width:40px;height:34px">
-            <div style="position:relative;width:100%;height:100%;animation:appearAb2 11s ease-in-out infinite">
-              <span style="position:absolute;left:18.5px;top:14px;width:3px;height:16px;background:var(--color-accent-800);border-radius:2px"></span>
-              <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(-35deg)"></span>
-              <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(35deg)"></span>
-            </div>
-          </div>
-          <!-- Blutzelle C -->
-          <div style="position:absolute;left:50%;top:50%;transform:translate(calc(-50% + 120px), calc(-50% - 30px));width:52px;height:52px">
-            <div style="position:relative;width:100%;height:100%;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600);animation:appearC 11s ease-in-out infinite">
-              <span style="position:absolute;bottom:-6px;left:2px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-            </div>
-          </div>
-          <span style="position:absolute;bottom:10px;left:14px;font-size:11px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">● Antigen auf der Blutzelle　Y Antikörper</span>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;min-height:44px">{{ aggText }}</p>
+          <span style="display:block;margin-top:9px;font-size:11px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">● B-Antigen auf der Spenderzelle　Y Anti-B-Antikörper des Empfängers　— schematisch, kein Maßstab</span>
         </div>
-        <p style="margin:8px 0 0;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 55%,transparent)">Vereinfachte, schematische Animation: Antikörper binden mit ihren zwei Armen Antigene auf benachbarten Blutzellen und verketten sie so zu einem Klumpen — kein Maßstab.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:13px">
         <sc-if value="{{ showHintAntikoerper }}" hint-placeholder-val="{{ false }}">
@@ -384,15 +401,15 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:18px">
         <sc-for list="{{ bloodCards }}" as="bc" hint-placeholder-count="2">
-          <button type="button" onClick="{{ bc.onClick }}" style="position:relative;height:150px;perspective:1200px;background:transparent;border:none;padding:0;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit">
+          <button type="button" onClick="{{ bc.onClick }}" style="position:relative;height:176px;perspective:1200px;background:transparent;border:none;padding:0;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit">
             <div style="{{ bc.flipStyle }}">
               <div class="card" style="{{ bc.frontStyle }}">
-                <span class="card-kicker">{{ bc.kicker }}</span>
-                <div class="card-title">{{ bc.title }}</div>
-                <span style="margin-top:auto;font-size:12px;color:var(--color-accent-700);text-decoration:underline;text-decoration-style:dotted">Klicken zum Aufdecken</span>
+                <div class="card-title" style="font-size:21px;line-height:1.25">{{ bc.question }}</div>
+                <span style="margin-top:auto;font-size:12px;color:var(--color-accent-700);text-decoration:underline;text-decoration-style:dotted">Klicken für die Antwort</span>
               </div>
               <div class="card" style="{{ bc.backStyle }};background:var(--color-accent-100)">
                 <span class="card-kicker">{{ bc.kicker }}</span>
+                <div class="card-title">{{ bc.title }}</div>
                 <p class="card-body">{{ bc.body }}</p>
               </div>
             </div>
@@ -524,10 +541,24 @@
             <span class="tag tag-accent-2">{{ squashExCorrectCount }} / {{ squashExTotal }} richtig</span>
           </sc-if>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">
-          <span class="tag tag-neutral">12/16 weiß</span>
-          <span class="tag tag-accent">3/16 gelb</span>
-          <span class="tag tag-accent-2">1/16 grün</span>
+        <div style="border-top:1.5px solid var(--color-accent-200);margin-top:20px;padding-top:18px">
+          <p style="margin:0 0 13px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Zähl jetzt selbst aus: Wie viele der 16 Felder ergeben welche Fruchtfarbe? (Summe = 16)</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <sc-for list="{{ squashCounts }}" as="c" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:10px;background:var(--color-bg);border-radius:999px;padding:5px 6px 5px 16px">
+                <span style="font-family:var(--font-heading);font-size:16px">{{ c.label }}</span>
+                <input type="text" inputmode="numeric" maxlength="2" value="{{ c.val }}" onChange="{{ c.onChange }}" style="{{ c.inputStyle }}">
+                <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);padding-right:8px">/ 16</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:14px">
+            <button type="button" class="btn btn-primary" onClick="{{ checkSquashCounts }}">Anzahlen prüfen</button>
+            <button type="button" class="btn btn-secondary" onClick="{{ resetSquashCounts }}">Zurücksetzen</button>
+          </div>
+          <sc-if value="{{ squashCountsChecked }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:13px 0 0;font-size:14px;line-height:1.55">{{ squashCountsFeedback }}</p>
+          </sc-if>
         </div>
       </div>
 
@@ -585,30 +616,6 @@
           <p style="margin:0">Multiple Allele existieren im <b>Genpool</b> einer ganzen Population, nicht in einem einzelnen Individuum. Wie häufig ein bestimmtes Allel in einer Population vorkommt (die Allelfrequenz), unterscheidet sich weltweit — Blutgruppe B ist z. B. in manchen Regionen Asiens deutlich häufiger als in Europa.</p>
         </div>
       </details>
-    </section>
-
-    <!-- GLOSSAR -->
-    <section id="glossar" style="padding:50px 0" data-screen-label="Glossar">
-      <div style="max-width:64ch">
-        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nachschlagen</span>
-        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Glossar der Fachbegriffe</h2>
-      </div>
-      <dl style="margin:28px 0 0;display:grid;grid-template-columns:220px 1fr;gap:0">
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">multiple Allele</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Mehr als zwei mögliche Allelvarianten eines Gens im Genpool einer Population — jedes Individuum trägt trotzdem nur zwei davon.</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Genpool</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Die Gesamtheit aller Allele aller Gene, die in einer Population vorkommen.</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">AB0-System</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Das menschliche Blutgruppensystem mit den drei Allelen I<sup>A</sup>, I<sup>B</sup> und i, die die Blutgruppen A, B, AB und 0 ergeben.</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Antigen / Antikörper</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Antigen: körpereigenes Merkmalsmolekül auf der Zelloberfläche. Antikörper: Abwehrmolekül, das gegen fremde Antigene gebildet wird.</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Epistasie</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Wechselwirkung zweier Gene, bei der ein Gen (epistatisch) darüber bestimmt, ob das andere Gen (hypostatisch) im Phänotyp sichtbar wird.</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">epistatisch / hypostatisch</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">epistatisch: das überdeckende Gen. hypostatisch: das Gen, dessen Wirkung überdeckt werden kann.</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Bombay-Phänotyp</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Seltener Fall, bei dem ein fehlendes H-Gen die Ausprägung von A- und B-Antigenen verhindert, obwohl die AB0-Allele vorhanden sind.</dd>
-      </dl>
     </section>
 
     <!-- QUIZ -->
@@ -699,6 +706,7 @@ class Component extends DCLogic {
   state = {
     scrollPct: 0,
     aboSel: null,
+    aggStep: 1,
     labSel: null,
     miniAnswers: {},
     quizAnswers: {},
@@ -710,6 +718,8 @@ class Component extends DCLogic {
     labExChecked: false,
     squashEx: {},
     squashExChecked: false,
+    squashCount: {},
+    squashCountsChecked: false,
     bloodTable: {},
     bloodTableChecked: false,
     tableHints: {},
@@ -794,6 +804,9 @@ class Component extends DCLogic {
   setSquashEx(idx, val) { this.setState(s => ({ squashEx: { ...s.squashEx, [idx]: val } })); }
   checkSquashEx() { this.setState({ squashExChecked: true }); }
   resetSquashEx() { this.setState({ squashEx: {}, squashExChecked: false }); }
+  setSquashCount(key, val) { this.setState(s => ({ squashCount: { ...s.squashCount, [key]: val } })); }
+  checkSquashCounts() { this.setState({ squashCountsChecked: true }); }
+  resetSquashCounts() { this.setState({ squashCount: {}, squashCountsChecked: false }); }
 
   setBloodTable(group, field, val) {
     this.setState(s => ({ bloodTable: { ...s.bloodTable, [group]: { ...s.bloodTable[group], [field]: val } } }));
@@ -845,7 +858,28 @@ class Component extends DCLogic {
     return `display:flex;align-items:center;gap:10px;background:${bg};border:1.5px solid ${border};border-radius:999px;padding:11px 16px;cursor:${locked ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);opacity:${opacity};width:100%;transition:border-color .15s,background .15s`;
   }
 
+  setAggStep(n) { this.setState({ aggStep: n }); }
+
   renderVals() {
+    const aggStep = this.state.aggStep;
+    const aggSteps = [
+      { n: 1, label: '1 · Fremde Zellen treffen ein' },
+      { n: 2, label: '2 · Antikörper binden' },
+      { n: 3, label: '3 · Verklumpung' },
+    ].map(st => ({
+      label: st.label,
+      onClick: () => this.setAggStep(st.n),
+      style: 'font:inherit;font-size:12.5px;cursor:pointer;padding:6px 13px;border-radius:999px;border:1.5px solid ' +
+        (aggStep === st.n ? 'var(--color-accent-700)' : 'var(--color-divider)') +
+        ';background:' + (aggStep === st.n ? 'var(--color-accent-700)' : 'transparent') +
+        ';color:' + (aggStep === st.n ? 'var(--color-bg)' : 'var(--color-text)'),
+    }));
+    const AGG_TEXT = {
+      1: 'Der Empfänger hat Blutgruppe A. Auf seinen eigenen Zellen fehlt das Antigen B, deshalb trägt sein Plasma Anti-B-Antikörper. Mit der Transfusion kommen Spenderzellen der Blutgruppe B hinzu, die das B-Antigen tragen. Noch schwimmen Zellen und Antikörper frei nebeneinander.',
+      2: 'Ein Antikörper hat zwei Bindungsstellen. Er passt nur zum B-Antigen und kann mit jedem Arm eine andere Spenderzelle greifen — so entsteht eine Brücke zwischen zwei Zellen. Die eigenen A-Zellen des Empfängers bleiben unberührt, gegen sie hat er keine Antikörper.',
+      3: 'Weil viele Antikörper viele Zellen gleichzeitig verbrücken, entsteht ein Netz aus verklumpten Spenderzellen (Agglutination). Solche Klumpen können kleine Blutgefäße verstopfen; zusätzlich werden die fremden Zellen zerstört, wobei Hämoglobin frei wird. Deshalb ist eine falsche Transfusion lebensgefährlich.',
+    };
+    const aggText = AGG_TEXT[aggStep];
     // ABO main cross: A0 x B0 -> gametes A,0 x B,0
     const aboAllelesRow = ['A', '0'];
     const aboAllelesCol = ['B', '0'];
@@ -988,9 +1022,30 @@ class Component extends DCLogic {
 
     // Blood group flip cards (Universalspender / Universalempfänger)
     const BLOOD_CARDS_DATA = [
-      { id: 'bloodSpender', kicker: 'Universalspender', title: 'Blutgruppe 0', body: 'Trägt keine Antigene — ruft bei keinem Empfänger eine Abwehrreaktion gegen die roten Blutkörperchen hervor.' },
-      { id: 'bloodEmpfaenger', kicker: 'Universalempfänger', title: 'Blutgruppe AB', body: 'Bildet keine Antikörper gegen A oder B — kann daher Blut jeder Blutgruppe erhalten.' },
+      { id: 'bloodSpender', kicker: 'Universalspender', question: 'Universalspender ist folgende Blutgruppe …?', title: 'Blutgruppe 0', body: 'Trägt keine Antigene — ruft bei keinem Empfänger eine Abwehrreaktion gegen die roten Blutkörperchen hervor.' },
+      { id: 'bloodEmpfaenger', kicker: 'Universalempfänger', question: 'Universalempfänger ist folgende Blutgruppe …?', title: 'Blutgruppe AB', body: 'Bildet keine Antikörper gegen A oder B — kann daher Blut jeder Blutgruppe erhalten.' },
     ];
+    const scChecked = this.state.squashCountsChecked;
+    const squashCounts = [
+      { key: 'weiss', label: 'weiß', expect: 12 },
+      { key: 'gelb', label: 'gelb', expect: 3 },
+      { key: 'gruen', label: 'grün', expect: 1 },
+    ].map(c => {
+      const val = (this.state.squashCount || {})[c.key] || '';
+      const ok = parseInt(val, 10) === c.expect;
+      let border = 'var(--color-divider)', bg = 'var(--color-surface)';
+      if (scChecked) { border = ok ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = ok ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+      return {
+        label: c.label, val, ok,
+        inputStyle: `width:52px;height:38px;text-align:center;font-family:var(--font-heading);font-size:16px;border-radius:12px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
+        onChange: (e) => this.setSquashCount(c.key, e.target.value),
+      };
+    });
+    const squashCountsFeedback = !scChecked ? ''
+      : squashCounts.every(c => c.ok)
+        ? 'Richtig: 12 weiß : 3 gelb : 1 grün. Jedes Feld mit mindestens einem W ist weiß — das sind 12 der 16 Felder. Nur die vier ww-Felder lassen die Farbe des zweiten Gens durch: drei davon tragen mindestens ein Y (gelb), eines ist wwyy (grün).'
+        : 'Noch nicht. Geh so vor: Zähl erst alle Felder mit mindestens einem W — die sind weiß, egal was am zweiten Gen steht. Von den übrigen ww-Feldern sind die mit mindestens einem Y gelb, das reinerbige wwyy ist grün. Die drei Zahlen müssen zusammen 16 ergeben.';
+
     const bloodCards = BLOOD_CARDS_DATA.map(t => {
       const revealed = !!this.state.revealedTerms[t.id];
       return {
@@ -1137,9 +1192,12 @@ class Component extends DCLogic {
       labGametes, labRows, labInfo, labInfoEmpty,
       labExRows, labExChecked: this.state.labExChecked, labExCorrectCount, labExTotal: 16,
       checkLabEx: () => this.checkLabEx(), resetLabEx: () => this.resetLabEx(),
+      squashCounts, squashCountsChecked: scChecked, squashCountsFeedback,
+      checkSquashCounts: () => this.checkSquashCounts(), resetSquashCounts: () => this.resetSquashCounts(),
       squashGametes, squashExRows, squashExChecked: this.state.squashExChecked, squashExCorrectCount, squashExTotal: 16,
       checkSquashEx: () => this.checkSquashEx(), resetSquashEx: () => this.resetSquashEx(),
       bloodCards,
+      aggSteps, aggText, agg1: aggStep === 1, agg2: aggStep === 2, agg3: aggStep === 3,
       bloodTableRows, bloodTableChecked: btChecked, bloodTableCorrectCount, bloodTableTotal: 12,
       checkBloodTable: () => this.checkBloodTable(), resetBloodTable: () => this.resetBloodTable(),
       toggleHintAntikoerper: () => this.toggleHint('antikoerper'),

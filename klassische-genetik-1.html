@@ -282,25 +282,74 @@
       </div>
 
       <div style="background:var(--color-accent-100);border-radius:31px;padding:22px;margin-top:18px">
-        <h4 style="margin:0 0 4px;font-size:19px;font-family:var(--font-heading);font-weight:400">Jetzt du: trag die Genotypen ein</h4>
-        <p style="margin:0 0 18px;font-size:14.5px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Fülle das leere Kreuzungsschema selbst aus (z. B. „{{ monoDomAllele }}{{ monoRecAllele }}") und klick auf „Prüfen".</p>
-        <div style="display:grid;grid-template-columns:60px 1fr 1fr;gap:6px;max-width:420px;margin:0 auto 18px">
+        <h4 style="margin:0 0 6px;font-size:19px;font-family:var(--font-heading);font-weight:400">Jetzt du: Blütenfarbe bei der Erbse</h4>
+        <p style="margin:0 0 10px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Anderes Merkmal, andere Eltern: Bei der Erbse ist die Blütenfarbe <b>rot</b> dominant über <b>weiß</b> — Allelsymbole <b>B</b> (rot) und <b>b</b> (weiß). Gekreuzt werden zwei rotblühende Pflanzen: <b>Pflanze 1</b> ist reinerbig (<b>BB</b>), <b>Pflanze 2</b> mischerbig (<b>Bb</b>).</p>
+        <ol style="margin:0 0 18px;padding-left:22px;font-size:14.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 82%,transparent)">
+          <li>Leg selbst fest, welches Allel jede Keimzelle der beiden Pflanzen trägt.</li>
+          <li>Trag die Genotypen der vier Nachkommen ein.</li>
+          <li>Gib am Ende Genotyp- und Phänotyp-Verhältnis an.</li>
+        </ol>
+        <div style="display:grid;grid-template-columns:110px 1fr 1fr;gap:6px;max-width:470px;margin:0 auto 6px">
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;font-size:12.5px;line-height:1.35;font-weight:600;color:var(--color-accent-700)">
+            <span>Pflanze 2 (Bb)</span>
+            <span style="font-weight:400;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Keimzellen ↓</span>
+          </div>
+          <div style="grid-column:span 2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;font-size:12.5px;line-height:1.35;font-weight:600;color:var(--color-accent-700);padding-bottom:4px">
+            <span>Pflanze 1 (BB)</span>
+            <span style="font-weight:400;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Keimzellen →</span>
+          </div>
           <div></div>
-          <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ monoDomAllele }}</div>
-          <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ monoRecAllele }}</div>
+          <sc-for list="{{ monoColGametes }}" as="g" hint-placeholder-count="2">
+            <div style="display:flex;justify-content:center">
+              <input type="text" maxlength="1" value="{{ g.val }}" onChange="{{ g.onChange }}" style="{{ g.inputStyle }}">
+            </div>
+          </sc-for>
           <sc-for list="{{ monoExRows }}" as="row" hint-placeholder-count="2">
-            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">{{ row.label }}</div>
+            <div style="display:flex;justify-content:flex-end;align-items:center;padding-right:6px">
+              <input type="text" maxlength="1" value="{{ row.gamete.val }}" onChange="{{ row.gamete.onChange }}" style="{{ row.gamete.inputStyle }}">
+            </div>
             <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="2">
-              <input type="text" maxlength="2" value="{{ cell.val }}" onChange="{{ cell.onChange }}" style="{{ cell.inputStyle }}">
+              <div style="display:flex;justify-content:center">
+                <input type="text" maxlength="2" value="{{ cell.val }}" onChange="{{ cell.onChange }}" style="{{ cell.inputStyle }}">
+              </div>
             </sc-for>
           </sc-for>
         </div>
-        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:14px">
           <button type="button" class="btn btn-primary" onClick="{{ checkMonoEx }}">Prüfen</button>
           <button type="button" class="btn btn-secondary" onClick="{{ resetMonoEx }}">Zurücksetzen</button>
           <sc-if value="{{ monoExChecked }}" hint-placeholder-val="{{ false }}">
-            <span class="tag tag-accent-2">{{ monoExCorrectCount }} / {{ monoExTotal }} richtig</span>
+            <span class="tag tag-accent-2">{{ monoExCorrectCount }} / {{ monoExTotal }} Felder richtig</span>
           </sc-if>
+        </div>
+        <sc-if value="{{ monoExChecked }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:12px 0 0;font-size:14px;line-height:1.55">{{ gameteFeedback }}</p>
+        </sc-if>
+        <div style="border-top:1.5px solid var(--color-accent-200);margin-top:20px;padding-top:18px;display:flex;flex-direction:column;gap:20px">
+          <span style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700)">Zahlenverhältnisse — Genotyp und Phänotyp</span>
+          <sc-for list="{{ monoCountGroups }}" as="g" hint-placeholder-count="2">
+            <div>
+              <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.3;margin:0 0 13px;font-weight:400">{{ g.title }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">
+                <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:10px;background:var(--color-surface);border-radius:999px;padding:5px 6px 5px 16px">
+                    <span style="font-family:var(--font-heading);font-size:16px">{{ it.label }}</span>
+                    <input type="text" inputmode="numeric" maxlength="2" value="{{ it.val }}" onChange="{{ it.onChange }}" style="{{ it.inputStyle }}">
+                  </div>
+                </sc-for>
+              </div>
+              <sc-if value="{{ g.showFeedback }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:13px 0 0;font-size:14px;line-height:1.55">{{ g.feedback }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+          <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+            <button type="button" class="btn btn-primary" onClick="{{ checkMonoCounts }}">Anzahlen prüfen</button>
+            <button type="button" class="btn btn-secondary" onClick="{{ resetMonoCounts }}">Zurücksetzen</button>
+            <sc-if value="{{ monoCountsChecked }}" hint-placeholder-val="{{ false }}">
+              <span class="tag tag-accent-2">{{ monoCountsSummary }}</span>
+            </sc-if>
+          </div>
         </div>
       </div>
 
@@ -362,27 +411,108 @@
       </div>
 
       <div style="background:var(--color-accent-100);border-radius:31px;padding:22px;margin-top:18px;overflow-x:auto">
-        <h4 style="margin:0 0 4px;font-size:19px;font-family:var(--font-heading);font-weight:400">Jetzt du: trag die Genotypen ein</h4>
-        <p style="margin:0 0 18px;font-size:14.5px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Fülle alle 16 Felder selbst aus (z. B. „RrGg") und klick auf „Prüfen".</p>
-        <div style="display:grid;grid-template-columns:64px repeat(4,1fr);gap:5px;min-width:520px;max-width:640px;margin:0 auto 18px">
+        <h4 style="margin:0 0 6px;font-size:19px;font-family:var(--font-heading);font-weight:400">Jetzt du: die Meerschweinchen-Zucht</h4>
+        <p style="margin:0 0 10px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 82%,transparent)">Eine Züchterin verpaart zwei schwarze Meerschweinchen. Schwarzes Fell ist dominant über weißes, Rosettenfell (mit Haarwirbeln) ist dominant über glattes Fell; die beiden Gene liegen auf verschiedenen Chromosomen. Der Bock hat Rosettenfell, das Weibchen glattes Fell. Aus früheren Verpaarungen weiß die Züchterin, dass beide Tiere in der Fellfarbe mischerbig sind und dass der Bock auch in der Fellstruktur mischerbig ist. Welche Nachkommen sind zu erwarten?</p>
+        <ol style="margin:0 0 18px;padding-left:22px;font-size:14.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 82%,transparent)">
+          <li>Leg für jedes der beiden Merkmale einen Buchstaben fest — du darfst frei wählen. Das dominante Allel schreibst du groß, das rezessive klein.</li>
+          <li>Stell die Genotypen der beiden Elterntiere auf.</li>
+          <li>Trag ein, welche Allel-Kombination jede Keimzelle trägt (je zwei Buchstaben).</li>
+          <li>Fülle die 16 Felder mit den Genotypen der Nachkommen.</li>
+          <li>Gib am Ende Genotyp- und Phänotyp-Verhältnis an.</li>
+        </ol>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px">
+          <sc-for list="{{ diSymbols }}" as="s" hint-placeholder-count="2">
+            <div style="background:var(--color-surface);border-radius:20px;padding:13px 16px">
+              <span style="display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700);margin-bottom:9px">{{ s.traitLabel }}</span>
+              <div style="display:flex;align-items:center;gap:11px">
+                <input type="text" maxlength="1" value="{{ s.val }}" onChange="{{ s.onChange }}" placeholder="?" style="{{ s.inputStyle }}">
+                <span style="font-size:13.5px;line-height:1.45">{{ s.hint }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ diSymNote }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:11px 0 0;font-size:13.5px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 75%,transparent)">{{ diSymNote }}</p>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px;margin-top:13px">
+          <sc-for list="{{ diParents }}" as="p" hint-placeholder-count="2">
+            <div style="background:var(--color-surface);border-radius:20px;padding:13px 16px">
+              <span style="display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700);margin-bottom:4px">{{ p.label }}</span>
+              <span style="display:block;font-size:13.5px;line-height:1.45;margin-bottom:9px">{{ p.desc }}</span>
+              <input type="text" maxlength="4" value="{{ p.val }}" onChange="{{ p.onChange }}" placeholder="Genotyp" style="{{ p.inputStyle }}">
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ diParentFeedback }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:11px 0 0;font-size:14px;line-height:1.55">{{ diParentFeedback }}</p>
+        </sc-if>
+        <div style="display:grid;grid-template-columns:96px repeat(4,1fr);gap:5px;min-width:560px;max-width:680px;margin:22px auto 6px">
+          <div style="display:flex;flex-direction:column;justify-content:flex-end;font-size:12.5px;line-height:1.35;font-weight:600;color:var(--color-accent-700)">
+            <span>Weibchen</span>
+            <span style="font-weight:400;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Keimzellen ↓</span>
+          </div>
+          <div style="grid-column:span 4;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;font-size:12.5px;line-height:1.35;font-weight:600;color:var(--color-accent-700);padding-bottom:4px">
+            <span>Bock</span>
+            <span style="font-weight:400;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Keimzellen →</span>
+          </div>
           <div></div>
-          <sc-for list="{{ diGametes }}" as="g" hint-placeholder-count="4">
-            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:15px">{{ g }}</div>
+          <sc-for list="{{ diColGametes }}" as="g" hint-placeholder-count="4">
+            <div style="display:flex;justify-content:center">
+              <input type="text" maxlength="2" value="{{ g.val }}" onChange="{{ g.onChange }}" style="{{ g.inputStyle }}">
+            </div>
           </sc-for>
           <sc-for list="{{ diExRows }}" as="row" hint-placeholder-count="4">
-            <div style="display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:15px">{{ row.label }}</div>
+            <div style="display:flex;justify-content:flex-end;align-items:center;padding-right:6px">
+              <input type="text" maxlength="2" value="{{ row.gamete.val }}" onChange="{{ row.gamete.onChange }}" style="{{ row.gamete.inputStyle }}">
+            </div>
             <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="4">
-              <input type="text" maxlength="4" value="{{ cell.val }}" onChange="{{ cell.onChange }}" style="{{ cell.inputStyle }}">
+              <div style="display:flex;justify-content:center">
+                <input type="text" maxlength="4" value="{{ cell.val }}" onChange="{{ cell.onChange }}" style="{{ cell.inputStyle }}">
+              </div>
             </sc-for>
           </sc-for>
         </div>
-        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:14px">
           <button type="button" class="btn btn-primary" onClick="{{ checkDiEx }}">Prüfen</button>
           <button type="button" class="btn btn-secondary" onClick="{{ resetDiEx }}">Zurücksetzen</button>
           <sc-if value="{{ diExChecked }}" hint-placeholder-val="{{ false }}">
-            <span class="tag tag-accent-2">{{ diExCorrectCount }} / {{ diExTotal }} richtig</span>
+            <span class="tag tag-accent-2">{{ diExCorrectCount }} / {{ diExTotal }} Felder richtig</span>
           </sc-if>
         </div>
+        <sc-if value="{{ diExChecked }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:12px 0 0;font-size:14px;line-height:1.55">{{ diGameteFeedback }}</p>
+        </sc-if>
+        <sc-if value="{{ diCountsHint }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:20px 0 0;padding-top:18px;border-top:1.5px solid var(--color-accent-200);font-size:13.5px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 75%,transparent)">Sobald du oben zwei verschiedene Buchstaben festgelegt hast, erscheint hier der Teil zu den Zahlenverhältnissen.</p>
+        </sc-if>
+        <sc-if value="{{ diCountsVisible }}" hint-placeholder-val="{{ false }}">
+          <div style="border-top:1.5px solid var(--color-accent-200);margin-top:20px;padding-top:18px;display:flex;flex-direction:column;gap:20px">
+            <span style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700)">Zahlenverhältnisse — Genotyp und Phänotyp</span>
+            <sc-for list="{{ diCountGroups }}" as="g" hint-placeholder-count="2">
+              <div>
+                <p style="font-family:var(--font-heading);font-size:17.5px;line-height:1.3;margin:0 0 13px;font-weight:400">{{ g.title }}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:10px">
+                  <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:10px;background:var(--color-surface);border-radius:999px;padding:5px 6px 5px 16px">
+                      <span style="font-family:var(--font-heading);font-size:16px">{{ it.label }}</span>
+                      <input type="text" inputmode="numeric" maxlength="2" value="{{ it.val }}" onChange="{{ it.onChange }}" style="{{ it.inputStyle }}">
+                    </div>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ g.showFeedback }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin:13px 0 0;font-size:14px;line-height:1.55">{{ g.feedback }}</p>
+                </sc-if>
+              </div>
+            </sc-for>
+            <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+              <button type="button" class="btn btn-primary" onClick="{{ checkDiCounts }}">Anzahlen prüfen</button>
+              <button type="button" class="btn btn-secondary" onClick="{{ resetDiCounts }}">Zurücksetzen</button>
+              <sc-if value="{{ diCountsChecked }}" hint-placeholder-val="{{ false }}">
+                <span class="tag tag-accent-2">{{ diCountsSummary }}</span>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
       </div>
 
       <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
@@ -506,13 +636,14 @@
         <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nachschlagen</span>
         <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Glossar der Fachbegriffe</h2>
       </div>
+      <p style="max-width:64ch;font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Begriffe, die über das Genetik-ABC am Anfang der Seite hinausgehen.</p>
       <dl style="margin:28px 0 0;display:grid;grid-template-columns:220px 1fr;gap:0">
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Genotyp / Phänotyp</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Genotyp = genetische Ausstattung (Allelkombination); Phänotyp = äußerlich erkennbares Erscheinungsbild.</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">homozygot / heterozygot</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">homozygot (reinerbig): beide Allele gleich (AA, aa). heterozygot (mischerbig): beide Allele unterschiedlich (Aa).</dd>
-        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">dominant / rezessiv</dt>
-        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Ein dominantes Allel setzt sich im Phänotyp durch; ein rezessives erscheint nur ohne dominantes Gegenstück.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Keimzelle (Gamete)</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Geschlechtszelle (Eizelle, Spermium oder Pollen). Sie trägt von jedem Gen nur ein Allel — deshalb hat sie den halben Chromosomensatz.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">P-, F1-, F2-Generation</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">P = Parentalgeneration (die gekreuzten Eltern), F1 = erste Filialgeneration (deren Nachkommen), F2 = zweite Filialgeneration (Nachkommen der F1).</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">monohybrid / dihybrid</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">monohybrid: eine Kreuzung, bei der ein Merkmal betrachtet wird. dihybrid: zwei Merkmale gleichzeitig.</dd>
         <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Kreuzungsschema</dt>
         <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Tabellarische Darstellung (Punnett-Quadrat), die alle möglichen Gameten-Kombinationen einer Kreuzung übersichtlich anordnet.</dd>
         <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Rückkreuzung (Testkreuzung)</dt>
@@ -521,6 +652,8 @@
         <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Weder Allel dominiert vollständig; die F1 zeigt eine Mischform zwischen beiden Elternmerkmalen.</dd>
         <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Kodominanz</dt>
         <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Beide Allele werden im Phänotyp gleichzeitig und unvermischt sichtbar — keine Mischfarbe, sondern beide Merkmale nebeneinander.</dd>
+        <dt style="font-family:var(--font-heading);font-size:16px;padding:13px 13px 13px 0;border-top:1px solid var(--color-divider);color:var(--color-accent-800)">Genkopplung</dt>
+        <dd style="margin:0;font-size:14.5px;line-height:1.5;padding:13px 0;border-top:1px solid var(--color-divider);color:color-mix(in srgb,var(--color-text) 82%,transparent)">Zwei Gene liegen so dicht auf demselben Chromosom, dass sie meist gemeinsam vererbt werden — dann gilt die Unabhängigkeitsregel nicht.</dd>
       </dl>
     </section>
 
@@ -617,8 +750,15 @@ class Component extends DCLogic {
     graded: false,
     revealedTerms: {},
     monoEx: {},
+    monoGam: {},
+    monoCount: {},
+    monoCountsChecked: false,
     monoExChecked: false,
     diEx: {},
+    diSym: {},
+    diGam: {},
+    diCount: {},
+    diCountsChecked: false,
     diExChecked: false,
     symbolEx: {},
     symbolChecked: false,
@@ -664,12 +804,43 @@ class Component extends DCLogic {
   }
 
   setMonoEx(idx, val) { this.setState(s => ({ monoEx: { ...s.monoEx, [idx]: val } })); }
+  setMonoGam(key, val) { this.setState(s => ({ monoGam: { ...s.monoGam, [key]: val } })); }
+  setMonoCount(key, val) { this.setState(s => ({ monoCount: { ...s.monoCount, [key]: val } })); }
+  checkMonoCounts() { this.setState({ monoCountsChecked: true }); }
+  resetMonoCounts() { this.setState({ monoCount: {}, monoCountsChecked: false }); }
+  setDiCount(key, val) { this.setState(s => ({ diCount: { ...s.diCount, [key]: val } })); }
+  checkDiCounts() { this.setState({ diCountsChecked: true }); }
+  resetDiCounts() { this.setState({ diCount: {}, diCountsChecked: false }); }
+
+  buildCountGroups(defs, values, checked, setter) {
+    return defs.map(def => {
+      const items = def.items.map(it => {
+        const key = def.id + ':' + (it.key || it.label);
+        const raw = (values[key] || '').trim();
+        const ok = raw !== '' && Number(raw) === it.expect;
+        let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+        if (checked) { border = ok ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = ok ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+        return {
+          label: it.label, val: raw, ok,
+          inputStyle: `width:52px;height:40px;text-align:center;font-family:var(--font-heading);font-size:17px;border-radius:999px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
+          onChange: (e) => setter(key, e.target.value),
+        };
+      });
+      const allOk = items.every(i => i.ok);
+      return {
+        id: def.id, title: def.title, items, allOk, showFeedback: !!checked,
+        feedback: checked ? ((allOk ? 'Richtig! ' : 'Noch nicht ganz. ') + def.feedback) : '',
+      };
+    });
+  }
   checkMonoEx() { this.setState({ monoExChecked: true }); }
-  resetMonoEx() { this.setState({ monoEx: {}, monoExChecked: false }); }
+  resetMonoEx() { this.setState({ monoEx: {}, monoGam: {}, monoExChecked: false }); }
 
   setDiEx(idx, val) { this.setState(s => ({ diEx: { ...s.diEx, [idx]: val } })); }
+  setDiGam(key, val) { this.setState(s => ({ diGam: { ...s.diGam, [key]: val } })); }
+  setDiSym(key, val) { this.setState(s => ({ diSym: { ...s.diSym, [key]: val } })); }
   checkDiEx() { this.setState({ diExChecked: true }); }
-  resetDiEx() { this.setState({ diEx: {}, diExChecked: false }); }
+  resetDiEx() { this.setState({ diEx: {}, diGam: {}, diSym: {}, diExChecked: false }); }
 
   genotypeVariants(genotype) {
     if (genotype.length === 2) {
@@ -769,25 +940,72 @@ class Component extends DCLogic {
       };
     }
 
-    const monoExRows = monoAlleles.map((rowAllele, ri) => ({
-      label: rowAllele,
-      cells: monoAlleles.map((colAllele, ci) => {
-        const idx = ri * 2 + ci;
-        const genotype = monoRows[ri].cells[ci].genotype;
-        const val = this.state.monoEx[idx] || '';
-        const checked = this.state.monoExChecked;
-        const correct = checked ? this.isExAnswerCorrect(val, genotype) : null;
-        let border = 'var(--color-divider)', bg = 'var(--color-bg)';
-        if (checked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
-        return {
-          idx, genotype, val, checked, correct,
-          inputStyle: `width:56px;height:56px;text-align:center;font-family:var(--font-heading);font-size:20px;border-radius:16px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
-          onChange: (e) => this.setMonoEx(idx, e.target.value),
-        };
-      }),
+    // Übungsaufgabe mit eigenem Merkmal: Blütenfarbe rot (B) dominant über weiß (b), BB × Bb
+    const exColTruth = ['B', 'B'];
+    const exRowTruth = ['B', 'b'];
+    const exChecked = this.state.monoExChecked;
+    const gamAt = (k) => ((this.state.monoGam || {})[k] || '').trim();
+    const gamValid = (v) => v === 'B' || v === 'b';
+    const colGamOk = gamAt('c0') === 'B' && gamAt('c1') === 'B';
+    const rowGamOk = [gamAt('r0'), gamAt('r1')].sort().join('') === 'Bb';
+    const gametesOk = colGamOk && rowGamOk;
+    const gamStyle = (ok) => {
+      let border = 'var(--color-divider)', bg = 'var(--color-surface)';
+      if (exChecked) { border = ok ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = ok ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+      return `width:52px;height:44px;text-align:center;font-family:var(--font-heading);font-size:18px;border-radius:14px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`;
+    };
+    const monoColGametes = [0, 1].map(ci => ({
+      val: gamAt('c' + ci),
+      inputStyle: gamStyle(colGamOk),
+      onChange: (e) => this.setMonoGam('c' + ci, e.target.value),
     }));
+    const monoExRows = [0, 1].map(ri => {
+      const rowLetter = gametesOk ? gamAt('r' + ri) : exRowTruth[ri];
+      return {
+        gamete: {
+          val: gamAt('r' + ri),
+          inputStyle: gamStyle(rowGamOk),
+          onChange: (e) => this.setMonoGam('r' + ri, e.target.value),
+        },
+        cells: [0, 1].map(ci => {
+          const idx = ri * 2 + ci;
+          const colLetter = gametesOk && gamValid(gamAt('c' + ci)) ? gamAt('c' + ci) : exColTruth[ci];
+          const genotype = this.pairAlleles(rowLetter, colLetter);
+          const val = this.state.monoEx[idx] || '';
+          const correct = exChecked ? this.isExAnswerCorrect(val, genotype) : null;
+          let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+          if (exChecked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+          return {
+            idx, genotype, val, checked: exChecked, correct,
+            inputStyle: `width:56px;height:56px;text-align:center;font-family:var(--font-heading);font-size:20px;border-radius:16px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
+            onChange: (e) => this.setMonoEx(idx, e.target.value),
+          };
+        }),
+      };
+    });
     const monoExAnswered = Object.keys(this.state.monoEx).filter(k => (this.state.monoEx[k] || '').trim() !== '').length;
     const monoExCorrectCount = monoExRows.flatMap(r => r.cells).filter(c => c.checked && c.correct).length;
+    const gameteFeedback = !exChecked ? ''
+      : gametesOk
+        ? 'Keimzellen richtig: Die reinerbige Pflanze 1 (BB) kann nur B-Keimzellen bilden, die mischerbige Pflanze 2 (Bb) zur Hälfte B und zur Hälfte b.'
+        : 'Die Keimzellen stimmen noch nicht. Jede Keimzelle enthält nur ein Allel des Merkmals: BB liefert zweimal B, Bb liefert einmal B und einmal b. Die vier Felder werden gegen die richtigen Keimzellen geprüft.';
+
+    const monoCountGroups = this.buildCountGroups([
+      {
+        id: 'genotyp',
+        title: 'Genotypen: Wie oft kommt jeder Genotyp unter den vier Feldern vor? (Summe = 4)',
+        items: [{ label: 'BB', expect: 2 }, { label: 'Bb', expect: 2 }, { label: 'bb', expect: 0 }],
+        feedback: 'Zwei Felder zeigen BB, zwei zeigen Bb, bb kommt nicht vor — Genotyp-Verhältnis 1 BB : 1 Bb. Der Genotyp bb ist unmöglich, weil Pflanze 1 ausschließlich B-Keimzellen bildet.',
+      },
+      {
+        id: 'phaenotyp',
+        title: 'Phänotypen: Wie viele der vier Nachkommen blühen rot, wie viele weiß? (Summe = 4)',
+        items: [{ label: 'rot', expect: 4 }, { label: 'weiß', expect: 0 }],
+        feedback: `Alle vier blühen rot (4 : 0) — BB und Bb tragen beide mindestens ein B. Zwei verschiedene Genotypen, ein einziger Phänotyp: deshalb gibt man beide Verhältnisse getrennt an. Im Beispiel oben (${monoDomAllele}${monoRecAllele} × ${monoDomAllele}${monoRecAllele}, zwei mischerbige Eltern) waren es 1 : 2 : 1 im Genotyp und 3 : 1 im Phänotyp.`,
+      },
+    ], this.state.monoCount || {}, this.state.monoCountsChecked, (k, v) => this.setMonoCount(k, v));
+    const monoCountsCorrect = monoCountGroups.flatMap(g => g.items).filter(i => i.ok).length;
+    const monoCountsTotal = monoCountGroups.flatMap(g => g.items).length;
 
     const diGametes = ['RG', 'Rg', 'rG', 'rg'];
     const diRows = diGametes.map((rowG, ri) => ({
@@ -823,25 +1041,141 @@ class Component extends DCLogic {
       };
     }
 
-    const diExRows = diGametes.map((rowG, ri) => ({
-      label: rowG,
-      cells: diGametes.map((colG, ci) => {
-        const idx = ri * 4 + ci;
-        const genotype = diRows[ri].cells[ci].genotype;
-        const val = this.state.diEx[idx] || '';
-        const checked = this.state.diExChecked;
-        const correct = checked ? this.isExAnswerCorrect(val, genotype) : null;
-        let border = 'var(--color-divider)', bg = 'var(--color-bg)';
-        if (checked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
-        return {
-          idx, genotype, val, checked, correct,
-          inputStyle: `width:100%;height:40px;text-align:center;font-family:var(--font-heading);font-size:14px;border-radius:12px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`,
-          onChange: (e) => this.setDiEx(idx, e.target.value),
-        };
-      }),
+    // Übungsaufgabe Meerschweinchen: Fellfarbe schwarz (dominant) / weiß, Fellstruktur Rosette (dominant) / glatt.
+    // Die Buchstaben wählen die Schüler selbst; alles wird gegen ihre eigene Symbolwahl geprüft.
+    const diExChecked = this.state.diExChecked;
+    const diS = this.state.diSym || {};
+    const rawS1 = (diS.s1 || '').trim();
+    const rawS2 = (diS.s2 || '').trim();
+    const isSingleLetter = (c) => /^[A-Za-z]$/.test(c);
+    const diSymOk = isSingleLetter(rawS1) && isSingleLetter(rawS2) && rawS1.toLowerCase() !== rawS2.toLowerCase();
+    const A1 = rawS1.toUpperCase(), a1 = rawS1.toLowerCase();
+    const A2 = rawS2.toUpperCase(), a2 = rawS2.toLowerCase();
+    const geneOf = (ch) => (ch === A1 || ch === a1) ? 1 : ((ch === A2 || ch === a2) ? 2 : 0);
+    const orderPair = (arr) => arr.filter(c => c === c.toUpperCase()).join('') + arr.filter(c => c !== c.toUpperCase()).join('');
+    const normGeno = (raw) => {
+      const s = (raw || '').replace(/\s+/g, '');
+      if (!diSymOk || s.length !== 4) return '';
+      const g1 = s.split('').filter(c => geneOf(c) === 1);
+      const g2 = s.split('').filter(c => geneOf(c) === 2);
+      if (g1.length !== 2 || g2.length !== 2) return '';
+      return orderPair(g1) + orderPair(g2);
+    };
+    const normGam = (raw) => {
+      const s = (raw || '').replace(/\s+/g, '');
+      if (!diSymOk || s.length !== 2) return '';
+      const g1 = s.split('').filter(c => geneOf(c) === 1);
+      const g2 = s.split('').filter(c => geneOf(c) === 2);
+      if (g1.length !== 1 || g2.length !== 1) return '';
+      return g1[0] + g2[0];
+    };
+    const bockGeno = diSymOk ? A1 + a1 + A2 + a2 : '';
+    const weibGeno = diSymOk ? A1 + a1 + a2 + a2 : '';
+    const diColTruth = diSymOk ? [A1 + A2, A1 + a2, a1 + A2, a1 + a2] : ['', '', '', ''];
+    const diRowTruth = diSymOk ? [A1 + a2, A1 + a2, a1 + a2, a1 + a2] : ['', '', '', ''];
+    const diFieldStyle = (ok, w, extra) => {
+      let border = 'var(--color-divider)', bg = 'var(--color-bg)';
+      if (diExChecked) { border = ok ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = ok ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
+      return `width:${w};${extra || ''}height:40px;text-align:center;font-family:var(--font-heading);font-size:15px;border-radius:12px;border:1.5px solid ${border};background:${bg};color:var(--color-text)`;
+    };
+    const diSymbols = [
+      { key: 's1', traitLabel: 'Fellfarbe', dom: 'schwarz', rec: 'weiß' },
+      { key: 's2', traitLabel: 'Fellstruktur', dom: 'Rosettenfell', rec: 'glattes Fell' },
+    ].map(s => {
+      const raw = (diS[s.key] || '').trim();
+      return {
+        traitLabel: s.traitLabel,
+        val: diS[s.key] || '',
+        hint: isSingleLetter(raw)
+          ? `${s.dom} = ${raw.toUpperCase()}, ${s.rec} = ${raw.toLowerCase()}`
+          : `${s.dom} ist dominant, ${s.rec} rezessiv`,
+        inputStyle: diFieldStyle(diSymOk, '48px'),
+        onChange: (e) => this.setDiSym(s.key, e.target.value),
+      };
+    });
+    const diSymNote = diSymOk ? '' : 'Wähle für jedes Merkmal einen Buchstaben — zwei verschiedene. Alles Weitere wird gegen deine eigene Wahl geprüft.';
+    const diParents = [
+      { key: 'p1', label: 'Bock', desc: 'schwarz, Rosettenfell — in beiden Merkmalen mischerbig', truth: bockGeno },
+      { key: 'p2', label: 'Weibchen', desc: 'schwarz, glattes Fell — in der Fellfarbe mischerbig', truth: weibGeno },
+    ].map(p => {
+      const ok = diSymOk && normGeno(diS[p.key]) === p.truth;
+      return {
+        label: p.label, desc: p.desc, ok,
+        val: diS[p.key] || '',
+        inputStyle: diFieldStyle(ok, '100%', 'max-width:140px;'),
+        onChange: (e) => this.setDiSym(p.key, e.target.value),
+      };
+    });
+    const diParentsOk = diParents.every(p => p.ok);
+    const diParentFeedback = !diExChecked ? ''
+      : !diSymOk ? 'Ohne festgelegte Buchstaben lassen sich die Genotypen nicht prüfen.'
+      : diParentsOk
+        ? `Richtig: Der Bock ist ${bockGeno}, das Weibchen ${weibGeno}. Glattes Fell ist rezessiv und zeigt sich nur reinerbig — deshalb muss das Weibchen dort ${a2}${a2} tragen.`
+        : `Noch nicht. Beide Tiere sind schwarz und in der Fellfarbe mischerbig, also ${A1}${a1}. Der Bock hat Rosettenfell und ist auch dort mischerbig (${A2}${a2}); das Weibchen zeigt das rezessive glatte Fell, das nur reinerbig (${a2}${a2}) erscheint.`;
+    const sameSet = (x, y) => x.slice().sort().join('|') === y.slice().sort().join('|');
+    const diGamAt = (k) => normGam((this.state.diGam || {})[k]);
+    const diColGamOk = diSymOk && sameSet([0, 1, 2, 3].map(i => diGamAt('c' + i)), diColTruth);
+    const diRowGamOk = diSymOk && sameSet([0, 1, 2, 3].map(i => diGamAt('r' + i)), diRowTruth);
+    const diGametesOk = diColGamOk && diRowGamOk;
+    const diColGametes = [0, 1, 2, 3].map(ci => ({
+      val: ((this.state.diGam || {})['c' + ci] || ''),
+      inputStyle: diFieldStyle(diColGamOk, '100%', 'max-width:66px;'),
+      onChange: (e) => this.setDiGam('c' + ci, e.target.value),
     }));
+    const diExRows = [0, 1, 2, 3].map(ri => {
+      const rowG = diGametesOk ? diGamAt('r' + ri) : diRowTruth[ri];
+      return {
+        gamete: {
+          val: ((this.state.diGam || {})['r' + ri] || ''),
+          inputStyle: diFieldStyle(diRowGamOk, '100%', 'max-width:66px;'),
+          onChange: (e) => this.setDiGam('r' + ri, e.target.value),
+        },
+        cells: [0, 1, 2, 3].map(ci => {
+          const idx = ri * 4 + ci;
+          const colG = diGametesOk ? diGamAt('c' + ci) : diColTruth[ci];
+          const genotype = diSymOk ? this.pairAlleles(rowG[0], colG[0]) + this.pairAlleles(rowG[1], colG[1]) : '';
+          const val = this.state.diEx[idx] || '';
+          const nv = normGeno(val);
+          const correct = (diExChecked && diSymOk) ? (nv !== '' && nv === normGeno(genotype)) : null;
+          return {
+            idx, genotype, val, checked: diExChecked, correct,
+            inputStyle: diFieldStyle(correct, '100%'),
+            onChange: (e) => this.setDiEx(idx, e.target.value),
+          };
+        }),
+      };
+    });
     const diExAnswered = Object.keys(this.state.diEx).filter(k => (this.state.diEx[k] || '').trim() !== '').length;
     const diExCorrectCount = diExRows.flatMap(r => r.cells).filter(c => c.checked && c.correct).length;
+    const diGameteFeedback = !diExChecked ? ''
+      : !diSymOk ? 'Ohne festgelegte Buchstaben lassen sich die Keimzellen nicht prüfen.'
+      : diGametesOk
+        ? `Keimzellen richtig: Der Bock (${bockGeno}) bildet vier Sorten — ${diColTruth.join(', ')}. Das Weibchen (${weibGeno}) bildet nur zwei, ${A1}${a2} und ${a1}${a2}, weil es bei der Fellstruktur nur ${a2} weitergeben kann.`
+        : `Die Keimzellen stimmen noch nicht. Jede Keimzelle trägt von jedem Gen genau ein Allel: aus ${bockGeno} entstehen ${diColTruth.join(', ')}; aus ${weibGeno} nur ${A1}${a2} und ${a1}${a2} (jeweils zweimal). Die 16 Felder werden gegen die richtigen Keimzellen geprüft.`;
+
+    const diCountGroups = !diSymOk ? [] : this.buildCountGroups([
+      {
+        id: 'genotyp',
+        title: 'Genotypen: Wie oft kommt jeder Genotyp unter den 16 Feldern vor? (Summe = 16)',
+        items: [
+          { key: 'g1', label: A1 + A1 + A2 + A2, expect: 0 }, { key: 'g2', label: A1 + A1 + A2 + a2, expect: 2 }, { key: 'g3', label: A1 + A1 + a2 + a2, expect: 2 },
+          { key: 'g4', label: A1 + a1 + A2 + A2, expect: 0 }, { key: 'g5', label: A1 + a1 + A2 + a2, expect: 4 }, { key: 'g6', label: A1 + a1 + a2 + a2, expect: 4 },
+          { key: 'g7', label: a1 + a1 + A2 + A2, expect: 0 }, { key: 'g8', label: a1 + a1 + A2 + a2, expect: 2 }, { key: 'g9', label: a1 + a1 + a2 + a2, expect: 2 },
+        ],
+        feedback: `Sechs Genotypen treten auf: 2 ${A1}${A1}${A2}${a2}, 2 ${A1}${A1}${a2}${a2}, 4 ${A1}${a1}${A2}${a2}, 4 ${A1}${a1}${a2}${a2}, 2 ${a1}${a1}${A2}${a2}, 2 ${a1}${a1}${a2}${a2} — im Verhältnis 1 : 1 : 2 : 2 : 1 : 1. Alle Genotypen mit ${A2}${A2} bleiben leer, weil das Weibchen bei der Fellstruktur nur ${a2} weitergibt.`,
+      },
+      {
+        id: 'phaenotyp',
+        title: 'Phänotypen: Wie viele der 16 Nachkommen zeigen welche Merkmalskombination? (Summe = 16)',
+        items: [
+          { key: 'p1', label: 'schwarz, Rosette', expect: 6 }, { key: 'p2', label: 'schwarz, glatt', expect: 6 },
+          { key: 'p3', label: 'weiß, Rosette', expect: 2 }, { key: 'p4', label: 'weiß, glatt', expect: 2 },
+        ],
+        feedback: `6 : 6 : 2 : 2, gekürzt 3 : 3 : 1 : 1. Man kann die Merkmale getrennt betrachten und die Verhältnisse multiplizieren: ${A1}${a1} × ${A1}${a1} ergibt 3 schwarz : 1 weiß, ${A2}${a2} × ${a2}${a2} ergibt 1 Rosette : 1 glatt. Sechs Genotypen, aber nur vier Phänotypen. Das 9 : 3 : 3 : 1 des Beispiels oben gilt nur, wenn beide Eltern in beiden Merkmalen mischerbig sind.`,
+      },
+    ], this.state.diCount || {}, this.state.diCountsChecked, (k, v) => this.setDiCount(k, v));
+    const diCountsCorrect = diCountGroups.flatMap(g => g.items).filter(i => i.ok).length;
+    const diCountsTotal = diCountGroups.flatMap(g => g.items).length;
 
     const GRUNDBEGRIFFE_DATA = [
       { id: 'gen', kicker: 'Erbanlage', title: 'Gen', body: 'Abschnitt der DNA, der die Information für ein Merkmal trägt.' },
@@ -973,10 +1307,20 @@ class Component extends DCLogic {
       checkSymbols: () => this.checkSymbols(), resetSymbols: () => this.resetSymbols(),
       monoDomAllele, monoRecAllele, monoDomLabel, monoRecLabel, monoTraitLabel,
       monoRows, monoInfo, monoInfoEmpty,
-      monoExRows, monoExChecked: this.state.monoExChecked, monoExAnswered, monoExCorrectCount, monoExTotal: 4,
+      monoExRows, monoColGametes, gameteFeedback,
+      monoCountGroups, monoCountsChecked: this.state.monoCountsChecked,
+      monoCountsSummary: `${monoCountsCorrect} / ${monoCountsTotal} Anzahlen richtig`,
+      checkMonoCounts: () => this.checkMonoCounts(), resetMonoCounts: () => this.resetMonoCounts(),
+      monoExChecked: this.state.monoExChecked, monoExAnswered, monoExCorrectCount, monoExTotal: 4,
       checkMonoEx: () => this.checkMonoEx(), resetMonoEx: () => this.resetMonoEx(),
       diGametes, diRows, diInfo, diInfoEmpty,
-      diExRows, diExChecked: this.state.diExChecked, diExAnswered, diExCorrectCount, diExTotal: 16,
+      diExRows, diColGametes, diGameteFeedback,
+      diSymbols, diSymNote, diParents, diParentFeedback,
+      diCountsVisible: diSymOk, diCountsHint: !diSymOk,
+      diCountGroups, diCountsChecked: this.state.diCountsChecked,
+      diCountsSummary: `${diCountsCorrect} / ${diCountsTotal} Anzahlen richtig`,
+      checkDiCounts: () => this.checkDiCounts(), resetDiCounts: () => this.resetDiCounts(),
+      diExChecked: this.state.diExChecked, diExAnswered, diExCorrectCount, diExTotal: 16,
       checkDiEx: () => this.checkDiEx(), resetDiEx: () => this.resetDiEx(),
       miniRegeln: miniById.regeln, miniMono: miniById.mono, miniDi: miniById.di, miniInter: miniById.inter,
       quiz, totalCount, answeredCount,
