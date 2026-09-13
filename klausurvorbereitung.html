@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<title>Klausurvorbereitung Genetik</title>
+<title>Klausurvorbereitung Blöcke 1–3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
@@ -15,12 +15,13 @@
     html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body { margin: 0; }
+    a { color: var(--color-accent-700); }
+    a:hover { color: var(--color-accent-800); }
   </style>
 </helmet>
 
-<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:clip;text-wrap:pretty" data-screen-label="Selbstlernseite">
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow-x:clip;text-wrap:pretty" data-screen-label="Klausurvorbereitung 1-3">
 
-  <!-- NAV -->
   <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:24px;padding:13px clamp(20px,5vw,72px);background:color-mix(in srgb,var(--color-bg) 90%,transparent);backdrop-filter:blur(8px)">
     <span style="display:flex;align-items:center;gap:12px;font-family:var(--font-heading);font-size:18px">
       <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:32px;width:auto;display:block">
@@ -29,68 +30,66 @@
     </span>
     <span style="flex:1"></span>
     <a href="index.html" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Übersicht</a>
-    <a href="#checkliste" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Checkliste</a>
-    <a href="#uebung" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Übungsaufgaben</a>
-    <a href="#bonus" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap" class="nav-link">Bonus</a>
+    <a href="#checkliste" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap">Checkliste</a>
+    <a href="#operatoren" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap">Operatoren</a>
+    <a href="#quiz" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap">Quiz</a>
+    <a href="#aufgaben" style="color:inherit;text-decoration:none;font-size:14px;white-space:nowrap">Übungsaufgaben</a>
     <div style="{{ navProgressStyle }}"></div>
   </nav>
 
   <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
 
-    <!-- HERO -->
     <header style="position:relative;padding:73px 0 50px" data-screen-label="Intro">
       <div style="position:absolute;right:-40px;top:-140px;width:380px;height:380px;border-radius:50%;background:var(--color-accent-2-200);z-index:-1;pointer-events:none"></div>
       <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Lernwelten · Evangelisches Gymnasium · GK Biologie 12</span>
       <h1 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(40px,6vw,68px);line-height:1.05;letter-spacing:-.02em;margin:0;max-width:20ch">Klausurvorbereitung</h1>
-      <p style="font-size:19px;line-height:28px;margin:20px 0 0;max-width:64ch;color:var(--color-text)">Bevor die Klausur kommt: eine Checkliste aller Themen aus den Blöcken 1–5 sowie Übungsaufgaben zum Durchrechnen. Wiederhole gezielt das, wo du dir noch unsicher bist — die Links führen dich direkt zurück zur passenden Selbstlernseite.</p>
+      <p style="font-size:19px;line-height:28px;margin:20px 0 0;max-width:64ch">Die Klausur schreibt ihr nach den ersten drei Blöcken. Geprüft werden die Mendelschen Regeln, der intermediäre Erbgang und die Kodominanz, multiple Allele und das AB0-System, die Epistasie sowie die Stammbaumanalyse autosomaler Erbgänge. Diese Seite gibt euch eine Checkliste, die wichtigsten Operatoren und Übungsaufgaben mit Lösungen.</p>
       <div style="display:flex;gap:13px;flex-wrap:wrap;margin-top:28px">
         <a class="btn btn-primary" href="#checkliste">Los geht's</a>
-        <a class="btn btn-secondary" href="#uebung">Direkt zu den Übungsaufgaben</a>
-        <a class="btn btn-ghost" href="arbeitstechniken.html">← Zurück zu Arbeitstechniken</a>
+        <a class="btn btn-secondary" href="#aufgaben">Direkt zu den Übungsaufgaben</a>
+        <a class="btn btn-ghost" href="humangenetik-1.html">← Zurück zu Humangenetik I</a>
       </div>
     </header>
 
-    <!-- PRÜFUNGSINFO -->
     <section style="padding:50px 0" data-screen-label="Prüfungsinfo">
       <div style="max-width:64ch">
-        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Block 6 · Ustd 11–12</span>
-        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Was erwartet dich in der Klausur?</h2>
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Rahmen</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Was euch in der Klausur erwartet</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
         <div class="card">
           <span class="card-kicker">Form</span>
-          <div class="card-title">90 oder 45 Minuten</div>
-          <p class="card-body">Klausur (90 Min) oder Leistungskontrolle (45 Min), Einzelarbeit unter Prüfungsbedingungen.</p>
+          <div class="card-title">90 Minuten</div>
+          <p class="card-body">Drei Aufgaben, Einzelarbeit unter Prüfungsbedingungen. Hilfsmittel sind nicht zugelassen.</p>
+        </div>
+        <div class="card">
+          <span class="card-kicker">Bewertung</span>
+          <div class="card-title">45 BE</div>
+          <p class="card-body">Je 15 Bewertungseinheiten pro Aufgabe. Die Punkte stehen in Klammern hinter jeder Teilaufgabe.</p>
         </div>
         <div class="card">
           <span class="card-kicker">Anforderungsbereiche</span>
           <div class="card-title">AFB I–III</div>
-          <p class="card-body">≈ 30 % Reproduktion, 50 % Reorganisation/Anwendung, 20 % Transfer/Bewertung.</p>
-        </div>
-        <div class="card">
-          <span class="card-kicker">Bewertung</span>
-          <div class="card-title">Punktebasiert</div>
-          <p class="card-body">Mit Erwartungshorizont und Notenschlüssel gemäß schulinternem Standard.</p>
+          <p class="card-body">Etwa ein Viertel Reproduktion, gut die Hälfte Anwendung, der Rest Transfer und Bewertung.</p>
         </div>
       </div>
       <div style="display:flex;gap:13px;background:var(--color-accent-2-100);border-radius:28px;padding:13px 18px;margin-top:18px">
         <span style="flex:none;color:var(--color-accent-2-700);margin-top:2px" aria-hidden="true">💡</span>
         <div>
-          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Geprüfte Inhalte</h4>
-          <p style="margin:0;font-size:14.5px;line-height:1.5">Nicht gekoppelte Vererbungsvorgänge (Mendel, mono-/dihybrid), multiple Allelie/Blutgruppen, Kodominanz/intermediärer Erbgang, Epistasie &amp; Pleiotropie, Stammbaumanalyse (autosomal/gonosomal) sowie die Grundlagen der Arbeitstechniken (PCR, Gelelektrophorese, Sequenzierung).</p>
+          <h4 style="margin:0 0 2px;font-size:17px;font-family:var(--font-heading);font-weight:400">Kreuzungsschemata immer vollständig</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.5">Ein vollständiges Schema enthält vier Teile: die Genotypen der Eltern, die Gameten, das Kombinationsquadrat und die Genotypen <b>und</b> Phänotypen der Nachkommen. Legt außerdem eure Allelsymbole zu Beginn fest.</p>
         </div>
       </div>
     </section>
 
-    <!-- CHECKLISTE -->
     <section id="checkliste" style="padding:50px 0" data-screen-label="Checkliste">
       <div style="max-width:64ch">
         <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Selbsteinschätzung</span>
         <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Themen-Checkliste</h2>
-        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Hak ab, was du sicher kannst. Bei Unsicherheit: Klick auf den Themen-Titel, um zurück zur passenden Selbstlernseite zu springen.</p>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Hakt ab, was ihr sicher könnt. Bei Unsicherheit führt ein Klick auf den Titel zurück zur passenden Selbstlernseite.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:28px">
-        <sc-for list="{{ checklist }}" as="item" hint-placeholder-count="6">
+        <sc-for list="{{ checklist }}" as="item" hint-placeholder-count="8">
           <div style="display:flex;align-items:center;gap:13px;background:var(--color-surface);border-radius:20px;padding:13px 18px">
             <button type="button" onClick="{{ item.onToggle }}" style="{{ item.checkStyle }}" aria-label="erledigt markieren">{{ item.checkMark }}</button>
             <div style="flex:1">
@@ -104,12 +103,34 @@
       <p style="font-size:14px;margin-top:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{ checkedCount }} / {{ checklistTotal }} Themen abgehakt</p>
     </section>
 
-    <!-- ÜBUNGSAUFGABEN -->
-    <section id="uebung" style="padding:50px 0" data-screen-label="Übungsaufgaben">
+    <section id="operatoren" style="padding:50px 0" data-screen-label="Operatoren">
       <div style="max-width:64ch">
-        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Zum Durchrechnen</span>
-        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Übungsaufgaben — quer durch alle Blöcke</h2>
-        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Zwölf Fragen im Klausur-Stil. Beantworte so viele du kannst und klick auf „Auswerten".</p>
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Aufgabenverständnis</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Die Operatoren</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Der Operator sagt euch, wie ausführlich und in welcher Form geantwortet werden muss. Wer „nennen“ mit „erklären“ verwechselt, verliert Punkte, ohne fachlich falsch zu liegen.</p>
+      </div>
+      <div style="overflow-x:auto;margin-top:28px">
+        <table class="table" style="min-width:560px">
+          <thead>
+            <tr><th style="text-align:left">Operator</th><th style="text-align:left">Was verlangt ist</th><th style="text-align:left">AFB</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>nennen / angeben</b></td><td>Fachbegriffe oder Ergebnisse ohne Erläuterung aufzählen.</td><td>I</td></tr>
+            <tr><td><b>beschreiben</b></td><td>Materialien oder Ergebnisse mit eigenen Worten strukturiert wiedergeben, noch ohne Deutung.</td><td>I–II</td></tr>
+            <tr><td><b>erklären / erläutern</b></td><td>Einen Sachverhalt auf Gesetzmäßigkeiten zurückführen und die Zusammenhänge darlegen.</td><td>II</td></tr>
+            <tr><td><b>begründen</b></td><td>Eine Aussage durch fachliche Argumente und Belege aus dem Material stützen.</td><td>II</td></tr>
+            <tr><td><b>bestimmen / überprüfen</b></td><td>Mit einem Verfahren, meist einem Kreuzungsschema, zu einem eindeutigen Ergebnis kommen.</td><td>II</td></tr>
+            <tr><td><b>Stellung nehmen / beurteilen</b></td><td>Argumente abwägen und zu einem begründeten, eigenständigen Fazit kommen.</td><td>III</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="quiz" style="padding:50px 0" data-screen-label="Quiz">
+      <div style="max-width:64ch">
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Schnellcheck</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Zwölf Fragen aus den Blöcken 1–3</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Beantwortet so viele wie möglich und klickt dann auf „Auswerten“.</p>
       </div>
 
       <div style="background:var(--color-surface);border-radius:calc(28px*1.05);padding:clamp(20px,4vw,40px);margin-top:28px">
@@ -166,97 +187,100 @@
       </div>
     </section>
 
-    <!-- BONUS -->
-    <section id="bonus" style="padding:50px 0 73px" data-screen-label="Bonus">
+    <section id="aufgaben" style="padding:50px 0 73px" data-screen-label="Übungsaufgaben">
       <div style="max-width:64ch">
-        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Nicht klausurrelevant, aber gute Übung</span>
-        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Bonus: Restriktionsenzyme &amp; Klonierung</h2>
-        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese Aufgaben gehen über den Klausurstoff hinaus und bereiten schon ein bisschen auf die Gentherapie-Blöcke vor (dort geht es um Vektoren und wie man Gene in Zellen einbringt).</p>
+        <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Im Klausurformat</span>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Drei Übungsaufgaben</h2>
+        <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Bearbeitet jede Aufgabe erst schriftlich auf Papier — mit vollständigen Kreuzungsschemata — und klappt dann die Lösung auf.</p>
       </div>
 
-      <div style="background:var(--color-accent-100);border-radius:31px;padding:22px;margin-top:28px">
-        <h4 style="margin:0 0 4px;font-size:19px;font-family:var(--font-heading);font-weight:400">Lückentext: Restriktionsenzyme</h4>
-        <p style="margin:0 0 13px;font-size:14.5px;line-height:1.6">Restriktionsenzyme sind bakterielle Enzyme, die DNA an ganz bestimmten <input type="text" value="{{ blank0 }}" onChange="{{ onBlank0 }}" placeholder="?" style="{{ blankStyle0 }}"> zerschneiden. Diese Erkennungssequenzen sind meist <input type="text" value="{{ blank1 }}" onChange="{{ onBlank1 }}" placeholder="?" style="{{ blankStyle1 }}"> aufgebaut (auf beiden Strängen in gleicher Richtung gelesen identisch). Ursprünglich schützen sich Bakterien mit ihnen gegen eindringende <input type="text" value="{{ blank2 }}" onChange="{{ onBlank2 }}" placeholder="?" style="{{ blankStyle2 }}">-DNA. In der Gentechnik nutzt man sie, um DNA gezielt zu schneiden und z. B. in einen <input type="text" value="{{ blank3 }}" onChange="{{ onBlank3 }}" placeholder="?" style="{{ blankStyle3 }}"> einzufügen.</p>
-        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap">
-          <button type="button" class="btn btn-primary" onClick="{{ checkBlanks }}">Prüfen</button>
-          <sc-if value="{{ blanksChecked }}" hint-placeholder-val="{{ false }}">
-            <span class="tag tag-accent-2">{{ blanksCorrectCount }} / 4 richtig</span>
-          </sc-if>
+      <div style="background:var(--color-surface);border-radius:31px;padding:clamp(20px,3vw,28px);margin-top:28px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">
+          <span class="tag tag-outline">Aufgabe 1</span>
+          <span class="tag tag-neutral">Block 1 · Mendel &amp; intermediärer Erbgang</span>
         </div>
-        <sc-if value="{{ blanksChecked }}" hint-placeholder-val="{{ false }}">
-          <p style="margin:13px 0 0;font-size:13.5px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Lösung: Erkennungssequenzen · palindromisch · fremder (virale) · Klonierungsvektor / Plasmid</p>
-        </sc-if>
-      </div>
-
-      <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:18px">
-        <h4 style="margin:0 0 4px;font-size:19px;font-family:var(--font-heading);font-weight:400">Klonierung: die richtige Reihenfolge</h4>
-        <p style="margin:0 0 18px;font-size:14.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Um ein DNA-Fragment zu klonieren, braucht man vier Schritte: <b>Selektion</b>, <b>Restriktionsverdau</b>, <b>Transformation</b>, <b>Ligation</b>. Bring sie mit den Auswahlfeldern in die richtige Reihenfolge.</p>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <sc-for list="{{ cloneSteps }}" as="step" hint-placeholder-count="4">
-            <div style="display:flex;align-items:center;gap:13px">
-              <select onChange="{{ step.onChange }}" value="{{ step.value }}" style="{{ step.selectStyle }}">
-                <option value="-1">Reihenfolge?</option>
-                <option value="0">1.</option>
-                <option value="1">2.</option>
-                <option value="2">3.</option>
-                <option value="3">4.</option>
-              </select>
-              <span style="font-size:15px">{{ step.label }}</span>
-            </div>
-          </sc-for>
-        </div>
-        <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:18px">
-          <button type="button" class="btn btn-primary" onClick="{{ checkCloneSteps }}">Prüfen</button>
-          <sc-if value="{{ cloneStepsChecked }}" hint-placeholder-val="{{ false }}">
-            <span class="tag tag-accent-2">{{ cloneStepsFeedback }}</span>
-          </sc-if>
-        </div>
-        <details style="margin-top:13px">
-          <summary style="cursor:pointer;font-size:14px;color:var(--color-accent-700)">Lösung anzeigen</summary>
-          <ol style="margin:9px 0 0;font-size:14.5px;line-height:1.6;padding-left:20px">
-            <li><b>Restriktionsverdau:</b> Vektor und DNA-Fragment werden mit demselben Enzym geschnitten, sodass komplementäre Enden entstehen.</li>
-            <li><b>Ligation:</b> Das Fragment wird mit Ligase in den Vektor eingefügt.</li>
-            <li><b>Transformation:</b> Der rekombinante Vektor wird in Bakterien übertragen.</li>
-            <li><b>Selektion:</b> Bakterien mit dem rekombinanten Vektor werden über Selektionsmarker (z. B. Antibiotikaresistenz) identifiziert.</li>
-          </ol>
+        <h3 style="font-family:var(--font-heading);font-weight:400;font-size:24px;margin:0 0 10px">Blütenfarbe beim Löwenmäulchen</h3>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 10px">Beim Löwenmäulchen entstehen aus der Kreuzung reinerbig rotblühender mit reinerbig weißblühenden Pflanzen ausschließlich rosablühende Nachkommen. Kreuzt man zwei dieser rosablühenden Pflanzen, erhält man 132 rote, 259 rosa und 127 weiße Blüten.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 5px">a) <b>Erklären</b> Sie die Ergebnisse mit einem vollständigen Kreuzungsschema von P bis F<sub>2</sub>.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 5px">b) <b>Begründen</b> Sie, warum hier kein dominant-rezessiver Erbgang vorliegt.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 14px">c) <b>Nennen</b> Sie die Mendelsche Regel, die die F<sub>2</sub>-Generation bestätigt.</p>
+        <details>
+          <summary style="cursor:pointer;font-size:14.5px;color:var(--color-accent-700)">Lösung anzeigen</summary>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.6;background:var(--color-bg);border-radius:16px;padding:14px 18px">
+            <p style="margin:0 0 6px"><b>a)</b> Allelsymbole: R = rot, W = weiß, gleichrangig. P: RR × WW, Gameten R bzw. W. F<sub>1</sub>: alle RW, Phänotyp rosa. F<sub>1</sub> × F<sub>1</sub>: RW × RW, Gameten je R und W; Kombinationsquadrat ergibt RR, RW, RW, WW. F<sub>2</sub>: 1 RR rot : 2 RW rosa : 1 WW weiß — das beobachtete Verhältnis 132 : 259 : 127 entspricht 1 : 2 : 1.</p>
+            <p style="margin:0 0 6px"><b>b)</b> Bei einem dominant-rezessiven Erbgang sähe die heterozygote F<sub>1</sub> wie ein Elternteil aus (rot) und die F<sub>2</sub> spaltete 3 : 1 auf. Beobachtet werden aber eine Zwischenform und ein 1 : 2 : 1-Verhältnis: beide Allele wirken sich zu gleichen Teilen aus.</p>
+            <p style="margin:0"><b>c)</b> Die Spaltungsregel (2. Mendelsche Regel).</p>
+          </div>
         </details>
       </div>
 
-      </section>
+      <div style="background:var(--color-surface);border-radius:31px;padding:clamp(20px,3vw,28px);margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">
+          <span class="tag tag-outline">Aufgabe 2</span>
+          <span class="tag tag-neutral">Block 2 · AB0-System &amp; Epistasie</span>
+        </div>
+        <h3 style="font-family:var(--font-heading);font-weight:400;font-size:24px;margin:0 0 10px">Blutgruppen und Fellfarbe</h3>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 10px">Eine Frau mit der Blutgruppe B und ein Mann mit der Blutgruppe A haben zwei Kinder: eines mit Blutgruppe AB, eines mit Blutgruppe 0.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 5px">a) <b>Geben</b> Sie die Genotypen der Eltern <b>an</b> und begründen Sie Ihre Wahl.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 5px">b) <b>Bestimmen</b> Sie mit einem Kreuzungsschema alle möglichen Blutgruppen weiterer Kinder dieses Paares.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 14px">c) Beim Labrador legt das Gen B/b die Pigmentart fest (B schwarz, dominant; b braun), das Gen E/e die Einlagerung (E Einlagerung, dominant; ee gelb). <b>Erklären</b> Sie, warum E/e als epistatisch bezeichnet wird.</p>
+        <details>
+          <summary style="cursor:pointer;font-size:14.5px;color:var(--color-accent-700)">Lösung anzeigen</summary>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.6;background:var(--color-bg);border-radius:16px;padding:14px 18px">
+            <p style="margin:0 0 6px"><b>a)</b> Das Kind mit Blutgruppe 0 hat den Genotyp ii und muss von jedem Elternteil ein i erhalten haben. Beide Eltern sind also heterozygot: Mutter I<sup>B</sup>i, Vater I<sup>A</sup>i.</p>
+            <p style="margin:0 0 6px"><b>b)</b> I<sup>A</sup>i × I<sup>B</sup>i: Gameten I<sup>A</sup> und i bzw. I<sup>B</sup> und i. Kombinationsquadrat: I<sup>A</sup>I<sup>B</sup>, I<sup>A</sup>i, I<sup>B</sup>i, ii — also je 25 % AB, A, B und 0. Alle vier Blutgruppen sind möglich.</p>
+            <p style="margin:0"><b>c)</b> Das Gen E/e entscheidet darüber, ob das Pigment überhaupt eingelagert wird. Bei ee bleibt das Fell gelb, unabhängig davon, ob B oder b vorliegt — die Wirkung von B/b wird also überdeckt. E/e ist epistatisch, B/b hypostatisch.</p>
+          </div>
+        </details>
+      </div>
+
+      <div style="background:var(--color-surface);border-radius:31px;padding:clamp(20px,3vw,28px);margin-top:18px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">
+          <span class="tag tag-outline">Aufgabe 3</span>
+          <span class="tag tag-neutral">Block 3 · Stammbaumanalyse</span>
+        </div>
+        <h3 style="font-family:var(--font-heading);font-weight:400;font-size:24px;margin:0 0 10px">Ein seltener autosomaler Erbgang</h3>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 14px">In einer Familie tritt eine seltene Erbkrankheit auf. Ein gesundes Paar hat drei Kinder, von denen die jüngste Tochter erkrankt ist. Der Vater der Mutter war ebenfalls gesund.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 5px">a) <b>Bestimmen</b> Sie begründet den Erbgang. Gehen Sie auf autosomal/gonosomal und auf dominant/rezessiv ein.</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 5px">b) <b>Geben</b> Sie die Genotypen der Eltern und der erkrankten Tochter <b>an</b> (A = gesundes Allel, a = krankheitsauslösendes Allel).</p>
+        <p style="font-size:15.5px;line-height:1.6;margin:0 0 14px">c) <b>Berechnen</b> Sie die Wahrscheinlichkeit, mit der ein weiteres Kind erkrankt, und die Wahrscheinlichkeit, mit der ein gesundes Geschwisterkind Anlageträger ist.</p>
+        <details>
+          <summary style="cursor:pointer;font-size:14.5px;color:var(--color-accent-700)">Lösung anzeigen</summary>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.6;background:var(--color-bg);border-radius:16px;padding:14px 18px">
+            <p style="margin:0 0 6px"><b>a)</b> Rezessiv: Beide Eltern sind gesund, haben aber ein erkranktes Kind — bei dominanter Vererbung müsste mindestens ein Elternteil erkrankt sein. Autosomal: Eine erkrankte Tochter müsste bei X-chromosomal-rezessiver Vererbung von ihrem Vater das einzige krankheitsauslösende X-Allel erhalten; der Vater ist aber gesund.</p>
+            <p style="margin:0 0 6px"><b>b)</b> Beide Eltern Aa, die erkrankte Tochter aa.</p>
+            <p style="margin:0"><b>c)</b> Aa × Aa ergibt 1 AA : 2 Aa : 1 aa, also 25 % Erkrankungswahrscheinlichkeit pro Kind. Ein gesundes Geschwisterkind kommt nur als AA oder Aa in Frage; von diesen drei gleich wahrscheinlichen Fällen sind zwei heterozygot — die Wahrscheinlichkeit für Anlageträgerschaft beträgt 2/3 ≈ 67 %.</p>
+          </div>
+        </details>
+      </div>
+
+      <div style="display:flex;gap:13px;flex-wrap:wrap;margin-top:28px">
+        <a class="btn btn-secondary" href="klassische-genetik-1.html">Block 1 wiederholen</a>
+        <a class="btn btn-secondary" href="klassische-genetik-2.html">Block 2 wiederholen</a>
+        <a class="btn btn-secondary" href="humangenetik-1.html">Block 3 wiederholen</a>
+      </div>
+    </section>
 
   </div>
 
   <footer style="padding:40px clamp(20px,5vw,72px) 73px;font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent);max-width:1120px;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between">
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-        <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:40px;width:auto">
-        <span>Klausurvorbereitung · GK Biologie 12 · Lernwelten – Evangelisches Gymnasium</span>
-      </div>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <img src="assets/lernwelten-logo.png" alt="Lernwelten – Evangelisches Gymnasium" style="height:40px;width:auto">
+      <span>Klausurvorbereitung Blöcke 1–3 · GK Biologie 12 · Lernwelten – Evangelisches Gymnasium</span>
     </div>
   </footer>
 
 </div>
-
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = {
-    scrollPct: 0,
-    checked: {},
-    quizAnswers: {},
-    graded: false,
-    blanks: {},
-    blanksChecked: false,
-    cloneSteps: {},
-    cloneStepsChecked: false,
-  };
+  state = { scrollPct: 0, checked: {}, quizAnswers: {}, graded: false };
 
   componentDidMount() {
     this._onScroll = () => {
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;
-      const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-      this.setState({ scrollPct: pct });
+      this.setState({ scrollPct: max > 0 ? (h.scrollTop / max) * 100 : 0 });
     };
     window.addEventListener('scroll', this._onScroll, { passive: true });
     this._onScroll();
@@ -264,18 +288,9 @@ class Component extends DCLogic {
   componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
 
   toggleChecked(id) { this.setState(s => ({ checked: { ...s.checked, [id]: !s.checked[id] } })); }
-  setQuizAnswer(id, i) {
-    if (this.state.graded) return;
-    this.setState(s => ({ quizAnswers: { ...s.quizAnswers, [id]: i } }));
-  }
+  setQuizAnswer(id, i) { if (!this.state.graded) this.setState(s => ({ quizAnswers: { ...s.quizAnswers, [id]: i } })); }
   grade() { this.setState({ graded: true }); }
   retry() { this.setState({ quizAnswers: {}, graded: false }); }
-
-  setBlank(i, val) { this.setState(s => ({ blanks: { ...s.blanks, [i]: val } })); }
-  checkBlanks() { this.setState({ blanksChecked: true }); }
-
-  setCloneStep(id, val) { this.setState(s => ({ cloneSteps: { ...s.cloneSteps, [id]: Number(val) } })); }
-  checkCloneSteps() { this.setState({ cloneStepsChecked: true }); }
 
   optionStyle(locked, isCorrect, isSelected) {
     let border = 'var(--color-divider)', bg = 'var(--color-bg)', opacity = '1';
@@ -289,43 +304,44 @@ class Component extends DCLogic {
 
   renderVals() {
     const CHECKLIST_DATA = [
-      { id: 'mendel', title: 'Mendelsche Regeln & Kreuzungsschemata', subtitle: 'Mono-/dihybrider Erbgang, Kodominanz, intermediärer Erbgang', block: 'Block 1', href: 'klassische-genetik-1.html' },
-      { id: 'allele', title: 'Multiple Allele, AB0-Blutgruppen, Epistasie', subtitle: 'Blutgruppen-Kreuzungen, Bluttransfusion, Fellfarbe-Beispiel', block: 'Block 2', href: 'klassische-genetik-2.html' },
-      { id: 'humangen1', title: 'Gen-/Genom-/Chromosomenmutationen, Erbkrankheiten', subtitle: 'Mukoviszidose, Chorea Huntington, Bluterkrankheit', block: 'Block 3', href: 'humangenetik-1.html' },
-      { id: 'humangen2', title: 'Stammbaumanalyse & Diagnostik', subtitle: 'Autosomal/gonosomal, Erbgang bestimmen, pränatale Diagnostik', block: 'Block 4', href: 'humangenetik-2.html' },
-      { id: 'arbeitstechniken', title: 'Arbeitstechniken: PCR, Gelelektrophorese, Sequenzierung', subtitle: 'Hybridisierung, genetischer Fingerabdruck, Strangabbruchmethode', block: 'Block 5', href: 'arbeitstechniken.html' },
+      { id: 'mendel', title: 'Mendelsche Regeln und Kreuzungsschemata', subtitle: 'Uniformität, Spaltung, Unabhängigkeit; mono- und dihybride Kreuzungen', block: 'Block 1', href: 'klassische-genetik-1.html' },
+      { id: 'inter', title: 'Intermediärer Erbgang und Kodominanz', subtitle: '1 : 2 : 1 in der F2, Unterschied zwischen Zwischenform und beiden Merkmalen nebeneinander', block: 'Block 1', href: 'klassische-genetik-1.html' },
+      { id: 'begriffe', title: 'Genotyp, Phänotyp, homozygot, heterozygot', subtitle: 'Fachsprache sicher verwenden, Allelsymbole festlegen', block: 'Block 1', href: 'klassische-genetik-1.html' },
+      { id: 'allele', title: 'Multiple Allele und das AB0-System', subtitle: 'Genotypen der vier Blutgruppen, Vaterschaftsausschluss', block: 'Block 2', href: 'klassische-genetik-2.html' },
+      { id: 'epistasie', title: 'Epistasie', subtitle: 'Ein Gen überdeckt die Wirkung eines anderen; epistatisch und hypostatisch', block: 'Block 2', href: 'klassische-genetik-2.html' },
+      { id: 'stammbaum', title: 'Stammbaumanalyse', subtitle: 'Symbole lesen, Erbgang begründet bestimmen, Belegperson nennen', block: 'Block 3', href: 'humangenetik-1.html' },
+      { id: 'genotypen', title: 'Genotypen im Stammbaum ableiten', subtitle: 'Anlageträger erkennen, Genotypen einzelner Personen angeben', block: 'Block 3', href: 'humangenetik-1.html' },
+      { id: 'wahrsch', title: 'Wahrscheinlichkeiten und genetische Beratung', subtitle: '25 %-Regel, 2/3-Wahrscheinlichkeit für Anlageträgerschaft, Nutzen und Grenzen der Beratung', block: 'Block 3', href: 'humangenetik-1.html' },
     ];
     const checklist = CHECKLIST_DATA.map(item => {
       const checked = !!this.state.checked[item.id];
       return {
-        ...item, checked, onToggle: () => this.toggleChecked(item.id),
+        ...item, onToggle: () => this.toggleChecked(item.id),
         checkMark: checked ? '✓' : '',
         checkStyle: `flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid ${checked ? 'var(--color-accent)' : 'var(--color-neutral-400)'};background:${checked ? 'var(--color-accent)' : 'transparent'};color:${checked ? 'white' : 'transparent'};cursor:pointer;display:grid;place-items:center;font-size:14px;padding:0`,
       };
     });
-    const checkedCount = Object.values(this.state.checked).filter(Boolean).length;
 
     const QUIZ_DATA = [
-      { block: 'Block 1', stem: 'Zwei mischerbige (Aa) Erbsenpflanzen werden gekreuzt. Wie ist das Verhältnis der Phänotypen in der F2?', options: ['3 : 1', '1 : 2 : 1', '9 : 3 : 3 : 1', '1 : 1'], correct: 0, explain: 'Bei einem einfachen dominant-rezessiven Erbgang ergibt Aa × Aa das klassische 3:1-Verhältnis.' },
-      { block: 'Block 1', stem: 'Was versteht man unter intermediärem Erbgang?', options: ['Beide Allele mischen sich im Phänotyp zu einer Zwischenform', 'Ein Allel ist immer vollständig dominant', 'Zwei Gene wirken unabhängig voneinander', 'Ein Gen hat mehr als zwei Allele'], correct: 0, explain: 'Beim intermediären Erbgang zeigt der heterozygote Phänotyp eine Mischform zwischen beiden homozygoten Ausprägungen (z. B. rosa bei rot × weiß).' },
-      { block: 'Block 2', stem: 'Welche Blutgruppe hat ein Kind mit Genotyp I^A i?', options: ['A', 'AB', 'B', '0'], correct: 0, explain: 'I^A ist dominant über i, daher zeigt sich das A-Antigen.' },
-      { block: 'Block 2', stem: 'Warum verschmelzen bei Epistasie mehrere Genotyp-Klassen zu einem Phänotyp?', options: ['Weil ein epistatisches Gen bestimmt, ob ein anderes Gen überhaupt sichtbar wird', 'Weil die Gene auf demselben Chromosom liegen', 'Weil eines der Gene mutiert ist', 'Weil es sich um multiple Allele handelt'], correct: 0, explain: 'Das epistatische Gen wirkt wie ein Schalter — steht er auf „aus", bleibt die Wirkung des anderen Gens unsichtbar, egal welcher Genotyp dort vorliegt.' },
-      { block: 'Block 3', stem: 'Wodurch unterscheidet sich eine Genommutation von einer Genmutation?', options: ['Genommutationen verändern die Chromosomenzahl, Genmutationen die Basensequenz eines einzelnen Gens', 'Genommutationen betreffen nur die Mitochondrien-DNA', 'Genmutationen sind immer tödlich, Genommutationen nie', 'Es gibt keinen Unterschied'], correct: 0, explain: 'Genmutation = Veränderung innerhalb eines Gens; Genommutation = Veränderung der Chromosomenzahl (z. B. Trisomie 21).' },
-      { block: 'Block 3', stem: 'Mukoviszidose wird autosomal-rezessiv vererbt. Welche Aussage stimmt?', options: ['Erkrankte Kinder können auch von zwei gesunden, heterozygoten Elternteilen stammen', 'Nur Söhne können erkranken', 'Ein einziges dominantes Allel reicht für die Erkrankung', 'Die Krankheit liegt auf dem Y-Chromosom'], correct: 0, explain: 'Bei autosomal-rezessivem Erbgang können zwei gesunde Träger (Aa × Aa) ein erkranktes Kind (aa) bekommen.' },
-      { block: 'Block 4', stem: 'Woran erkennt man in einem Stammbaum am ehesten einen gonosomal-rezessiven (X-chromosomalen) Erbgang?', options: ['Deutlich mehr betroffene Männer als Frauen, Merkmal „überspringt" oft eine Generation', 'Gleich viele betroffene Männer und Frauen', 'Nur Frauen sind betroffen', 'Jedes Kind eines betroffenen Elternteils ist betroffen'], correct: 0, explain: 'X-chromosomal-rezessive Merkmale zeigen sich häufiger bei Männern (nur ein X-Chromosom), Frauen sind meist nur Trägerinnen.' },
-      { block: 'Block 4', stem: 'Was liefert eine pränatale Diagnostik wie die Amniozentese?', options: ['Untersuchung von Fruchtwasserzellen auf Chromosomen- oder Genmutationen vor der Geburt', 'Eine Behandlung der Erbkrankheit im Mutterleib', 'Die Bestimmung des Erbgangs nach der Geburt', 'Einen genetischen Fingerabdruck des Vaters'], correct: 0, explain: 'Bei der Amniozentese werden kindliche Zellen aus dem Fruchtwasser auf Chromosomen- und Genmutationen untersucht.' },
-      { block: 'Block 5', stem: 'Welche drei Schritte laufen in einem PCR-Zyklus ab?', options: ['Denaturierung, Hybridisierung, Verlängerung', 'Transkription, Translation, Reifung', 'Restriktion, Ligation, Selektion', 'Isolierung, Elektrophorese, Detektion'], correct: 0, explain: 'PCR-Zyklus: Denaturierung (Auftrennen) → Hybridisierung (Primer-Anlagerung) → Verlängerung (Synthese).' },
-      { block: 'Block 5', stem: 'Warum wandern kurze DNA-Fragmente in der Gelelektrophorese weiter als lange?', options: ['Sie passen leichter durch die Gelporen', 'Sie sind schwerer geladen', 'Sie binden stärker an die Elektroden', 'Lange Fragmente lösen sich im Gel auf'], correct: 0, explain: 'Die Gelmatrix wirkt wie ein molekulares Sieb — kleine Fragmente kommen schneller durch als große.' },
-      { block: 'Block 5', stem: 'Was verrät bei der Strangabbruchmethode das markierte Ende jedes Fragments?', options: ['Die letzte eingebaute Base an dieser Fragmentlänge', 'Die Gesamtzahl der PCR-Zyklen', 'Die Temperatur der Denaturierung', 'Die Bindungsstelle des zweiten Primers'], correct: 0, explain: 'Nach Größe sortiert ergeben die markierten Endbuchstaben Base für Base den neu synthetisierten, komplementären Strang.' },
-      { block: 'Alle Blöcke', stem: 'Welche der folgenden Aussagen beschreibt korrekt den Unterschied zwischen Genotyp und Phänotyp?', options: ['Genotyp ist die genetische Ausstattung, Phänotyp die sichtbare Ausprägung eines Merkmals', 'Phänotyp und Genotyp sind immer identisch', 'Genotyp ändert sich im Laufe des Lebens, Phänotyp nicht', 'Phänotyp bestimmt den Genotyp'], correct: 0, explain: 'Der Genotyp ist die Allelkombination eines Individuums, der Phänotyp das daraus resultierende, beobachtbare Merkmal.' },
+      { block: 'Block 1', stem: 'Zwei mischerbige (Aa) Erbsenpflanzen werden gekreuzt. Wie ist das Verhältnis der Phänotypen in der F2?', options: ['3 : 1', '1 : 2 : 1', '9 : 3 : 3 : 1', '1 : 1'], correct: 0, explain: 'Bei einem dominant-rezessiven Erbgang ergibt Aa × Aa das klassische 3 : 1-Verhältnis.' },
+      { block: 'Block 1', stem: 'Welches Ergebnis spricht für einen intermediären Erbgang?', options: ['Die F1 zeigt eine Zwischenform, die F2 spaltet 1 : 2 : 1 auf', 'Die F1 ist uniform wie ein Elternteil, die F2 spaltet 3 : 1 auf', 'In der F2 treten vier Phänotypen im Verhältnis 9 : 3 : 3 : 1 auf', 'Alle Nachkommen sehen aus wie die Mutter'], correct: 0, explain: 'Beim intermediären Erbgang wirken beide Allele zu gleichen Teilen: die Heterozygoten zeigen eine Zwischenform, die F2 spaltet 1 : 2 : 1 auf.' },
+      { block: 'Block 1', stem: 'Was besagt die Uniformitätsregel?', options: ['Kreuzt man zwei reinerbige Eltern, ist die F1 in dem betrachteten Merkmal einheitlich', 'Die Allele eines Gens trennen sich bei der Gametenbildung', 'Verschiedene Gene werden unabhängig voneinander vererbt', 'Jedes Merkmal wird von genau zwei Genen bestimmt'], correct: 0, explain: '1. Mendelsche Regel: Aus der Kreuzung zweier reinerbiger Eltern geht eine im betrachteten Merkmal einheitliche F1 hervor.' },
+      { block: 'Block 1', stem: 'Ein Kreuzungsschema gilt in der Klausur als vollständig, wenn es enthält:', options: ['Genotypen der Eltern, Gameten, Kombinationsquadrat sowie Genotypen und Phänotypen der Nachkommen', 'nur das Kombinationsquadrat', 'nur die Phänotypen der Nachkommen', 'die Genotypen der Eltern und das Ergebnis in Prozent'], correct: 0, explain: 'Fehlt einer der vier Teile, gehen Punkte verloren — auch dann, wenn das Endergebnis stimmt.' },
+      { block: 'Block 2', stem: 'Welchen Genotyp hat ein Mensch mit der Blutgruppe 0?', options: ['ii', 'I^A i', 'I^B i', 'I^A I^B'], correct: 0, explain: 'Blutgruppe 0 ist nur reinerbig möglich: beide Allele sind i.' },
+      { block: 'Block 2', stem: 'Was bedeutet „multiple Allele“?', options: ['Für ein Gen existieren in der Population mehr als zwei Allelvarianten, jede Person besitzt aber nur zwei davon', 'Ein Individuum trägt für ein Gen drei Allele', 'Mehrere Gene bestimmen ein Merkmal', 'Ein Allel wirkt sich auf mehrere Merkmale aus'], correct: 0, explain: 'Beim AB0-System gibt es die drei Allele I^A, I^B und i — jeder Mensch trägt davon zwei, je eines pro homologem Chromosom.' },
+      { block: 'Block 2', stem: 'Worin unterscheidet sich Kodominanz vom intermediären Erbgang?', options: ['Bei Kodominanz sind beide Merkmale nebeneinander ausgeprägt, beim intermediären Erbgang entsteht eine Zwischenform', 'Kodominanz tritt nur bei Pflanzen auf', 'Beim intermediären Erbgang ist ein Allel vollständig dominant', 'Es gibt keinen Unterschied'], correct: 0, explain: 'I^A I^B bildet A- und B-Antigen nebeneinander; rosa Blüten dagegen sind eine echte Zwischenform.' },
+      { block: 'Block 2', stem: 'Ein Kind hat die Blutgruppe 0, die Mutter A. Welche Blutgruppe schließt eine Vaterschaft aus?', options: ['AB', 'A', 'B', '0'], correct: 0, explain: 'Ein Mann mit AB (I^A I^B) gibt immer I^A oder I^B weiter und kann kein Kind mit ii zeugen.' },
+      { block: 'Block 2', stem: 'Warum fallen bei Epistasie mehrere Genotypen zu einem Phänotyp zusammen?', options: ['Weil ein Gen darüber entscheidet, ob ein anderes Gen überhaupt sichtbar wird', 'Weil beide Gene auf demselben Chromosom liegen', 'Weil eines der Gene mutiert ist', 'Weil multiple Allele vorliegen'], correct: 0, explain: 'Das epistatische Gen wirkt wie ein Schalter: steht er auf „aus“, bleibt die Wirkung des hypostatischen Gens unsichtbar.' },
+      { block: 'Block 3', stem: 'Zwei gesunde Eltern haben ein erkranktes Kind. Welcher Erbgang ist damit ausgeschlossen?', options: ['dominant', 'autosomal-rezessiv', 'X-chromosomal-rezessiv', 'keiner'], correct: 0, explain: 'Bei dominanter Vererbung müsste mindestens ein Elternteil das Merkmal selbst zeigen.' },
+      { block: 'Block 3', stem: 'Eine erkrankte Frau hat einen gesunden Vater. Was folgt daraus?', options: ['Der Erbgang ist nicht X-chromosomal-rezessiv', 'Der Erbgang ist dominant', 'Die Mutter ist gesund', 'Alle Söhne der Frau erkranken'], correct: 0, explain: 'Bei X-chromosomal-rezessiver Vererbung erhielte die Tochter ihr einziges väterliches X-Allel vom Vater — dieser müsste dann selbst erkrankt sein.' },
+      { block: 'Block 3', stem: 'Ein gesundes Geschwisterkind zweier heterozygoter Eltern (Aa × Aa): Wie hoch ist die Wahrscheinlichkeit, dass es Anlageträger ist?', options: ['2/3', '1/2', '1/4', '3/4'], correct: 0, explain: 'Da aa ausgeschlossen ist, bleiben AA, Aa und Aa — zwei von drei gleich wahrscheinlichen Fällen sind heterozygot.' },
     ];
     const graded = this.state.graded;
     let correctCount = 0;
     const quiz = QUIZ_DATA.map((q, qi) => {
       const id = 'q' + qi;
       const sel = this.state.quizAnswers[id];
-      const answered = sel !== undefined;
-      if (graded && answered && sel === q.correct) correctCount++;
+      if (graded && sel === q.correct) correctCount++;
       return {
         id, num: qi + 1, block: q.block, stem: q.stem, explain: q.explain,
         options: q.options.map((text, i) => ({ text, style: this.optionStyle(graded, i === q.correct, i === sel), onClick: () => this.setQuizAnswer(id, i) })),
@@ -334,68 +350,22 @@ class Component extends DCLogic {
       };
     });
     const totalCount = QUIZ_DATA.length;
-    const answeredCount = Object.keys(this.state.quizAnswers).length;
     const scorePct = graded ? Math.round((correctCount / totalCount) * 100) : 0;
-    const scoreHead = graded ? (scorePct >= 80 ? 'Stark — bereit für die Klausur!' : scorePct >= 50 ? 'Guter Stand, noch etwas üben' : 'Schau nochmal in die Checkliste') : '—';
-    const scoreMsg = graded ? `${correctCount} von ${totalCount} Fragen richtig beantwortet.` : '';
-
-    // Blanks (Restriktionsenzyme Lückentext)
-    const bChecked = this.state.blanksChecked;
-    const blankStyleFor = (idx, correctList) => {
-      const val = (this.state.blanks[idx] || '').trim().toLowerCase();
-      let border = 'var(--color-divider)', bg = 'var(--color-bg)';
-      if (bChecked) {
-        const ok = correctList.some(c => val.includes(c));
-        border = ok ? 'var(--color-accent-2-600)' : '#b04a3a';
-        bg = ok ? 'var(--color-accent-2-100)' : '#f8e2dc';
-      }
-      return `min-width:150px;font-family:var(--font-body);font-size:14.5px;border-radius:10px;border:1.5px solid ${border};background:${bg};color:var(--color-text);padding:3px 10px`;
-    };
-    const BLANK_ANSWERS = [['erkennungssequenz', 'sequenzen', 'stelle'], ['palindrom'], ['fremd', 'viral', 'virale', 'fremder'], ['vektor', 'plasmid', 'klonierungsvektor']];
-    let blanksCorrectCount = 0;
-    [0, 1, 2, 3].forEach(i => { if (bChecked) { const val = (this.state.blanks[i] || '').trim().toLowerCase(); if (BLANK_ANSWERS[i].some(c => val.includes(c))) blanksCorrectCount++; } });
-
-    // Cloning order
-    const CLONE_STEPS_DATA = [
-      { id: 'restriktion', label: 'Restriktionsverdau — Vektor und Fragment werden geschnitten', correctOrder: 0 },
-      { id: 'ligation', label: 'Ligation — Fragment wird in den Vektor eingefügt', correctOrder: 1 },
-      { id: 'transformation', label: 'Transformation — Vektor wird in Bakterien übertragen', correctOrder: 2 },
-      { id: 'selektion', label: 'Selektion — Bakterien mit Vektor werden identifiziert', correctOrder: 3 },
-    ];
-    const csChecked = this.state.cloneStepsChecked;
-    const cloneSteps = CLONE_STEPS_DATA.map(s => {
-      const value = this.state.cloneSteps[s.id] !== undefined ? String(this.state.cloneSteps[s.id]) : '-1';
-      const ok = csChecked ? Number(value) === s.correctOrder : null;
-      return {
-        ...s, value,
-        onChange: (e) => this.setCloneStep(s.id, e.target.value),
-        selectStyle: `font-family:var(--font-body);font-size:14.5px;border-radius:999px;padding:6px 14px;border:1.5px solid ${csChecked ? (ok ? 'var(--color-accent-2-600)' : '#b04a3a') : 'var(--color-divider)'};background:${csChecked ? (ok ? 'var(--color-accent-2-100)' : '#f8e2dc') : 'var(--color-bg)'};color:var(--color-text)`,
-      };
-    });
-    let cloneStepsFeedback = '';
-    if (csChecked) {
-      const correctN = cloneSteps.filter(s => Number(s.value) === CLONE_STEPS_DATA.find(d => d.id === s.id).correctOrder).length;
-      cloneStepsFeedback = `${correctN} / 4 richtig`;
-    }
 
     return {
       navProgressStyle: `position:absolute;left:0;bottom:0;height:3px;background:var(--color-accent);transition:width .1s linear;width:${this.state.scrollPct}%`,
-      checklist, checkedCount, checklistTotal: CHECKLIST_DATA.length,
-      quiz, totalCount, answeredCount, graded,
+      checklist,
+      checkedCount: Object.values(this.state.checked).filter(Boolean).length,
+      checklistTotal: CHECKLIST_DATA.length,
+      quiz, totalCount, answeredCount: Object.keys(this.state.quizAnswers).length, graded,
       scorePctLabel: scorePct + '%',
       scoreRingBg: `conic-gradient(var(--color-accent) ${scorePct * 3.6}deg, var(--color-neutral-200) 0)`,
-      scoreHead, scoreMsg,
+      scoreHead: graded ? (scorePct >= 80 ? 'Stark — bereit für die Klausur!' : scorePct >= 50 ? 'Guter Stand, noch etwas üben' : 'Schau nochmal in die Checkliste') : '—',
+      scoreMsg: graded ? `${correctCount} von ${totalCount} Fragen richtig beantwortet.` : '',
       grade: () => this.grade(), retry: () => this.retry(),
-      blank0: this.state.blanks[0] || '', onBlank0: (e) => this.setBlank(0, e.target.value), blankStyle0: blankStyleFor(0, BLANK_ANSWERS[0]),
-      blank1: this.state.blanks[1] || '', onBlank1: (e) => this.setBlank(1, e.target.value), blankStyle1: blankStyleFor(1, BLANK_ANSWERS[1]),
-      blank2: this.state.blanks[2] || '', onBlank2: (e) => this.setBlank(2, e.target.value), blankStyle2: blankStyleFor(2, BLANK_ANSWERS[2]),
-      blank3: this.state.blanks[3] || '', onBlank3: (e) => this.setBlank(3, e.target.value), blankStyle3: blankStyleFor(3, BLANK_ANSWERS[3]),
-      checkBlanks: () => this.checkBlanks(), blanksChecked: bChecked, blanksCorrectCount,
-      cloneSteps, checkCloneSteps: () => this.checkCloneSteps(), cloneStepsChecked: csChecked, cloneStepsFeedback,
     };
   }
 }
-
 </script>
 </body>
 </html>

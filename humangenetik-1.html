@@ -11,6 +11,7 @@
 <helmet>
   <link rel="stylesheet" href="ds/organic/styles.css">
   <script src="ds/organic/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
   <style>
     html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -135,10 +136,10 @@
         <div style="max-width:64ch">
           <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Genetik-ABC, Teil 3</span>
           <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Grundbegriffe zum Aufwärmen</h2>
-          <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese acht Begriffe brauchst du für alles Weitere auf dieser Seite. Klick auf ein Kärtchen — überleg erst selbst, ob du den Begriff noch kennst, bevor du die Erklärung aufdeckst.</p>
+          <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Diese neun Begriffe brauchst du für alles Weitere auf dieser Seite. Klick auf ein Kärtchen — überleg erst selbst, ob du den Begriff noch kennst, bevor du die Erklärung aufdeckst.</p>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-top:28px">
-          <sc-for list="{{ grundbegriffe }}" as="term" hint-placeholder-count="8">
+          <sc-for list="{{ grundbegriffe }}" as="term" hint-placeholder-count="9">
             <button type="button" onClick="{{ term.onClick }}" style="position:relative;height:168px;perspective:1200px;background:transparent;border:none;padding:0;cursor:pointer;width:100%;text-align:left;font:inherit;color:inherit">
               <div style="{{ term.flipStyle }}">
                 <div class="card" style="{{ term.frontStyle }}">
@@ -228,6 +229,20 @@
         <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Bei einem autosomal-rezessiven Erbgang liegt das veränderte Gen auf einem der Autosomen (Chromosomen 1–22, nicht auf X oder Y) und wird nur dann im Phänotyp sichtbar, wenn beide Allele die rezessive Variante tragen (aa). Ein bekanntes Beispiel ist Mukoviszidose (zystische Fibrose): Menschen mit dem Genotyp aa bilden einen zu zähen Schleim in Lunge und Bauchspeicheldrüse, mit teils schweren gesundheitlichen Folgen. Heterozygote Anlageträger (Aa) sind selbst vollständig gesund, können das veränderte Allel aber unbemerkt an ihre Kinder weitergeben. Genau das erschwert die Stammbaumanalyse: Eine betroffene Person (aa) kann durchaus zwei völlig gesunde Eltern haben — das Merkmal „überspringt" scheinbar eine Generation, obwohl es in Wirklichkeit nur verdeckt weitervererbt wurde. Klick im Stammbaum unten auf eine Person, um zu sehen, welcher Genotyp sich aus ihrer Stellung in der Familie ableiten lässt.</p>
       </div>
 
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;align-items:start;margin-top:28px">
+        <div>
+          <h3 style="font-family:var(--font-heading);font-weight:400;font-size:24px;margin:0 0 10px">Der menschliche Chromosomensatz</h3>
+          <p style="font-size:16.5px;line-height:28px;margin:0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Jede Körperzelle des Menschen enthält 46 Chromosomen, also 23 Paare. Ein Chromosom jedes Paares stammt von der Mutter, das andere vom Vater; die beiden Partner eines Paares heißen homologe Chromosomen und tragen dieselben Gene an denselben Stellen — aber möglicherweise in unterschiedlichen Allelvarianten. Deshalb besitzt jeder Mensch von jedem Gen zwei Allele.</p>
+          <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Die Paare 1 bis 22 sind die <b>Autosomen</b>. Das 23. Paar sind die <b>Gonosomen</b> (Geschlechtschromosomen): XX bei Frauen, XY bei Männern. Eizellen und Spermien enthalten nur je einen halben Satz mit 23 Chromosomen — bei der Befruchtung ergänzen sie sich wieder zu 46. Ob ein Erbgang autosomal oder gonosomal verläuft, hängt also davon ab, auf welchem dieser Chromosomen das betroffene Gen liegt. Die Schreibweise für den Chromosomensatz lautet 46,XX bzw. 46,XY.</p>
+        </div>
+        <figure style="margin:0;background:var(--color-surface);border-radius:31px;padding:18px;box-shadow:var(--shadow-sm)">
+          <div style="aspect-ratio:4/3;border-radius:20px;overflow:hidden">
+            <image-slot id="hg1-karyogramm" shape="rounded" radius="20" fit="contain" placeholder="Karyogramm: menschlicher Chromosomensatz (46,XY) — Bild hier ablegen"></image-slot>
+          </div>
+          <figcaption style="margin:11px 0 0;font-size:13.5px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Karyogramm eines menschlichen Chromosomensatzes: 22 Autosomenpaare, nach Größe geordnet, dazu das Gonosomenpaar.</figcaption>
+        </figure>
+      </div>
+
       <div style="background:var(--color-surface);border-radius:31px;padding:22px;margin-top:28px;box-shadow:var(--shadow-sm);overflow-x:auto">
         <div style="position:relative;width:560px;height:400px;margin:0 auto">
           <sc-for list="{{ recLines }}" as="ln" hint-placeholder-count="11">
@@ -242,9 +257,9 @@
         </div>
 
         <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:13px;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
           <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>weiblich</span>
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
         </div>
 
         <div style="background:var(--color-bg);border-radius:28px;padding:13px 18px;min-height:76px;box-shadow:inset 0 0 0 1px var(--color-divider);margin-top:13px">
@@ -303,9 +318,9 @@
         </div>
 
         <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:13px;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
           <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>weiblich</span>
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
         </div>
 
         <div style="background:var(--color-bg);border-radius:28px;padding:13px 18px;min-height:76px;box-shadow:inset 0 0 0 1px var(--color-divider);margin-top:13px">
@@ -364,9 +379,9 @@
           </sc-for>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:9px;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
           <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>weiblich</span>
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
         </div>
         <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:18px">
           <button type="button" class="btn btn-primary" onClick="{{ checkEx }}">Prüfen</button>
@@ -698,7 +713,7 @@ class Component extends DCLogic {
 
   buildNode(p, id, selectedId, selectFn) {
     const selected = selectedId === id;
-    const shapeRadius = p.sex === 'f' ? '50%' : 'var(--radius-sm)';
+    const shapeRadius = p.sex === 'f' ? '50%' : '4px';
     const bg = p.affected ? 'var(--color-accent-600)' : 'var(--color-bg)';
     const border = p.affected ? 'var(--color-accent-800)' : 'var(--color-accent-700)';
     const ring = selected ? ',0 0 0 3px var(--color-accent)' : '';
@@ -715,7 +730,7 @@ class Component extends DCLogic {
     const correct = checked ? accepted.indexOf((val || '').trim()) !== -1 : null;
     let border = 'var(--color-divider)', bg = 'var(--color-bg)';
     if (checked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
-    const shapeRadius = p.sex === 'f' ? '50%' : 'var(--radius-sm)';
+    const shapeRadius = p.sex === 'f' ? '50%' : '4px';
     const shapeBg = p.affected ? 'var(--color-accent-600)' : 'var(--color-bg)';
     const shapeBorder = p.affected ? 'var(--color-accent-800)' : 'var(--color-accent-700)';
     return {
@@ -815,6 +830,7 @@ class Component extends DCLogic {
       { id: 'merkmalstraeger', kicker: 'Phänotyp', title: 'Merkmalsträger', body: 'Eine Person, die das untersuchte Merkmal (z. B. eine Erbkrankheit) im Phänotyp zeigt.' },
       { id: 'anlagetraeger', kicker: 'Genotyp', title: 'Anlageträger', body: 'Eine heterozygote Person, die ein rezessives Allel trägt, selbst aber gesund ist.' },
       { id: 'autosomal', kicker: 'Ort im Genom', title: 'autosomal', body: 'Ein Gen liegt auf einem der Autosomen (Chromosomen 1–22), nicht auf X oder Y.' },
+      { id: 'gonosomal', kicker: 'Ort im Genom', title: 'gonosomal', body: 'Ein Gen liegt auf einem der Geschlechtschromosomen X oder Y. Weil Männer nur ein X besitzen, wirken sich rezessive Allele auf dem X bei ihnen sofort aus.' },
       { id: 'konsanguinitaet', kicker: 'Risikofaktor', title: 'Konsanguinität', body: 'Verwandtenehe — erhöht bei den Kindern das Risiko für rezessive Erbkrankheiten.' },
       { id: 'beratung', kicker: 'Anwendung', title: 'Genetische Beratung', body: 'Nichtdirektive fachliche Beratung von Familien zu Vererbungsrisiken.' },
       { id: 'neumutation', kicker: 'Sonderfall', title: 'Neumutation', body: 'Eine spontan neu entstandene Veränderung der DNA, unabhängig vom elterlichen Genotyp.' },

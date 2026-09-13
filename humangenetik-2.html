@@ -177,9 +177,9 @@
         </div>
 
         <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:13px;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
           <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>weiblich</span>
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
         </div>
 
         <div style="background:var(--color-bg);border-radius:28px;padding:13px 18px;min-height:76px;box-shadow:inset 0 0 0 1px var(--color-divider);margin-top:13px">
@@ -238,9 +238,9 @@
           </sc-for>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:9px;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>männlich</span>
           <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:50%;box-shadow:inset 0 0 0 2px var(--color-accent-700);display:inline-block"></span>weiblich</span>
-          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:var(--radius-sm);background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:3px;background:var(--color-accent-600);display:inline-block"></span>betroffen</span>
         </div>
         <div style="display:flex;gap:13px;align-items:center;flex-wrap:wrap;margin-top:18px">
           <button type="button" class="btn btn-primary" onClick="{{ checkEx }}">Prüfen</button>
@@ -587,7 +587,7 @@ class Component extends DCLogic {
 
   buildNode(p, id, selectedId, selectFn) {
     const selected = selectedId === id;
-    const shapeRadius = p.sex === 'f' ? '50%' : 'var(--radius-sm)';
+    const shapeRadius = p.sex === 'f' ? '50%' : '4px';
     const bg = p.affected ? 'var(--color-accent-600)' : 'var(--color-bg)';
     const border = p.affected ? 'var(--color-accent-800)' : 'var(--color-accent-700)';
     const ring = selected ? ',0 0 0 3px var(--color-accent)' : '';
@@ -604,7 +604,7 @@ class Component extends DCLogic {
     const correct = checked ? this.matchesAny(val, accepted) : null;
     let border = 'var(--color-divider)', bg = 'var(--color-bg)';
     if (checked) { border = correct ? 'var(--color-accent-2-600)' : '#b04a3a'; bg = correct ? 'var(--color-accent-2-100)' : '#f8e2dc'; }
-    const shapeRadius = p.sex === 'f' ? '50%' : 'var(--radius-sm)';
+    const shapeRadius = p.sex === 'f' ? '50%' : '4px';
     const shapeBg = p.affected ? 'var(--color-accent-600)' : 'var(--color-bg)';
     const shapeBorder = p.affected ? 'var(--color-accent-800)' : 'var(--color-accent-700)';
     return {

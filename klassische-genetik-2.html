@@ -370,6 +370,7 @@
         </sc-if>
       </div>
       <p style="font-size:14.5px;line-height:1.5;margin:13px 0 0;color:color-mix(in srgb,var(--color-text) 78%,transparent)">Trag die drei rechten Spalten selbst aus — du hast alle Informationen dafür schon oben gelesen.</p>
+      <div style="display:flex;gap:10px;background:var(--color-accent-2-100);border-radius:16px;padding:11px 16px;font-size:13.5px;line-height:1.5;margin-top:11px"><span aria-hidden="true">ⓘ</span><span><b>Schreibweise:</b> Antikörper heißen fachlich <b>Anti-A</b> bzw. <b>Anti-B</b> — also mit „Anti-" vor dem Buchstaben. Bei der Prüfung genügt auch der Buchstabe allein. Mehrere Angaben trennst du mit Komma oder „und"; die <b>Reihenfolge ist beliebig</b>. Gibt es keine, schreib „keine".</span></div>
       <div style="margin-top:13px;overflow-x:auto">
         <table class="table">
           <thead><tr>
@@ -821,6 +822,25 @@ class Component extends DCLogic {
   normalizeAnswer(str) {
     return (str || '').trim().toLowerCase().replace(/\s+/g, '').replace(/,/g, '');
   }
+  // order-independent set comparison for the blood table: "AB, A" === "A und AB",
+  // "Anti-B" === "B", "alle" === "A, B, AB, 0"
+  bloodSet(str) {
+    let s = (str || '').trim().toLowerCase();
+    if (!s) return null;
+    s = s.replace(/anti\s*-?\s*/g, '').replace(/\bnur\b/g, '').replace(/\bund\b|\boder\b|&|\+|\//g, ',');
+    const parts = s.split(/[,;\s]+/).map(t => t.trim()).filter(Boolean)
+      .map(t => (t === 'null' || t === 'o' ? '0' : t))
+      .map(t => (t === '-' || t === 'keiner' ? 'keine' : t));
+    if (parts.length === 1 && parts[0] === 'alle') return ['0', 'a', 'ab', 'b'];
+    if (!parts.length) return null;
+    return [...new Set(parts)].sort();
+  }
+  bloodMatches(input, expected) {
+    const a = this.bloodSet(input);
+    if (!a) return false;
+    const b = [...expected].sort();
+    return a.length === b.length && a.every((v, i) => v === b[i]);
+  }
   answerMatches(input, acceptedList) {
     const norm = this.normalizeAnswer(input);
     if (!norm) return false;
@@ -1058,10 +1078,10 @@ class Component extends DCLogic {
 
     // Blood transfusion fill-in table
     const BLOOD_TABLE_DATA = [
-      { group: 'A', antigens: 'A', antikoerper: ['Anti-B'], spendet: ['A, AB'], empfaengt: ['A, 0'] },
-      { group: 'B', antigens: 'B', antikoerper: ['Anti-A'], spendet: ['B, AB'], empfaengt: ['B, 0'] },
-      { group: 'AB', antigens: 'A und B', antikoerper: ['keine'], spendet: ['nur AB', 'AB'], empfaengt: ['A, B, AB, 0', 'alle'] },
-      { group: '0', antigens: 'keine', antikoerper: ['Anti-A und Anti-B', 'Anti-A, Anti-B'], spendet: ['A, B, AB, 0', 'alle'], empfaengt: ['nur 0', '0'] },
+      { group: 'A', antigens: 'A', antikoerper: ['b'], spendet: ['a', 'ab'], empfaengt: ['a', '0'] },
+      { group: 'B', antigens: 'B', antikoerper: ['a'], spendet: ['b', 'ab'], empfaengt: ['b', '0'] },
+      { group: 'AB', antigens: 'A und B', antikoerper: ['keine'], spendet: ['ab'], empfaengt: ['a', 'b', 'ab', '0'] },
+      { group: '0', antigens: 'keine', antikoerper: ['a', 'b'], spendet: ['a', 'b', 'ab', '0'], empfaengt: ['0'] },
     ];
     const btChecked = this.state.bloodTableChecked;
     const fieldStyle = (ok) => {
@@ -1072,9 +1092,9 @@ class Component extends DCLogic {
     let bloodTableCorrectCount = 0;
     const bloodTableRows = BLOOD_TABLE_DATA.map(row => {
       const ex = this.state.bloodTable[row.group] || {};
-      const akOk = btChecked ? this.answerMatches(ex.antikoerper, row.antikoerper) : null;
-      const spOk = btChecked ? this.answerMatches(ex.spendet, row.spendet) : null;
-      const emOk = btChecked ? this.answerMatches(ex.empfaengt, row.empfaengt) : null;
+      const akOk = btChecked ? this.bloodMatches(ex.antikoerper, row.antikoerper) : null;
+      const spOk = btChecked ? this.bloodMatches(ex.spendet, row.spendet) : null;
+      const emOk = btChecked ? this.bloodMatches(ex.empfaengt, row.empfaengt) : null;
       if (akOk) bloodTableCorrectCount++;
       if (spOk) bloodTableCorrectCount++;
       if (emOk) bloodTableCorrectCount++;

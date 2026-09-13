@@ -11,9 +11,9 @@ Startseite: `index.html` (auf GitHub Pages die Wurzel des Repositorys).
 | 3 | humangenetik-1.html |
 | 4 | humangenetik-2.html |
 | 5 | arbeitstechniken.html |
-| 6 | klausurvorbereitung.html |
-| 7 | gentherapie-1.html |
-| 8 | gentherapie-2.html |
+| – | klausurvorbereitung.html (nach Block 3) |
+| 6 | gentherapie-1.html |
+| 7 | gentherapie-2.html |
 | 9 | Bewertete Debatte — findet im Unterricht statt, keine Seite |
 
 Die Klausur selbst ist absichtlich nicht Teil dieses Repositorys.
