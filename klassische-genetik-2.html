@@ -292,72 +292,15 @@
         <span style="display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 14px">Warum das im Alltag zählt</span>
         <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(30px,4vw,38px);margin:0">Blutgruppen &amp; Bluttransfusion</h2>
         <p style="font-size:16.5px;line-height:28px;margin:14px 0 0;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Die Antigene A und B entscheiden nicht nur über die Genetik, sondern auch, welches Blut du bei einer Transfusion vertragen würdest. <b>Dein Immunsystem bildet nur gegen die Antigene Antikörper, die auf deinen <em>eigenen</em> Blutzellen <u>fehlen </u>— dein Körper „erkennt" sie als fremd.</b> Antikörper haben eine Y-Form mit zwei Bindungsstellen und können sich deshalb gleichzeitig an Antigene auf <b>mehreren</b> Blutzellen festsetzen. Bekommst du fremdes Blut mit einem Antigen, gegen das du Antikörper besitzt, verbinden diese Antikörper viele Blutzellen zu Klumpen (Agglutination) — diese Klumpen können kleine Blutgefäße verstopfen und lebensgefährlich sein.</p>
-        <div style="max-width:520px;margin:18px 0 0;background:var(--color-bg);border-radius:20px;box-shadow:inset 0 0 0 1px var(--color-divider);padding:16px 18px 14px">
-          <span style="display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700)">Beispiel: Blutgruppe B wird in einen Empfänger der Blutgruppe A übertragen</span>
-          <div style="display:flex;gap:7px;margin:11px 0 0;flex-wrap:wrap">
-            <sc-for list="{{ aggSteps }}" as="st" hint-placeholder-count="3">
-              <button type="button" onClick="{{ st.onClick }}" style="{{ st.style }}">{{ st.label }}</button>
-            </sc-for>
-          </div>
-          <div style="height:150px;display:flex;align-items:center;justify-content:center;margin-top:13px">
-            <sc-if value="{{ agg1 }}" hint-placeholder-val="{{ true }}">
-              <div style="display:flex;align-items:center;gap:34px">
-                <div style="display:flex;gap:14px">
-                  <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
-                    <span style="position:absolute;top:-6px;left:19px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-                  </div>
-                  <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
-                    <span style="position:absolute;top:-6px;left:19px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-                  </div>
-                </div>
-                <div style="display:flex;gap:16px">
-                  <div style="position:relative;width:40px;height:34px;flex:none">
-                    <span style="position:absolute;left:18.5px;top:14px;width:3px;height:16px;background:var(--color-accent-800);border-radius:2px"></span>
-                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(-35deg)"></span>
-                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(35deg)"></span>
-                  </div>
-                  <div style="position:relative;width:40px;height:34px;flex:none">
-                    <span style="position:absolute;left:18.5px;top:14px;width:3px;height:16px;background:var(--color-accent-800);border-radius:2px"></span>
-                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(-35deg)"></span>
-                    <span style="position:absolute;left:20px;top:-2px;width:3px;height:18px;background:var(--color-accent-800);border-radius:2px;transform-origin:bottom center;transform:rotate(35deg)"></span>
-                  </div>
-                </div>
-              </div>
-            </sc-if>
-            <sc-if value="{{ agg2 }}" hint-placeholder-val="{{ false }}">
-              <div style="display:flex;align-items:center;gap:0">
-                <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
-                  <span style="position:absolute;top:22px;right:-7px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-                </div>
-                <div style="position:relative;width:56px;height:34px;flex:none">
-                  <span style="position:absolute;top:15.5px;left:20px;width:16px;height:3px;background:var(--color-accent-800);border-radius:2px"></span>
-                  <span style="position:absolute;left:2px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:right center;transform:rotate(-35deg)"></span>
-                  <span style="position:absolute;left:2px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:right center;transform:rotate(35deg)"></span>
-                  <span style="position:absolute;left:36px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:left center;transform:rotate(35deg)"></span>
-                  <span style="position:absolute;left:36px;top:15.5px;width:18px;height:3px;background:var(--color-accent-800);border-radius:2px;transform-origin:left center;transform:rotate(-35deg)"></span>
-                </div>
-                <div style="position:relative;width:52px;height:52px;flex:none;border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)">
-                  <span style="position:absolute;top:22px;left:-7px;width:13px;height:13px;border-radius:50%;background:var(--color-accent-700);border:2px solid var(--color-bg)"></span>
-                </div>
-              </div>
-            </sc-if>
-            <sc-if value="{{ agg3 }}" hint-placeholder-val="{{ false }}">
-              <div style="display:grid;grid-template-columns:repeat(2,52px);grid-template-rows:repeat(2,52px);gap:26px;position:relative">
-                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
-                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
-                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
-                <div style="border-radius:50%;background:var(--color-accent-2-300);box-shadow:inset 0 0 0 3px var(--color-accent-2-600)"></div>
-                <span style="position:absolute;left:52px;top:24.5px;width:26px;height:3px;background:var(--color-accent-800);border-radius:2px"></span>
-                <span style="position:absolute;left:52px;top:103.5px;width:26px;height:3px;background:var(--color-accent-800);border-radius:2px"></span>
-                <span style="position:absolute;left:24.5px;top:52px;width:3px;height:26px;background:var(--color-accent-800);border-radius:2px"></span>
-                <span style="position:absolute;left:103.5px;top:52px;width:3px;height:26px;background:var(--color-accent-800);border-radius:2px"></span>
-              </div>
-            </sc-if>
-          </div>
-          <p style="margin:0;font-size:13.5px;line-height:1.55;min-height:44px">{{ aggText }}</p>
-          <span style="display:block;margin-top:9px;font-size:11px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">● B-Antigen auf der Spenderzelle　Y Anti-B-Antikörper des Empfängers　— schematisch, kein Maßstab</span>
-        </div>
       </div>
+      <figure style="max-width:880px;margin:22px 0 0;background:var(--color-bg);border-radius:20px;box-shadow:inset 0 0 0 1px var(--color-divider);padding:16px 18px 14px">
+        <span style="display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--color-accent-700)">Erklärvideo: Wie Antikörper Blut verklumpen lassen (4:23 min)</span>
+        <video controls preload="metadata" playsinline poster="assets/agglutination-poster.jpg" style="display:block;width:100%;aspect-ratio:16/9;margin:11px 0 0;border-radius:12px;background:#000">
+          <source src="assets/agglutination.mp4" type="video/mp4">
+          Dein Browser kann das Video nicht abspielen. <a href="assets/agglutination.mp4">Video öffnen</a>
+        </video>
+        <figcaption style="margin-top:9px;font-size:11px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Untertitel im Video · computergenerierte Stimme · schematisch, nicht maßstabsgetreu</figcaption>
+      </figure>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:13px">
         <sc-if value="{{ showHintAntikoerper }}" hint-placeholder-val="{{ false }}">
           <div style="display:flex;gap:10px;background:var(--color-accent-2-100);border-radius:16px;padding:11px 16px;font-size:13.5px;line-height:1.5"><span aria-hidden="true">ⓘ</span><span>Es werden nur Antikörper gegen Antigene gebildet, die auf den <b>eigenen</b> Zellen fehlen.</span></div>
@@ -707,7 +650,6 @@ class Component extends DCLogic {
   state = {
     scrollPct: 0,
     aboSel: null,
-    aggStep: 1,
     labSel: null,
     miniAnswers: {},
     quizAnswers: {},
@@ -878,28 +820,7 @@ class Component extends DCLogic {
     return `display:flex;align-items:center;gap:10px;background:${bg};border:1.5px solid ${border};border-radius:999px;padding:11px 16px;cursor:${locked ? 'default' : 'pointer'};font-size:15px;line-height:1.4;text-align:left;font-family:var(--font-body);color:var(--color-text);opacity:${opacity};width:100%;transition:border-color .15s,background .15s`;
   }
 
-  setAggStep(n) { this.setState({ aggStep: n }); }
-
   renderVals() {
-    const aggStep = this.state.aggStep;
-    const aggSteps = [
-      { n: 1, label: '1 · Fremde Zellen treffen ein' },
-      { n: 2, label: '2 · Antikörper binden' },
-      { n: 3, label: '3 · Verklumpung' },
-    ].map(st => ({
-      label: st.label,
-      onClick: () => this.setAggStep(st.n),
-      style: 'font:inherit;font-size:12.5px;cursor:pointer;padding:6px 13px;border-radius:999px;border:1.5px solid ' +
-        (aggStep === st.n ? 'var(--color-accent-700)' : 'var(--color-divider)') +
-        ';background:' + (aggStep === st.n ? 'var(--color-accent-700)' : 'transparent') +
-        ';color:' + (aggStep === st.n ? 'var(--color-bg)' : 'var(--color-text)'),
-    }));
-    const AGG_TEXT = {
-      1: 'Der Empfänger hat Blutgruppe A. Auf seinen eigenen Zellen fehlt das Antigen B, deshalb trägt sein Plasma Anti-B-Antikörper. Mit der Transfusion kommen Spenderzellen der Blutgruppe B hinzu, die das B-Antigen tragen. Noch schwimmen Zellen und Antikörper frei nebeneinander.',
-      2: 'Ein Antikörper hat zwei Bindungsstellen. Er passt nur zum B-Antigen und kann mit jedem Arm eine andere Spenderzelle greifen — so entsteht eine Brücke zwischen zwei Zellen. Die eigenen A-Zellen des Empfängers bleiben unberührt, gegen sie hat er keine Antikörper.',
-      3: 'Weil viele Antikörper viele Zellen gleichzeitig verbrücken, entsteht ein Netz aus verklumpten Spenderzellen (Agglutination). Solche Klumpen können kleine Blutgefäße verstopfen; zusätzlich werden die fremden Zellen zerstört, wobei Hämoglobin frei wird. Deshalb ist eine falsche Transfusion lebensgefährlich.',
-    };
-    const aggText = AGG_TEXT[aggStep];
     // ABO main cross: A0 x B0 -> gametes A,0 x B,0
     const aboAllelesRow = ['A', '0'];
     const aboAllelesCol = ['B', '0'];
@@ -1217,7 +1138,6 @@ class Component extends DCLogic {
       squashGametes, squashExRows, squashExChecked: this.state.squashExChecked, squashExCorrectCount, squashExTotal: 16,
       checkSquashEx: () => this.checkSquashEx(), resetSquashEx: () => this.resetSquashEx(),
       bloodCards,
-      aggSteps, aggText, agg1: aggStep === 1, agg2: aggStep === 2, agg3: aggStep === 3,
       bloodTableRows, bloodTableChecked: btChecked, bloodTableCorrectCount, bloodTableTotal: 12,
       checkBloodTable: () => this.checkBloodTable(), resetBloodTable: () => this.resetBloodTable(),
       toggleHintAntikoerper: () => this.toggleHint('antikoerper'),
